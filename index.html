@@ -5,26 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>StreamEcho - Free IPTV M3U Playlists 2025</title>
 
-  <!-- SEO Meta Tags -->
   <meta name="description" content="🚀 StreamEcho – Best IPTV M3U Playlists 2025 📺 | Free sports, movies & live TV channels worldwide 🌍 | Daily updated playlists & smooth streaming!">
   <meta name="keywords" content="StreamEcho, IPTV, M3U Playlist 2025, Sports IPTV, Free IPTV, Movies IPTV, BDIX IPTV, Live TV M3U">
   <meta name="author" content="StreamEcho">
 
-  <!-- Open Graph -->
   <meta property="og:title" content="StreamEcho - Free IPTV M3U Playlists 2025">
   <meta property="og:description" content="Download free IPTV M3U playlists for sports, movies & live TV. Daily updated and 100% working links!">
   <meta property="og:url" content="https://streamecho.top/">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://streamecho.top/logo.png">
 
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png">
 
-  <!-- Verification -->
   <meta name="google-site-verification" content="4NQUp8leljBbaQ4uCL3_7R6-Vqz8aqEZlx0i19Wa9Xs" />
   <meta name="msvalidate.01" content="AB3EDD738DDF6336CA573339251F1D6F" />
 
-  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZKJ2RFDP8R"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -34,49 +29,14 @@
   </script>
 
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      margin: 0;
-      padding: 0;
-      color: #333;
-      text-align: center;
-    }
-    header {
-      background: #0073e6;
-      color: white;
-      padding: 20px;
-    }
-    h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
-    p {
-      font-size: 1.1rem;
-    }
-    .btn {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 12px 20px;
-      background: #28a745;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-    }
-    .btn:hover {
-      background: #218838;
-    }
-    footer {
-      margin-top: 40px;
-      padding: 15px;
-      background: #eee;
-    }
-    .counter {
-      font-size: 1.2rem;
-      color: #0073e6;
-      margin-top: 20px;
-    }
+    body { font-family: Arial, sans-serif; background: #f9f9f9; margin: 0; padding: 0; color: #333; text-align: center; }
+    header { background: #0073e6; color: white; padding: 20px; }
+    h1 { margin: 0; font-size: 2rem; }
+    p { font-size: 1.1rem; }
+    .btn { display: inline-block; margin-top: 15px; padding: 12px 20px; background: #28a745; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; }
+    .btn:hover { background: #218838; }
+    footer { margin-top: 40px; padding: 15px; background: #eee; }
+    .counter { font-size: 1.2rem; color: #0073e6; margin-top: 20px; }
   </style>
 </head>
 <body>
@@ -99,17 +59,12 @@
     <p>© 2025 StreamEcho. All rights reserved.</p>
   </footer>
 
-  <!-- Visitor Counter Script -->
   <script>
-    async function initVisitorCounter() {
+    async function updateVisitorCount() {
       try {
         let namespace = "streamecho";
         let key = "visits";
 
-        // Create namespace if it does not exist
-        await fetch(`https://api.countapi.xyz/create?namespace=${namespace}&key=${key}&value=0`);
-
-        // Hit the counter
         let response = await fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`);
         let data = await response.json();
 
@@ -119,7 +74,7 @@
         document.getElementById("visitorCount").innerText = "Error";
       }
     }
-    initVisitorCounter();
+    updateVisitorCount();
   </script>
 </body>
 </html>
