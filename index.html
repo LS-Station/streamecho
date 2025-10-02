@@ -10,7 +10,7 @@
   <meta name="keywords" content="StreamEcho, IPTV, M3U Playlist 2025, Sports IPTV, Free IPTV, Movies IPTV, BDIX IPTV, Live TV M3U, IPTV Player, StreamEcho Playlist">
   <meta name="author" content="StreamEcho">
 
-  <!-- Open Graph (For Social Media Preview) -->
+  <!-- Open Graph -->
   <meta property="og:title" content="StreamEcho - Free IPTV M3U Playlists 2025">
   <meta property="og:description" content="Download free IPTV M3U playlists for sports, movies & live TV. Daily updated and 100% working links!">
   <meta property="og:url" content="https://streamecho.top/">
@@ -26,13 +26,11 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png">
 
-  <!-- Google Search Console Verification -->
+  <!-- Verification -->
   <meta name="google-site-verification" content="4NQUp8leljBbaQ4uCL3_7R6-Vqz8aqEZlx0i19Wa9Xs" />
-
-  <!-- Bing Webmaster Verification -->
   <meta name="msvalidate.01" content="AB3EDD738DDF6336CA573339251F1D6F" />
 
-  <!-- Google Analytics (GA4) -->
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZKJ2RFDP8R"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -80,6 +78,11 @@
       padding: 15px;
       background: #eee;
     }
+    .counter {
+      font-size: 1.2rem;
+      color: #0073e6;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
@@ -92,10 +95,30 @@
     <h2>🔥 Latest Free IPTV Playlists</h2>
     <p>Here you will find daily updated IPTV M3U playlists for sports, movies, news, and worldwide live TV channels. Stay connected and enjoy buffer-free streaming.</p>
     <a href="https://streamecho.top/" class="btn">Visit StreamEcho Website</a>
+
+    <div class="counter">
+      🌐 Visitors: <span id="visitorCount">Loading...</span>
+    </div>
   </main>
 
   <footer>
     <p>© 2025 StreamEcho. All rights reserved.</p>
   </footer>
+
+  <!-- Visitor Counter Script -->
+  <script>
+    async function updateVisitorCount() {
+      try {
+        let siteID = "streamecho"; // আপনার ইউনিক সাইট আইডি
+        let response = await fetch(`https://api.countapi.xyz/hit/${siteID}/visits`);
+        let data = await response.json();
+        document.getElementById("visitorCount").innerText = data.value;
+      } catch (err) {
+        console.error("Visitor count error:", err);
+        document.getElementById("visitorCount").innerText = "Error";
+      }
+    }
+    updateVisitorCount();
+  </script>
 </body>
 </html>
