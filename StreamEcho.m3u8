@@ -71,8 +71,6 @@ http://mydsat85.cbilant.com/iptv/E2DFKS2LWK569Q/6586/index.m3u8
 http://45.143.220.6:3333/live/premium-aostv-free/download-fdrm-aostv.asia/2906.ts
 #EXTINF:-1 ,Colors Super
 http://45.143.220.6:3333/live/premium-aostv-free/download-fdrm-aostv.asia/2982.ts
-#EXTINF:-1 ,Colors Rishtey
-http://45.143.220.6:3333/live/premium-aostv-free/download-fdrm-aostv.asia/2773.ts
 #EXTINF:-1 ,Disney Chahnle HD
 http://45.143.220.6:3333/live/premium-aostv-free/download-fdrm-aostv.asia/2776.ts
 #EXTINF:-1 ,Zing
@@ -119,3 +117,59 @@ http://103.175.242.10:8080/jamuna/index.m3u8
 http://103.175.242.10:8080/metv/index.m3u8
 #EXTINF:-1 ,Movie Bangla
 http://103.175.242.10:8080/moviebangla/index.m3u8
+#EXTINF:-1 ,Willow
+https://fl7.moveonjoy.com/WILLOW_CRICKET/index.m3u8
+#EXTINF:-1 ,Star Sports 3 🏏🏏🏏🏏🏏🏏
+http://89.187.189.98/STARSPORTS3/index.m3u8
+#EXTINF:-1 ,Star Sports 1
+https://live20.bozztv.com/akamaissh101/ssh101/starsports/chunks.m3u8
+#EXTINF:-1 ,T Sports Ind vs WI Test Match
+https://live.tsports.com/mobile_hls/tsports_live_1/playlist.m3u8
+#EXTINF:-1 ,Sky Sports Cricket
+http://y3fqd48g.megatv.fun/iptv/NRLXRWSBWBPLN4/9258/index.m3u8
+#EXTINF:-1 ,Star Sports SL 1 HD EPL
+https://live.dinesh29.com.np/stream/jiotvplus/starsportsselecthd1/master.m3u8
+#EXTINF:-1 ,Star Sports SL 2 HD EPL
+https://live.dinesh29.com.np/stream/jiotvplus/starsportsselecthd2/master.m3u8
+#EXTINF:-1 ,TNT Sports 1 HD
+https://crichdplaylist.extratvteam.workers.dev/master.m3u8?cid=bbtsp1
+#EXTINF:-1 ,TNT Sports 2 HD
+https://crichdplaylist.extratvteam.workers.dev/master.m3u8?cid=bbtsp2
+#EXTINF:-1 ,TNT Sports 3 HD
+https://crichdplaylist.extratvteam.workers.dev/master.m3u8?cid=bbtsp3
+#EXTINF:-1 ,Sony sports 1
+https://tiger-hub.vercel.app/SONY/Sports-1/tracks-v1a1/mono.ts.m3u8
+#EXTINF:-1 ,Sony sports 2
+https://tiger-hub.vercel.app/SONY/Sports-2/tracks-v1a1/mono.ts.m3u8
+#EXTINF:-1 ,Sony sports 5
+https://tiger-hub.vercel.app/SONY/Sports-5/tracks-v1a1/mono.ts.m3u8
+#EXTINF:-1 ,Willow
+https://tiger-hub.vercel.app/WillowHD/tracks-v1a1/mono.m3u8
+#EXTINF:-1 ,A Sports HD
+http://filex.me:8080/live/1234567890/1234567890/247168.ts.m3u8
+#EXTINF:-1 ,Willow HD
+http://xxip9.top:8080/live/7656691303/chrisbolden765%40icloud.com/58847.m3u8
+#EXTINF:-1 ,Fox Sports 501 HD
+http://ee0c5e74.akadatel.com/iptv/QRDWGTBMDHSDGK/19146/index.m3u8
+#EXTINF:-1 ,M-Sports HD
+http://live.matribhumitv.com/matribhumi-sports/index.m3u8
+#EXTINF:-1 ,RTA Sports HD
+https://rtatv.akamaized.net/Content/HLS/Live/channel(RTA3)/variant.m3u8
+#EXTINF:-1 ,Fast-Studios-Womens-Sports
+https://csm-e-eb.csm.tubi.video/csm/extlive/tubiprd01,Fast-Studios-Womens-Sports.m3u8
+#EXTINF:-1 ,Redbull TV
+https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master_3360.m3u8
+#EXTINF:-1 ,Unifi HD
+https://unifi-live05.secureswiftcontent.com/UnifiHD/live27-1080FHD.m3u8
+#EXTINF:-1 ,Motor Vision
+https://mvg-mv-xumo.otteravision.com/mvg/mv/mv.m3u8
+#EXTINF:-1 ,Arena_Sport
+http://178.23.88.55/Arena_sport/index.m3u8
+#EXTINF:-1 ,Sport 1 HD
+http://178.23.88.55/Sport1/index.m3u8
+#EXTINF:-1 ,Nova_Sport
+http://178.23.88.55/Nova_Sport/index.m3u8
+#EXTINF:-1 ,Eurosport_2
+http://178.23.88.55/Eurosport_2/index.m3u8
+#EXTINF:-1 ,Football Live
+https://spstr.abntv.live/hls/psstream.m3u8
