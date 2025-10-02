@@ -29,8 +29,6 @@ http://89.187.189.98/SONYMAX2/index.m3u8
 http://89.187.189.98/MOVIESNOWHD/index.m3u8
 #EXTINF:-1 ,HUNGAMAKIDS
 http://89.187.189.98/HUNGAMAKIDS/index.m3u8
-#EXTINF:-1 ,POGOKIDS
-http://89.187.189.98/POGOKIDS/index.m3u8
 #EXTINF:-1 ,SONYYAY
 http://89.187.189.98/SONYYAY/index.m3u8
 #EXTINF:-1 ,Boishakhi Tv
@@ -151,14 +149,6 @@ http://filex.me:8080/live/1234567890/1234567890/247168.ts.m3u8
 http://xxip9.top:8080/live/7656691303/chrisbolden765%40icloud.com/58847.m3u8
 #EXTINF:-1 ,Fox Sports 501 HD
 http://ee0c5e74.akadatel.com/iptv/QRDWGTBMDHSDGK/19146/index.m3u8
-#EXTINF:-1 ,M-Sports HD
-http://live.matribhumitv.com/matribhumi-sports/index.m3u8
-#EXTINF:-1 ,RTA Sports HD
-https://rtatv.akamaized.net/Content/HLS/Live/channel(RTA3)/variant.m3u8
-#EXTINF:-1 ,Fast-Studios-Womens-Sports
-https://csm-e-eb.csm.tubi.video/csm/extlive/tubiprd01,Fast-Studios-Womens-Sports.m3u8
-#EXTINF:-1 ,Redbull TV
-https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master_3360.m3u8
 #EXTINF:-1 ,Unifi HD
 https://unifi-live05.secureswiftcontent.com/UnifiHD/live27-1080FHD.m3u8
 #EXTINF:-1 ,Motor Vision
