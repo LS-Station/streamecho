@@ -109,8 +109,9 @@
   <script>
     async function updateVisitorCount() {
       try {
-        let siteID = "streamecho"; // আপনার ইউনিক সাইট আইডি
-        let response = await fetch(`https://api.countapi.xyz/hit/${siteID}/visits`);
+        let namespace = "streamecho";
+        let key = "visits";
+        let response = await fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`);
         let data = await response.json();
         document.getElementById("visitorCount").innerText = data.value;
       } catch (err) {
