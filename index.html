@@ -106,7 +106,7 @@
         let namespace = "streamecho";
         let key = "visits";
 
-        // Create counter if not exists
+        // Create namespace if it does not exist
         await fetch(`https://api.countapi.xyz/create?namespace=${namespace}&key=${key}&value=0`);
 
         // Hit the counter
