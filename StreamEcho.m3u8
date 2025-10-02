@@ -1,4 +1,14 @@
 #EXTM3U
+#EXTINF:-1,Colors hd
+
+
+http://51.15.7.9:3141/colorshd/index.m3u8
+
+#EXTINF:-1,Sony pix
+
+http://51.15.7.9:3141/pix/index.m3u8
+
+streamecho.top
 #EXTINF:-1 ,Sony sports 1
 http://51.15.7.9:3141/ten1/index.m3u8
 #EXTINF:-1 ,Sony sports 2
