@@ -101,12 +101,12 @@
 
   <!-- Visitor Counter Script -->
   <script>
-    async function updateVisitorCount() {
+    async function initVisitorCounter() {
       try {
         let namespace = "streamecho";
         let key = "visits";
 
-        // Create the counter if it doesn't exist
+        // Create counter if not exists
         await fetch(`https://api.countapi.xyz/create?namespace=${namespace}&key=${key}&value=0`);
 
         // Hit the counter
@@ -119,7 +119,7 @@
         document.getElementById("visitorCount").innerText = "Error";
       }
     }
-    updateVisitorCount();
+    initVisitorCounter();
   </script>
 </body>
 </html>
