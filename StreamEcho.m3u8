@@ -1,6 +1,8 @@
 #EXTM3U
 #EXTINF:-1 ,T Sports Live
 http://147.93.154.65/Bein3/index.m3u8
+#EXTINF:-1 ,Star Sports Select 1 HD
+http://stvlive.net:8080/starselect1/tracks-v1a1/mono.m3u8
 #EXTINF:-1 ,PTV SPORTS HD
 https://tv.elb.com.pk/play/VDeely_kEYpv8munpxDVgInSgnzIxq5Vs8BR-BFiIyw/m3u8
 #EXTINF:-1 ,STARSPORTSSELECT2HD
