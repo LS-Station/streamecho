@@ -1,20 +1,78 @@
 #EXTM3U
-#EXTINF:-1,US-BD Journal 24 TV
+#EXTINF:-1 ,PTV SPORTS HD
+https://tv.elb.com.pk/play/VDeely_kEYpv8munpxDVgInSgnzIxq5Vs8BR-BFiIyw/m3u8
+#EXTINF:-1 ,STARSPORTSSELECT1HD
+http://89.187.189.98/STARSPORTSSELECT1HD/index.m3u8
+#EXTINF:-1 ,STARSPORTSSELECT2HD
+http://89.187.189.98/STARSPORTSSELECT2HD/index.m3u8
+#EXTINF:-1 ,Ten SPORTS LOW QUALITY
+https://tv.elb.com.pk/play/VDeely_kEYpv8munpxDVgC3kRoALUDIe_xYeZlM29Js/m3u8
+#EXTINF:-1 ,Sky Sports Cricket
+http://178.33.239.54:8080/503/index.m3u8
+#EXTINF:-1 ,SONY MX2
+http://89.187.189.98/SONYMAX2/index.m3u8
+#EXTINF:-1 ,MOVIESNOWHD
+http://89.187.189.98/MOVIESNOWHD/index.m3u8
+#EXTINF:-1 ,HUNGAMAKIDS
+http://89.187.189.98/HUNGAMAKIDS/index.m3u8
+#EXTINF:-1 ,POGOKIDS
+http://89.187.189.98/POGOKIDS/index.m3u8
+#EXTINF:-1 ,SONYYAY
+http://89.187.189.98/SONYYAY/index.m3u8
+#EXTINF:-1 ,Boishakhi Tv
+https://boishakhi.sonarbanglatv.com/boishakhi/boishakhitv/index.m3u8
+#EXTINF:-1 ,DEPTO BANGLA HD
+https://byphdgllyk.gpcdn.net/hls/deeptotv/index.m3u8
+#EXTINF:-1 ,RogeenTV
+https://server.thelegitpro.in/rongeentv/rongeentv/tracks-v1a1/mono.m3u8
+#EXTINF:-1 ,INDEPENDENT TV
+https://ythls.armelin.one/channel/UCATUkaOHwO9EP_W87zCiPbA.m3u8
+#EXTINF:-1 ,JAMUNA TV
+https://ythls.armelin.one/channel/UCDj9HHrRUzlsTuPQN0PHxjw.m3u8
+#EXTINF:-1 ,EKUSHEY TV HD
+http://210.4.72.204/hls-live/livepkgr/_definst_/liveevent/livestream3.m3u8
+#EXTINF:-1 ,Discovery Bangla
+https://varun-iptv.netlify.app/m3u/discoverybengali.m3u8
+#EXTINF:-1 ,MY TV HD
+https://mytvbangla.com/0.m3u8
+#EXTINF:-1 ,Star Jalsha HD
+http://stream247.live:8080/starjalsha/index.m3u8
+#EXTINF:-1 ,Zee Bangla Cinema (airte)
+http://103.175.242.10:8080/zeebangla/index.m3u8
+#EXTINF:-1 ,SONY SAB HD
+http://45.143.220.6:3333/live/premium-aostv-free/download-fdrm-aostv.asia/2964.ts
+#EXTINF:-1 ,SONY SIX
+http://103.175.242.10:8080/sonyten5/index.m3u8
+#EXTINF:-1 ,Europe Sports 1 HD
+http://185.189.225.157/EuroSport1/index.m3u8
+#EXTINF:-1 ,Europe  Sports 2 HD
+http://185.189.225.157/EuroSport2/index.m3u8
+#EXTINF:-1 ,Nick Hindi
+http://103.175.242.10:8080/nick/index.m3u8
+#EXTINF:-1 ,Discovery Kids
+https://dplus.gammacdn.workers.dev/videos/113.m3u8
+#EXTINF:-1 ,Rishtey
+http://mydsat85.cbilant.com/iptv/E2DFKS2LWK569Q/6586/index.m3u8
+#EXTINF:-1 ,Sangeet Bangla
+http://45.143.220.6:3333/live/premium-aostv-free/download-fdrm-aostv.asia/2906.ts
+#EXTINF:-1 ,Colors Super
+http://45.143.220.6:3333/live/premium-aostv-free/download-fdrm-aostv.asia/2982.ts
+#EXTINF:-1 ,Colors Rishtey
+http://45.143.220.6:3333/live/premium-aostv-free/download-fdrm-aostv.asia/2773.ts
+#EXTINF:-1 ,Disney Chahnle HD
+http://45.143.220.6:3333/live/premium-aostv-free/download-fdrm-aostv.asia/2776.ts
+#EXTINF:-1 ,Zing
+http://45.143.220.6:3333/live/premium-aostv-free/download-fdrm-aostv.asia/2973.ts
+#EXTINF:-1 ,B4u Music
+http://45.143.220.6:3333/live/premium-aostv-free/download-fdrm-aostv.asia/2762.ts
+#EXTINF:-1 ,Star Jalsha HD
+https://live.dinesh29.com.np/stream/jiotvplus/starjalshahd/master.m3u8
+#EXTINF:-1 ,US-BD Journal 24 TV
 http://208.86.19.13:81/510.stream/index.m3u8?
-#EXTINF:-1,Zee Bangla HD
+#EXTINF:-1 ,Zee Bangla HD
 https://smart.bengaldigital.live/Zee-Bangla/index.m3u8
-#EXTINF:-1,Sananda TV
+#EXTINF:-1 ,Sananda TV
 https://live.sanonda.tv/sanonda/index.m3u8
-#EXTINF:-1,Colors hd
-
-
-http://51.15.7.9:3141/colorshd/index.m3u8
-
-#EXTINF:-1,Sony pix
-
-http://51.15.7.9:3141/pix/index.m3u8
-
-streamecho.top
 #EXTINF:-1 ,Sony sports 1
 http://51.15.7.9:3141/ten1/index.m3u8
 #EXTINF:-1 ,Sony sports 2
@@ -35,8 +93,6 @@ http://51.15.7.9:3141/cafe/index.m3u8
 http://51.15.7.9:3141/epic/index.m3u8
 #EXTINF:-1 ,Zee Cinema HD
 http://51.15.7.9:3141/zeecinema/index.m3u8
-#EXTINF:-1 ,🏏aus w🆚nz w🏏
-http://178.33.239.54:8080/503/index.m3u8
 #EXTINF:-1 ,Jamuna TV
 http://stvlive.net:8080/jamuna/index.m3u8
 #EXTINF:-1 ,Me TV
