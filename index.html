@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>StreamEcho - Free IPTV M3U Playlists 2025</title>
-  
+
   <!-- SEO Meta Tags -->
   <meta name="description" content="🚀 StreamEcho – Best IPTV M3U Playlists 2025 📺 | Free sports, movies & live TV channels worldwide 🌍 | Daily updated playlists & smooth streaming!">
-  <meta name="keywords" content="StreamEcho, IPTV, M3U Playlist 2025, Sports IPTV, Free IPTV, Movies IPTV, BDIX IPTV, Live TV M3U, IPTV Player, StreamEcho Playlist">
+  <meta name="keywords" content="StreamEcho, IPTV, M3U Playlist 2025, Sports IPTV, Free IPTV, Movies IPTV, BDIX IPTV, Live TV M3U">
   <meta name="author" content="StreamEcho">
 
   <!-- Open Graph -->
@@ -16,12 +16,6 @@
   <meta property="og:url" content="https://streamecho.top/">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://streamecho.top/logo.png">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="StreamEcho - Free IPTV M3U Playlists 2025">
-  <meta name="twitter:description" content="Daily updated IPTV M3U playlists for sports, movies & TV 📺 Free worldwide streaming 🌍">
-  <meta name="twitter:image" content="https://streamecho.top/logo.png">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png">
@@ -81,7 +75,7 @@
     .counter {
       font-size: 1.2rem;
       color: #0073e6;
-      margin-top: 10px;
+      margin-top: 20px;
     }
   </style>
 </head>
@@ -111,8 +105,14 @@
       try {
         let namespace = "streamecho";
         let key = "visits";
+
+        // Create the counter if it doesn't exist
+        await fetch(`https://api.countapi.xyz/create?namespace=${namespace}&key=${key}&value=0`);
+
+        // Hit the counter
         let response = await fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`);
         let data = await response.json();
+
         document.getElementById("visitorCount").innerText = data.value;
       } catch (err) {
         console.error("Visitor count error:", err);
