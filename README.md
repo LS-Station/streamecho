@@ -1,3 +1,7 @@
+## 👀 Profile Visitors  
+
+![Visitor Count](https://komarev.com/ghpvc/?username=YourGitHubUsername&label=Profile+Visitors&color=blue&style=flat-square) 
+
 # 🌐 StreamEcho - Free IPTV & M3U Playlists  
 
 Welcome to **StreamEcho** – your trusted platform for 🎥 Free IPTV, 📺 M3U Playlists, and 🌍 Live TV Streaming.  
@@ -16,11 +20,7 @@ Stay connected with our global community and enjoy daily updated IPTV links for 
 * Works on VLC, MX Player, NS Player & More 📺  
 * Friendly Community on Telegram, WhatsApp & Facebook 👥  
 * Profile Visitor Counter to Track Popularity 📊  
-
-## 👀 Profile Visitors  
-
-![Visitor Count](https://komarev.com/ghpvc/?username=YourGitHubUsername&label=Profile+Visitors&color=blue&style=flat-square)  
-
+ 
 ## 📌 SEO Keywords  
 IPTV 2025, Free IPTV Playlist, M3U Link, Bangla IPTV, Indian Sports IPTV, BDIX IPTV, StreamEcho IPTV, Daily Updated M3U  
 
