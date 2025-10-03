@@ -3,14 +3,8 @@
 http://147.93.154.65/Bein3/index.m3u8
 #EXTINF:-1 ,Star Sports Select 1 HD
 http://stvlive.net:8080/starselect1/tracks-v1a1/mono.m3u8
-#EXTINF:-1 ,PTV SPORTS HD
-https://tv.elb.com.pk/play/VDeely_kEYpv8munpxDVgInSgnzIxq5Vs8BR-BFiIyw/m3u8
 #EXTINF:-1 ,STARSPORTSSELECT2HD
 http://89.187.189.98/STARSPORTSSELECT2HD/index.m3u8
-#EXTINF:-1 ,Ten SPORTS LOW QUALITY
-https://tv.elb.com.pk/play/VDeely_kEYpv8munpxDVgC3kRoALUDIe_xYeZlM29Js/m3u8
-#EXTINF:-1 ,Sky Sports Cricket
-http://178.33.239.54:8080/503/index.m3u8
 #EXTINF:-1 ,Hungama
 http://103.182.170.32:8888/play/a04b
 #EXTINF:-1 ,Disney Channel
@@ -31,8 +25,6 @@ http://89.187.189.98/MOVIESNOWHD/index.m3u8
 http://89.187.189.98/HUNGAMAKIDS/index.m3u8
 #EXTINF:-1 ,SONYYAY
 http://89.187.189.98/SONYYAY/index.m3u8
-#EXTINF:-1 ,Boishakhi Tv
-https://boishakhi.sonarbanglatv.com/boishakhi/boishakhitv/index.m3u8
 #EXTINF:-1 ,DEPTO BANGLA HD
 https://byphdgllyk.gpcdn.net/hls/deeptotv/index.m3u8
 #EXTINF:-1 ,RogeenTV
@@ -43,8 +35,6 @@ https://ythls.armelin.one/channel/UCATUkaOHwO9EP_W87zCiPbA.m3u8
 https://ythls.armelin.one/channel/UCDj9HHrRUzlsTuPQN0PHxjw.m3u8
 #EXTINF:-1 ,EKUSHEY TV HD
 http://210.4.72.204/hls-live/livepkgr/_definst_/liveevent/livestream3.m3u8
-#EXTINF:-1 ,Discovery Bangla
-https://varun-iptv.netlify.app/m3u/discoverybengali.m3u8
 #EXTINF:-1 ,MY TV HD
 https://mytvbangla.com/0.m3u8
 #EXTINF:-1 ,Star Jalsha HD
@@ -119,8 +109,6 @@ http://103.175.242.10:8080/moviebangla/index.m3u8
 https://fl7.moveonjoy.com/WILLOW_CRICKET/index.m3u8
 #EXTINF:-1 ,Star Sports 3 🏏🏏🏏🏏🏏🏏
 http://89.187.189.98/STARSPORTS3/index.m3u8
-#EXTINF:-1 ,Star Sports 1
-https://live20.bozztv.com/akamaissh101/ssh101/starsports/chunks.m3u8
 #EXTINF:-1 ,T Sports Ind vs WI Test Match
 https://live.tsports.com/mobile_hls/tsports_live_1/playlist.m3u8
 #EXTINF:-1 ,Sky Sports Cricket
@@ -129,20 +117,6 @@ http://y3fqd48g.megatv.fun/iptv/NRLXRWSBWBPLN4/9258/index.m3u8
 https://live.dinesh29.com.np/stream/jiotvplus/starsportsselecthd1/master.m3u8
 #EXTINF:-1 ,Star Sports SL 2 HD EPL
 https://live.dinesh29.com.np/stream/jiotvplus/starsportsselecthd2/master.m3u8
-#EXTINF:-1 ,TNT Sports 1 HD
-https://crichdplaylist.extratvteam.workers.dev/master.m3u8?cid=bbtsp1
-#EXTINF:-1 ,TNT Sports 2 HD
-https://crichdplaylist.extratvteam.workers.dev/master.m3u8?cid=bbtsp2
-#EXTINF:-1 ,TNT Sports 3 HD
-https://crichdplaylist.extratvteam.workers.dev/master.m3u8?cid=bbtsp3
-#EXTINF:-1 ,Sony sports 1
-https://tiger-hub.vercel.app/SONY/Sports-1/tracks-v1a1/mono.ts.m3u8
-#EXTINF:-1 ,Sony sports 2
-https://tiger-hub.vercel.app/SONY/Sports-2/tracks-v1a1/mono.ts.m3u8
-#EXTINF:-1 ,Sony sports 5
-https://tiger-hub.vercel.app/SONY/Sports-5/tracks-v1a1/mono.ts.m3u8
-#EXTINF:-1 ,Willow
-https://tiger-hub.vercel.app/WillowHD/tracks-v1a1/mono.m3u8
 #EXTINF:-1 ,A Sports HD
 http://filex.me:8080/live/1234567890/1234567890/247168.ts.m3u8
 #EXTINF:-1 ,Willow HD
@@ -151,8 +125,6 @@ http://xxip9.top:8080/live/7656691303/chrisbolden765%40icloud.com/58847.m3u8
 http://ee0c5e74.akadatel.com/iptv/QRDWGTBMDHSDGK/19146/index.m3u8
 #EXTINF:-1 ,Unifi HD
 https://unifi-live05.secureswiftcontent.com/UnifiHD/live27-1080FHD.m3u8
-#EXTINF:-1 ,Motor Vision
-https://mvg-mv-xumo.otteravision.com/mvg/mv/mv.m3u8
 #EXTINF:-1 ,Arena_Sport
 http://178.23.88.55/Arena_sport/index.m3u8
 #EXTINF:-1 ,Sport 1 HD
@@ -161,5 +133,61 @@ http://178.23.88.55/Sport1/index.m3u8
 http://178.23.88.55/Nova_Sport/index.m3u8
 #EXTINF:-1 ,Eurosport_2
 http://178.23.88.55/Eurosport_2/index.m3u8
-#EXTINF:-1 ,Football Live
-https://spstr.abntv.live/hls/psstream.m3u8
+#EXTINF:-1 ,Arena_Sport_1 HD
+http://78.108.251.7/Arena_Sport_1/index.m3u8
+#EXTINF:-1 ,Arena_Sport_2 HD
+http://78.108.251.7/Arena_Sport_2/index.m3u8
+#EXTINF:-1 ,Arena_Sport_3 HD
+http://78.108.251.7/Arena_Sport_3/index.m3u8
+#EXTINF:-1 ,Arena_Sport_4 HD
+http://78.108.251.7/Arena_Sport_4/index.m3u8
+#EXTINF:-1 ,Arena_Sport_5 HD
+http://78.108.251.7/Arena_Sport_5/index.m3u8
+#EXTINF:-1 ,MovieStar HD
+http://78.108.251.7/MovieStar/index.m3u8
+#EXTINF:-1 ,Diema HD
+http://78.108.251.7/Diema/index.m3u8
+#EXTINF:-1 ,MagicTV HD
+http://78.108.251.7/MagicTV/index.m3u8
+#EXTINF:-1 ,DMSat
+http://78.108.251.7/DMSat/index.m3u8
+#EXTINF:-1 ,EKids
+http://78.108.251.7/EKids/index.m3u8
+#EXTINF:-1 ,RodinaTV HD
+http://78.108.251.7/RodinaTV/index.m3u8
+#EXTINF:-1 ,DaVinciLearning
+http://78.108.251.7/DaVinciLearning/index.m3u8
+#EXTINF:-1 ,DuckTV
+http://78.108.251.7/DuckTV/index.m3u8
+#EXTINF:-1 ,MTVEurope
+http://78.108.251.7/MTVEurope/index.m3u8
+#EXTINF:-1 ,EpicDrama HD
+http://78.108.251.7/EpicDrama/index.m3u8
+#EXTINF:-1 ,DiemaFamily
+http://78.108.251.7/DiemaFamily/index.m3u8
+#EXTINF:-1 ,BabyTV
+http://78.108.251.7/BabyTV/index.m3u8
+#EXTINF:-1 ,NickToons
+http://78.108.251.7/NickToons/index.m3u8
+#EXTINF:-1 ,amc
+http://78.108.251.7/amc/index.m3u8
+#EXTINF:-1 ,PassionXXX HD
+http://78.108.251.7/PassionXXX/index.m3u8
+#EXTINF:-1 ,BBC
+http://78.108.251.7/BBC/index.m3u8
+#EXTINF:-1 ,CNN HD
+http://78.108.251.7/CNN/index.m3u8
+#EXTINF:-1 ,RTVi
+http://78.108.251.7/RTVi/index.m3u8
+#EXTINF:-1 ,Travel_Channel_HD
+http://78.108.251.7/Travel_Channel_HD/index.m3u8
+#EXTINF:-1 ,Disney_Junior
+http://78.108.251.7/Disney_Junior/index.m3u8
+#EXTINF:-1 ,Cartoon_Network
+http://78.108.251.7/Cartoon_Network/index.m3u8
+#EXTINF:-1 ,Boomerang
+http://78.108.251.7/Boomerang/index.m3u8
+#EXTINF:-1 ,Nick_Jr
+http://78.108.251.7/Nick_Jr/index.m3u8
+#EXTINF:-1 ,Discovery_HD
+http://78.108.251.7/Discovery_HD/index.m3u8
