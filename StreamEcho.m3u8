@@ -1,4 +1,8 @@
 #EXTM3U
+#EXTINF:-1, Sony Ten 5 🇮🇳
+http://103.175.242.10:8080/sonyten5/index.m3u8
+#EXTINF:-1, Sony Ten 5 🇮🇳
+http://stvlive.net:8080/sonyten5/index.m3u8
 #EXTINF:-1 ,Star Sports Select 1 HD
 http://103.175.242.10:8080/starselect1/index.m3u8
 #EXTINF:-1 ,TSports
