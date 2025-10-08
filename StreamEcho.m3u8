@@ -1,9 +1,29 @@
 #EXTM3U
-#EXTINF:-1,Sony Liv
+#EXTINF:-1 ,Sony Liv
 https://dai.google.com/ssai/event/jRQlKg2DQWa70jsLHUtxGA/master.m3u8
-#EXTINF:-1, Sony Ten 5 🇮🇳
+#EXTINF:-1 ,Disney Channel SD
+http://116.90.120.149:8000/play/a0bx/index.m3u8
+#EXTINF:-1 ,Star Gold HD
+http://116.90.120.149:8000/play/a0c2/index.m3u8
+#EXTINF:-1 ,Star Gold Thrills SD
+http://116.90.120.149:8000/play/a0c0/index.m3u8
+#EXTINF:-1 ,StarPlus HD
+http://116.90.120.149:8000/play/a0b9/index.m3u8
+#EXTINF:-1 ,Star Sports 1 Hindi HD
+http://116.90.120.149:8000/play/a0bv/index.m3u8
+#EXTINF:-1 ,Star Sports 2 Hindi SD
+http://116.90.120.149:8000/play/a0cs/index.m3u8
+#EXTINF:-1 ,Star Sports Select 1 HD
+http://116.90.120.149:8000/play/a0cl/index.m3u8
+#EXTINF:-1 ,Star Sports Select 2 HD
+http://116.90.120.149:8000/play/a0cm/index.m3u8
+#EXTINF:-1 ,Star Utsav SD
+http://116.90.120.149:8000/play/a02t/index.m3u8
+#EXTINF:-1 ,Star Utsav Movies SD
+http://116.90.120.149:8000/play/a02r/index.m3u8
+#EXTINF:-1 ,Sony Ten 5 🇮🇳
 http://103.175.242.10:8080/sonyten5/index.m3u8
-#EXTINF:-1, Sony Ten 5 🇮🇳
+#EXTINF:-1 ,Sony Ten 5 🇮🇳
 http://stvlive.net:8080/sonyten5/index.m3u8
 #EXTINF:-1 ,Star Sports Select 1 HD
 http://103.175.242.10:8080/starselect1/index.m3u8
@@ -11,8 +31,6 @@ http://103.175.242.10:8080/starselect1/index.m3u8
 http://103.175.242.10:8080/tsports1/index.m3u8
 #EXTINF:-1 ,True Vision Sports
 http://195.128.27.141:80/play/live.php?mac=00:1A:79:24:1B:18&stream=191873&extension=m3u8
-#EXTINF:-1 ,🏏IND 🆚 Wi🏏
-https://fl25.moveonjoy.com/WILLOW_CRICKET/index.m3u8
 #EXTINF:-1 ,TSN 1 🇨🇦
 http://212.102.60.231/TSN_1/index.m3u8
 #EXTINF:-1 ,TSN 2 🇨🇦
@@ -43,8 +61,6 @@ http://45.71.254.1:8000/play/a01r/index.m3u8
 http://147.93.154.65/Bein3/index.m3u8
 #EXTINF:-1 ,STARSPORTSSELECT2HD
 http://89.187.189.98/STARSPORTSSELECT2HD/index.m3u8
-#EXTINF:-1 ,Hungama
-http://103.182.170.32:8888/play/a04b
 #EXTINF:-1 ,Disney Channel
 http://103.182.170.32:8888/play/a04g
 #EXTINF:-1 ,B4u music
@@ -87,8 +103,6 @@ http://mydsat85.cbilant.com/iptv/E2DFKS2LWK569Q/6586/index.m3u8
 http://45.143.220.6:3333/live/premium-aostv-free/download-fdrm-aostv.asia/2906.ts
 #EXTINF:-1 ,B4u Music
 http://45.143.220.6:3333/live/premium-aostv-free/download-fdrm-aostv.asia/2762.ts
-#EXTINF:-1 ,Star Jalsha HD
-https://live.dinesh29.com.np/stream/jiotvplus/starjalshahd/master.m3u8
 #EXTINF:-1 ,US-BD Journal 24 TV
 http://208.86.19.13:81/510.stream/index.m3u8?
 #EXTINF:-1 ,Zee Bangla HD
@@ -127,14 +141,8 @@ http://103.175.242.10:8080/moviebangla/index.m3u8
 https://fl7.moveonjoy.com/WILLOW_CRICKET/index.m3u8
 #EXTINF:-1 ,Star Sports 3 🏏🏏🏏🏏🏏🏏
 http://89.187.189.98/STARSPORTS3/index.m3u8
-#EXTINF:-1 ,T Sports Ind vs WI Test Match
-https://live.tsports.com/mobile_hls/tsports_live_1/playlist.m3u8
 #EXTINF:-1 ,Sky Sports Cricket
 http://y3fqd48g.megatv.fun/iptv/NRLXRWSBWBPLN4/9258/index.m3u8
-#EXTINF:-1 ,Star Sports SL 1 HD EPL
-https://live.dinesh29.com.np/stream/jiotvplus/starsportsselecthd1/master.m3u8
-#EXTINF:-1 ,Star Sports SL 2 HD EPL
-https://live.dinesh29.com.np/stream/jiotvplus/starsportsselecthd2/master.m3u8
 #EXTINF:-1 ,Willow HD
 http://xxip9.top:8080/live/7656691303/chrisbolden765%40icloud.com/58847.m3u8
 #EXTINF:-1 ,Fox Sports 501 HD
