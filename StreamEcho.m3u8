@@ -3,6 +3,8 @@
 http://103.151.60.204/T-Sports/tracks-v1a1/mono.m3u8
 #EXTINF:-1 ,Disney Channel SD
 http://116.90.120.149:8000/play/a0bx/index.m3u8
+#EXTINF:-1 ,Star Sports 1 HD Tamil
+http://ptu.ridsys.in/riptv/live/stream20/index.m3u8
 #EXTINF:-1 ,Star Gold HD
 http://116.90.120.149:8000/play/a0c2/index.m3u8
 #EXTINF:-1 ,Star Gold Thrills SD
@@ -51,8 +53,6 @@ http://45.71.254.1:8000/play/a0e6/index.m3u8
 http://45.71.254.1:8000/play/a0e7/index.m3u8
 #EXTINF:-1 ,ESPN 🇦🇷
 http://45.71.254.1:8000/play/a038/index.m3u8
-#EXTINF:-1 ,ESPN 🇦🇷
-http://45.71.254.1:8000/play/a01r/index.m3u8
 #EXTINF:-1 ,T Sports Live
 http://147.93.154.65/Bein3/index.m3u8
 #EXTINF:-1 ,Disney Channel
@@ -107,12 +107,8 @@ http://51.15.7.9:3141/cafe/index.m3u8
 http://51.15.7.9:3141/epic/index.m3u8
 #EXTINF:-1 ,Zee Cinema HD
 http://51.15.7.9:3141/zeecinema/index.m3u8
-#EXTINF:-1 ,Me TV
-http://stvlive.net:8080/metv/index.m3u8
 #EXTINF:-1 ,Movie Bangla
 http://stvlive.net:8080/moviebangla/index.m3u8
-#EXTINF:-1 ,Me TV
-http://103.175.242.10:8080/metv/index.m3u8
 #EXTINF:-1 ,Movie Bangla
 http://103.175.242.10:8080/moviebangla/index.m3u8
 #EXTINF:-1 ,Willow
@@ -193,3 +189,9 @@ http://78.108.251.7/Nick_Jr/index.m3u8
 http://78.108.251.7/Discovery_HD/index.m3u8
 #EXTINF:-1 ,A&E
 http://190.60.48.149:8000/play/AE
+#EXTINF:-1 ,Star movies
+http://51.15.7.9:3141/starmovies/index.m3u8
+#EXTINF:-1 ,Sony pix
+http://51.15.7.9:3141/pix/index.m3u8
+#EXTINF:-1 ,Axn
+http://185.18.56.26:8888/axn/index.m3u8
