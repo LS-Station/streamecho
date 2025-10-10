@@ -191,3 +191,5 @@ http://78.108.251.7/Boomerang/index.m3u8
 http://78.108.251.7/Nick_Jr/index.m3u8
 #EXTINF:-1 ,Discovery_HD
 http://78.108.251.7/Discovery_HD/index.m3u8
+#EXTINF:-1 ,A&E
+http://190.60.48.149:8000/play/AE
