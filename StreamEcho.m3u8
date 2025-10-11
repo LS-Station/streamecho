@@ -9,6 +9,14 @@ http://103.175.242.10:8080/moviebangla/index.m3u8
 http://51.15.7.9:3141/sethd/index.m3u8
 #EXTINF:-1 ,SONY max HD
 http://51.15.7.9:3141/max/index.m3u8
+#EXTINF:-1 ,Sony Ten Sports 1 HD1
+http://51.15.7.9:3141/ten1/index.m3u8
+#EXTINF:-1 ,Sony Ten Sports 2 HD1
+http://51.15.7.9:3141/ten2/index.m3u8
+#EXTINF:-1 ,Sony Ten Sports 3 HD1
+http://51.15.7.9:3141/ten3/index.m3u8
+#EXTINF:-1 ,Sony Ten Sports 5 HD1
+http://51.15.7.9:3141/ten5/index.m3u8
 #EXTINF:-1 ,SONY max2 HD
 http://51.15.7.9:3141/max2/index.m3u8
 #EXTINF:-1 ,stargold HD
@@ -117,14 +125,6 @@ http://208.86.19.13:81/510.stream/index.m3u8?
 https://smart.bengaldigital.live/Zee-Bangla/index.m3u8
 #EXTINF:-1 ,Sananda TV
 https://live.sanonda.tv/sanonda/index.m3u8
-#EXTINF:-1 ,Sony sports 1
-http://51.15.7.9:3141/ten1/index.m3u8
-#EXTINF:-1 ,Sony sports 2
-http://51.15.7.9:3141/ten2/index.m3u8
-#EXTINF:-1 ,Sony sports 3
-http://51.15.7.9:3141/ten3/index.m3u8
-#EXTINF:-1 ,Sony sports 5
-http://51.15.7.9:3141/ten5/index.m3u8
 #EXTINF:-1 ,Willow
 https://fl7.moveonjoy.com/WILLOW_CRICKET/index.m3u8
 #EXTINF:-1 ,Sky Sports Cricket
