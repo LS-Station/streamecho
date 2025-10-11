@@ -207,5 +207,43 @@ http://190.60.48.149:8000/play/AE
 http://51.15.7.9:3141/starmovies/index.m3u8
 #EXTINF:-1 ,Sony pix
 http://51.15.7.9:3141/pix/index.m3u8
-#EXTINF:-1 ,Axn
-http://185.18.56.26:8888/axn/index.m3u8
+#EXTINF:-1 ,RTA Sports
+https://rtatv.akamaized.net/Content/HLS/Live/channel(RTA3)/03.m3u8
+#EXTINF:-1 ,Sony Sports 1 HD
+http://front-main.eagle-4k.me/play/live.php?mac=00:1A:79:BD:42:AC&stream=276737&extension=.m3u8
+#EXTINF:-1 ,TELEMUNDO 🇲🇽
+https://nbculocallive.akamaized.net/hls/live/2037499/puertorico/stream1/master.m3u8
+#EXTINF:-1 ,NOVA Sport 2 🇨🇿
+http://78.130.250.2:8023/play/a004/index.m3u8
+#EXTINF:-1 ,ARENA Sport 1 🇨🇿
+http://78.130.250.2:8023/play/a02o/index.m3u8
+#EXTINF:-1 ,Sport5 🇮🇱
+https://rgelive.akamaized.net/hls/live/2043151/radiolive/playlist.m3u8
+#EXTINF:-1 ,X SPORT 🇷🇺
+http://iptv.prosto.tv:7000/ch109/video.m3u8
+#EXTINF:-1 ,Turkmenistan Sport 🇹🇲
+http://217.174.225.146/hls/ch004_720/index.m3u8
+#EXTINF:-1 ,INFOSPORT 🇫🇷
+http://212.102.60.80/Infosport/index.m3u8
+#EXTINF:-1 ,TELETRAK 🇨🇱
+http://unlimited6-cl.dps.live/sportinghd/sportinghd.smil/playlist.m3u8
+#EXTINF:-1 ,Bien sport 3 🇶🇦
+http://www.teledunet.com:8080/tdn/tdn/456489.m3u8
+#EXTINF:-1 ,Bien sport 1 🇶🇦
+http://www.teledunet.com:8080/tdn/tdn/456487.m3u8
+#EXTINF:-1 ,TRT 1 🇹🇷
+https://helga.iptv2022.com/sh/trt_1/index.m3u8
+#EXTINF:-1 ,BeIn Sports 1 FHD
+http://mol-2.com:8080/play/live.php?mac=00:1A:79:BC:CF:06&stream=2816&extension=ts&play_token=fubq0ZpVWx&sn2=
+#EXTINF:-1 ,BeIn Sports 2 FHD
+http://mol-2.com:8080/play/live.php?mac=00:1A:79:BC:CF:06&stream=2818&extension=ts&play_token=NetqiLLyMA&sn2=
+#EXTINF:-1 ,BeIn Sports 3 FHD
+http://mol-2.com:8080/play/live.php?mac=00:1A:79:BC:CF:06&stream=2820&extension=ts&play_token=fSU4CBEl5o&s
+#EXTINF:-1 ,Canal+ FHD
+http://mol-2.com:8080/play/live.php?mac=00:1A:79:BC:CF:06&stream=43972&extension=ts&play_token=CfU9GIzt83&sn2=
+#EXTINF:-1 ,Canal+ Foot FHD
+http://mol-2.com:8080/play/live.php?mac=00:1A:79:BC:CF:06&stream=418308&extension=ts&play_token=gI9BEIsFGv&sn2=
+#EXTINF:-1 ,Canal+ Sport 360 FHD
+http://mol-2.com:8080/play/live.php?mac=00:1A:79:BC:CF:06&stream=418307&extension=ts&play_token=BUkrdm9NKD&sn2=
+#EXTINF:-1 ,Canal+ Sport FHD
+http://mol-2.com:8080/play/live.php?mac=00:1A:79:BC:CF:06&stream=2804&extension=ts&play_token=we3qaeVQwz&sn2=
