@@ -1,5 +1,5 @@
 #EXTM3U
-#EXTINF:-1,BTV World
+#EXTINF:-1 ,BTV World
 http://103.230.105.252:1935/live/btv/manifest.m3u8
 #EXTINF:-1 ,Willow
 https://fl7.moveonjoy.com/WILLOW_CRICKET/index.m3u8
@@ -19,15 +19,15 @@ http://78.108.251.7/Boomerang/index.m3u8
 http://78.108.251.7/Nick_Jr/index.m3u8
 #EXTINF:-1 ,Discovery_HD
 http://78.108.251.7/Discovery_HD/index.m3u8
-#EXTINF:-1,Histoire HD
+#EXTINF:-1 ,Histoire HD
 http://151.80.18.177:86/Histoire/index.m3u8
-#EXTINF:-1,TF1_HD
+#EXTINF:-1 ,TF1_HD
 http://151.80.18.177:86/TF1_HD/index.m3u8
-#EXTINF:-1,RTL9 HD
+#EXTINF:-1 ,RTL9 HD
 http://151.80.18.177:86/RTL9/index.m3u8
-#EXTINF:-1,Discovery_HD
+#EXTINF:-1 ,Discovery_HD
 http://151.80.18.177:86/Discovery_HD/index.m3u8
-#EXTINF:-1,Eurosport_HD
+#EXTINF:-1 ,Eurosport_HD
 http://151.80.18.177:86/Eurosport_HD/index.m3u8
 #EXTINF:-1 ,Disney Channel SD Raja-Krisno
 http://116.90.120.149:8000/play/a0bx/index.m3u8
@@ -59,42 +59,8 @@ http://103.175.242.10:8080/sonyten5/index.m3u8
 http://stvlive.net:8080/sonyten5/index.m3u8
 #EXTINF:-1 ,TSports
 http://103.175.242.10:8080/tsports1/index.m3u8
-#EXTINF:-1,T Sports
+#EXTINF:-1 ,T Sports
 http://147.93.154.65/Bein3/index.m3u8
-#EXTINF:-1,Willow
-https://fl7.moveonjoy.com/WILLOW_CRICKET/index.m3u8
-#EXTINF:-1,Sky Sports Cricket
-http://y3fqd48g.megatv.fun/iptv/NRLXRWSBWBPLN4/9258/index.m3u8
-#EXTINF:-1 ,Disney Channel SD
-http://116.90.120.149:8000/play/a0bx/index.m3u8
-#EXTINF:-1 ,Star Gold 2 HD
-http://116.90.120.149:8000/play/a0ea/index.m3u8
-#EXTINF:-1 ,Star Gold HD
-http://116.90.120.149:8000/play/a0c2/index.m3u8
-#EXTINF:-1 ,Star Gold Thrills SD
-http://116.90.120.149:8000/play/a0c0/index.m3u8
-#EXTINF:-1 ,StarPlus HD
-http://116.90.120.149:8000/play/a0b9/index.m3u8
-#EXTINF:-1 ,Star Sports 1 Hindi HD
-http://116.90.120.149:8000/play/a0bv/index.m3u8
-#EXTINF:-1 ,Star Sports 2 Hindi SD
-http://116.90.120.149:8000/play/a0cs/index.m3u8
-#EXTINF:-1 ,Star Sports Select 1 HD
-http://116.90.120.149:8000/play/a0cl/index.m3u8
-#EXTINF:-1 ,Star Sports Select 2 HD
-http://116.90.120.149:8000/play/a0cm/index.m3u8
-#EXTINF:-1 ,Star Utsav SD
-http://116.90.120.149:8000/play/a02t/index.m3u8
-#EXTINF:-1 ,Star Utsav Movies SD
-http://116.90.120.149:8000/play/a02r/index.m3u8
-#EXTINF:-1 ,Zee Cafe SD
-http://116.90.120.149:8000/play/a0e7/index.m3u8
-#EXTINF:-1 ,Sony Ten 5 🇮🇳
-http://103.175.242.10:8080/sonyten5/index.m3u8
-#EXTINF:-1 ,Sony Ten 5 🇮🇳
-http://stvlive.net:8080/sonyten5/index.m3u8
-#EXTINF:-1 ,TSports
-http://103.175.242.10:8080/tsports1/index.m3u8
 #EXTINF:-1 ,True Vision Sports
 http://195.128.27.141:80/play/live.php?mac=00:1A:79:24:1B:18&stream=191873&extension=m3u8
 #EXTINF:-1 ,PassionXXX HD
@@ -107,17 +73,6 @@ http://78.108.251.7/CNN/index.m3u8
 http://78.108.251.7/RTVi/index.m3u8
 #EXTINF:-1 ,Travel_Channel_HD
 http://78.108.251.7/Travel_Channel_HD/index.m3u8
-#EXTINF:-1 ,Disney_Junior
-http://78.108.251.7/Disney_Junior/index.m3u8
-#EXTINF:-1 ,Cartoon_Network
-http://78.108.251.7/Cartoon_Network/index.m3u8
-#EXTINF:-1 ,Boomerang
-http://78.108.251.7/Boomerang/index.m3u8
-#EXTINF:-1 ,Nick_Jr
-http://78.108.251.7/Nick_Jr/index.m3u8
-#EXTINF:-1 ,Discovery_HD
-http://78.108.251.7/Discovery_HD/index.m3u8
-
 #EXTINF:-1 group-title="-",&flix HD - Rs 19.00
 http://66.102.120.18:8000/play/a022
 #EXTINF:-1 group-title="-",&pictures HD - Rs 19.00
@@ -486,50 +441,12 @@ http://66.102.120.18:8000/play/a00y
 http://66.102.120.18:8000/play/a06n
 #EXTINF:-1 ,T sports HD
 http://116.204.149.16/t_sports/index.m3u8
-#EXTINF:-1 ,T sports HD
-http://147.93.154.65/Bein3/index.m3u8
 #EXTINF:-1 ,Movie Bangla
 http://stvlive.net:8080/moviebangla/index.m3u8
 #EXTINF:-1 ,Movie Bangla
 http://103.175.242.10:8080/moviebangla/index.m3u8
-#EXTINF:-1 ,National_Geo_HD
-http://151.80.18.177:86/National_Geo_HD/index.m3u8
-#EXTINF:-1 ,Histoire HD
-http://151.80.18.177:86/Histoire/index.m3u8
-#EXTINF:-1 ,TF1_HD
-http://151.80.18.177:86/TF1_HD/index.m3u8
-#EXTINF:-1 ,RTL9 HD
-http://151.80.18.177:86/RTL9/index.m3u8
-#EXTINF:-1 ,Discovery_HD
-http://151.80.18.177:86/Discovery_HD/index.m3u8
-#EXTINF:-1 ,Eurosport_HD
-http://151.80.18.177:86/Eurosport_HD/index.m3u8
-#EXTINF:-1 ,Eurosport_2_HD
-http://151.80.18.177:86/Eurosport_2_HD/index.m3u8
-#EXTINF:-1 ,Disney Channel SD
-http://116.90.120.149:8000/play/a0bx/index.m3u8
 #EXTINF:-1 ,Star Sports 1 HD Tamil
 http://ptu.ridsys.in/riptv/live/stream20/index.m3u8
-#EXTINF:-1 ,Star Gold HD
-http://116.90.120.149:8000/play/a0c2/index.m3u8
-#EXTINF:-1 ,Star Gold Thrills SD
-http://116.90.120.149:8000/play/a0c0/index.m3u8
-#EXTINF:-1 ,StarPlus HD
-http://116.90.120.149:8000/play/a0b9/index.m3u8
-#EXTINF:-1 ,Star Sports 1 Hindi HD
-http://116.90.120.149:8000/play/a0bv/index.m3u8
-#EXTINF:-1 ,Star Sports 2 Hindi SD
-http://116.90.120.149:8000/play/a0cs/index.m3u8
-#EXTINF:-1 ,Star Sports Select 1 HD
-http://116.90.120.149:8000/play/a0cl/index.m3u8
-#EXTINF:-1 ,Star Sports Select 2 HD
-http://116.90.120.149:8000/play/a0cm/index.m3u8
-#EXTINF:-1 ,Star Utsav SD
-http://116.90.120.149:8000/play/a02t/index.m3u8
-#EXTINF:-1 ,Star Utsav Movies SD
-http://116.90.120.149:8000/play/a02r/index.m3u8
-#EXTINF:-1 ,True Vision Sports
-http://195.128.27.141:80/play/live.php?mac=00:1A:79:24:1B:18&stream=191873&extension=m3u8
 #EXTINF:-1 ,TSN 1 🇨🇦
 http://212.102.60.231/TSN_1/index.m3u8
 #EXTINF:-1 ,TSN 4 🇨🇦
@@ -582,12 +499,6 @@ http://208.86.19.13:81/510.stream/index.m3u8?
 https://smart.bengaldigital.live/Zee-Bangla/index.m3u8
 #EXTINF:-1 ,Sananda TV
 https://live.sanonda.tv/sanonda/index.m3u8
-#EXTINF:-1 ,Willow
-https://fl7.moveonjoy.com/WILLOW_CRICKET/index.m3u8
-#EXTINF:-1 ,Sky Sports Cricket
-http://y3fqd48g.megatv.fun/iptv/NRLXRWSBWBPLN4/9258/index.m3u8
-#EXTINF:-1 ,Fox Sports 501 HD
-http://ee0c5e74.akadatel.com/iptv/QRDWGTBMDHSDGK/19146/index.m3u8
 #EXTINF:-1 ,Unifi HD
 https://unifi-live05.secureswiftcontent.com/UnifiHD/live27-1080FHD.m3u8
 #EXTINF:-1 ,Arena_Sport
@@ -636,26 +547,6 @@ http://78.108.251.7/BabyTV/index.m3u8
 http://78.108.251.7/NickToons/index.m3u8
 #EXTINF:-1 ,amc
 http://78.108.251.7/amc/index.m3u8
-#EXTINF:-1 ,PassionXXX HD
-http://78.108.251.7/PassionXXX/index.m3u8
-#EXTINF:-1 ,BBC
-http://78.108.251.7/BBC/index.m3u8
-#EXTINF:-1 ,CNN HD
-http://78.108.251.7/CNN/index.m3u8
-#EXTINF:-1 ,RTVi
-http://78.108.251.7/RTVi/index.m3u8
-#EXTINF:-1 ,Travel_Channel_HD
-http://78.108.251.7/Travel_Channel_HD/index.m3u8
-#EXTINF:-1 ,Disney_Junior
-http://78.108.251.7/Disney_Junior/index.m3u8
-#EXTINF:-1 ,Cartoon_Network
-http://78.108.251.7/Cartoon_Network/index.m3u8
-#EXTINF:-1 ,Boomerang
-http://78.108.251.7/Boomerang/index.m3u8
-#EXTINF:-1 ,Nick_Jr
-http://78.108.251.7/Nick_Jr/index.m3u8
-#EXTINF:-1 ,Discovery_HD
-http://78.108.251.7/Discovery_HD/index.m3u8
 #EXTINF:-1 ,A&E
 http://190.60.48.149:8000/play/AE
 #EXTINF:-1 ,RTA Sports
