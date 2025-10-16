@@ -1,21 +1,21 @@
 #EXTM3U
 #EXTINF:-1 ,BTV World
 http://103.230.105.252:1935/live/btv/manifest.m3u8
-#EXTINF:-1,SONY LIV
+#EXTINF:-1 ,SONY LIV
 https://dai.google.com/linear/hls/event/biQJgf06SJCitj-nd502ow/master.m3u8
-#EXTINF:-1,SONY LIV2
+#EXTINF:-1 ,SONY LIV2
 https://dai.google.com/linear/hls/event/tG04-ukTSleEi0819p-EqA/master.m3u8
-#EXTINF:-1,Hindi Hits HD
+#EXTINF:-1 ,Hindi Hits HD
 http://146.59.253.52:8080/hindihitshd/index.m3u8
-#EXTINF:-1,TSPORTS
+#EXTINF:-1 ,TSPORTS
 http://116.204.149.16/t_sports/index.m3u8
-#EXTINF:-1,Zee-Bangla
+#EXTINF:-1 ,Zee-Bangla
 http://smart.bengaldigital.live/Zee-Bangla/index.m3u8
-#EXTINF:-1,ZeeCinema
+#EXTINF:-1 ,ZeeCinema
 http://smart.bengaldigital.live/ZeeCinema/index.m3u8
-#EXTINF:-1,NICKTOONS
+#EXTINF:-1 ,NICKTOONS
 http://143.244.60.30/NICKTOONS/index.m3u8
-#EXTINF:-1,Movie Bangla
+#EXTINF:-1 ,Movie Bangla
 http://103.175.242.10:8080/moviebangla/index.m3u8
 #EXTINF:-1 ,Disney_Junior
 http://78.108.251.7/Disney_Junior/index.m3u8
@@ -37,30 +37,6 @@ http://151.80.18.177:86/RTL9/index.m3u8
 http://151.80.18.177:86/Discovery_HD/index.m3u8
 #EXTINF:-1 ,Eurosport_HD
 http://151.80.18.177:86/Eurosport_HD/index.m3u8
-#EXTINF:-1 ,Disney Channel SD Raja-Krisno
-http://116.90.120.149:8000/play/a0bx/index.m3u8
-#EXTINF:-1 ,Star Gold 2 HD
-http://116.90.120.149:8000/play/a0ea/index.m3u8
-#EXTINF:-1 ,Star Gold HD
-http://116.90.120.149:8000/play/a0c2/index.m3u8
-#EXTINF:-1 ,Star Gold Thrills SD Raja-Krisno
-http://116.90.120.149:8000/play/a0c0/index.m3u8
-#EXTINF:-1 ,StarPlus HD
-http://116.90.120.149:8000/play/a0b9/index.m3u8
-#EXTINF:-1 ,Star Sports 1 Hindi HD
-http://116.90.120.149:8000/play/a0bv/index.m3u8
-#EXTINF:-1 ,Star Sports 2 Hindi SD
-http://116.90.120.149:8000/play/a0cs/index.m3u8
-#EXTINF:-1 ,Star Sports Select 1 HD
-http://116.90.120.149:8000/play/a0cl/index.m3u8
-#EXTINF:-1 ,Star Sports Select 2 HD
-http://116.90.120.149:8000/play/a0cm/index.m3u8
-#EXTINF:-1 ,Star Utsav SD
-http://116.90.120.149:8000/play/a02t/index.m3u8
-#EXTINF:-1 ,Star Utsav Movies SD
-http://116.90.120.149:8000/play/a02r/index.m3u8
-#EXTINF:-1 ,Zee Cafe SD
-http://116.90.120.149:8000/play/a0e7/index.m3u8
 #EXTINF:-1 ,Sony Ten 5 🇮🇳
 http://103.175.242.10:8080/sonyten5/index.m3u8
 #EXTINF:-1 ,Sony Ten 5 🇮🇳
@@ -201,8 +177,6 @@ http://66.102.120.18:8000/play/a04d
 http://66.102.120.18:8000/play/a04n
 #EXTINF:-1 group-title="-",FIX&FOXI
 http://66.102.120.18:8000/play/a04b
-#EXTINF:-1 group-title="-",FN MOVIES HD
-http://66.102.120.18:8000/play/a06e
 #EXTINF:-1 group-title="-",GEM COMEDY
 http://66.102.120.18:8000/play/a049
 #EXTINF:-1 group-title="-",GEM TV HD
@@ -447,12 +421,8 @@ http://66.102.120.18:8000/play/a006
 http://66.102.120.18:8000/play/a00y
 #EXTINF:-1 group-title="-",iFilm English
 http://66.102.120.18:8000/play/a06n
-#EXTINF:-1 ,T sports HD
-http://116.204.149.16/t_sports/index.m3u8
 #EXTINF:-1 ,Movie Bangla
 http://stvlive.net:8080/moviebangla/index.m3u8
-#EXTINF:-1 ,Movie Bangla
-http://103.175.242.10:8080/moviebangla/index.m3u8
 #EXTINF:-1 ,Star Sports 1 HD Tamil
 http://ptu.ridsys.in/riptv/live/stream20/index.m3u8
 #EXTINF:-1 ,TSN 1 🇨🇦
