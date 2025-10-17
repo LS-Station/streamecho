@@ -1,14 +1,30 @@
 #EXTM3U
 #EXTINF:-1 ,BTV World
 http://103.230.105.252:1935/live/btv/manifest.m3u8
+#EXTINF:-1,Gopal Bhar
+https://cloudfrontnet.vercel.app/tplay/playout/209611/master.m3u8
+#EXTINF:-1 ,SonyAath
+https://iptvcable.netlify.app/Altogether-007/Kolkata/SonyAath.m3u8
+#EXTINF:-1 ,zeebangla
+https://tvsen3.aynaott.com/PNEb3v2q6GBk/index.m3u8
+#EXTINF:-1 ,colorsbanglahd
+https://tvsen3.aynaott.com/u3LkNQ7UHhFX/index.m3u8
+#EXTINF:-1,Enter 10 Bangla
+https://live-bangla.akamaized.net/liveabr/pub-iobanglakp3sff/live_720p/chunks.m3u8
+#EXTINF:-1,Ruposhi Bangla
+https://cdn-4.pishow.tv/live/1039/master.m3u8
+#EXTINF:-1,AAKASH AATH
+https://cdn-4.pishow.tv/live/969/master.m3u8
+#EXTINF:-1,Bangla Movies
+https://cloudfrontnet.vercel.app/tplay/playout/209627/master.m3u8
+#EXTINF:-1,Zee Bangla Cinema
+https://smart.bengaldigital.live/Zee-Bangla-Cinema/tracks-v1a1/mono.m3u8
 #EXTINF:-1 ,SONY LIV
 https://dai.google.com/linear/hls/event/biQJgf06SJCitj-nd502ow/master.m3u8
 #EXTINF:-1 ,SONY LIV2
 https://dai.google.com/linear/hls/event/tG04-ukTSleEi0819p-EqA/master.m3u8
 #EXTINF:-1 ,Hindi Hits HD
 http://146.59.253.52:8080/hindihitshd/index.m3u8
-#EXTINF:-1 ,TSPORTS
-http://116.204.149.16/t_sports/index.m3u8
 #EXTINF:-1 ,Zee-Bangla
 http://smart.bengaldigital.live/Zee-Bangla/index.m3u8
 #EXTINF:-1 ,ZeeCinema
@@ -37,10 +53,6 @@ http://151.80.18.177:86/RTL9/index.m3u8
 http://151.80.18.177:86/Discovery_HD/index.m3u8
 #EXTINF:-1 ,Eurosport_HD
 http://151.80.18.177:86/Eurosport_HD/index.m3u8
-#EXTINF:-1 ,Sony Ten 5 🇮🇳
-http://103.175.242.10:8080/sonyten5/index.m3u8
-#EXTINF:-1 ,Sony Ten 5 🇮🇳
-http://stvlive.net:8080/sonyten5/index.m3u8
 #EXTINF:-1 ,TSports
 http://103.175.242.10:8080/tsports1/index.m3u8
 #EXTINF:-1 ,T Sports
@@ -425,26 +437,6 @@ http://66.102.120.18:8000/play/a06n
 http://stvlive.net:8080/moviebangla/index.m3u8
 #EXTINF:-1 ,Star Sports 1 HD Tamil
 http://ptu.ridsys.in/riptv/live/stream20/index.m3u8
-#EXTINF:-1 ,TSN 1 🇨🇦
-http://212.102.60.231/TSN_1/index.m3u8
-#EXTINF:-1 ,TSN 4 🇨🇦
-http://212.102.60.231/TSN_4/index.m3u8
-#EXTINF:-1 ,TSN 5 🇨🇦
-http://212.102.60.231/TSN_5/index.m3u8
-#EXTINF:-1 ,FS 1 SPORT 🇺🇸
-http://212.102.60.10/FOX_Sports_1/index.m3u8
-#EXTINF:-1 ,ESPN PREMIUM 🇦🇷
-http://190.102.246.93:9005/play/a00x
-#EXTINF:-1 ,ESPN 2 🇨🇴
-http://190.102.246.93:9005/play/a029
-#EXTINF:-1 ,ESPN 3 🇨🇴
-http://190.102.246.93:9005/play/a02l
-#EXTINF:-1 ,ESPN 1 NORTE 🇩🇴
-http://45.71.254.1:8000/play/a0e6/index.m3u8
-#EXTINF:-1 ,ESPN 2 NORTE 🇩🇴
-http://45.71.254.1:8000/play/a0e7/index.m3u8
-#EXTINF:-1 ,ESPN 🇦🇷
-http://45.71.254.1:8000/play/a038/index.m3u8
 #EXTINF:-1 ,Disney Channel
 http://103.182.170.32:8888/play/a04g
 #EXTINF:-1 ,DEPTO BANGLA HD
@@ -459,74 +451,16 @@ https://ythls.armelin.one/channel/UCDj9HHrRUzlsTuPQN0PHxjw.m3u8
 http://210.4.72.204/hls-live/livepkgr/_definst_/liveevent/livestream3.m3u8
 #EXTINF:-1 ,MY TV HD
 https://mytvbangla.com/0.m3u8
-#EXTINF:-1 ,Europe Sports 1 HD
-http://185.189.225.157/EuroSport1/index.m3u8
-#EXTINF:-1 ,Europe  Sports 2 HD
-http://185.189.225.157/EuroSport2/index.m3u8
 #EXTINF:-1 ,Discovery Kids
 https://dplus.gammacdn.workers.dev/videos/113.m3u8
 #EXTINF:-1 ,Rishtey
 http://mydsat85.cbilant.com/iptv/E2DFKS2LWK569Q/6586/index.m3u8
-#EXTINF:-1 ,Sangeet Bangla
-http://45.143.220.6:3333/live/premium-aostv-free/download-fdrm-aostv.asia/2906.ts
-#EXTINF:-1 ,B4u Music
-http://45.143.220.6:3333/live/premium-aostv-free/download-fdrm-aostv.asia/2762.ts
 #EXTINF:-1 ,US-BD Journal 24 TV
 http://208.86.19.13:81/510.stream/index.m3u8?
 #EXTINF:-1 ,Zee Bangla HD
 https://smart.bengaldigital.live/Zee-Bangla/index.m3u8
 #EXTINF:-1 ,Sananda TV
 https://live.sanonda.tv/sanonda/index.m3u8
-#EXTINF:-1 ,Unifi HD
-https://unifi-live05.secureswiftcontent.com/UnifiHD/live27-1080FHD.m3u8
-#EXTINF:-1 ,Arena_Sport
-http://178.23.88.55/Arena_sport/index.m3u8
-#EXTINF:-1 ,Sport 1 HD
-http://178.23.88.55/Sport1/index.m3u8
-#EXTINF:-1 ,Nova_Sport
-http://178.23.88.55/Nova_Sport/index.m3u8
-#EXTINF:-1 ,Eurosport_2
-http://178.23.88.55/Eurosport_2/index.m3u8
-#EXTINF:-1 ,Arena_Sport_1 HD
-http://78.108.251.7/Arena_Sport_1/index.m3u8
-#EXTINF:-1 ,Arena_Sport_2 HD
-http://78.108.251.7/Arena_Sport_2/index.m3u8
-#EXTINF:-1 ,Arena_Sport_3 HD
-http://78.108.251.7/Arena_Sport_3/index.m3u8
-#EXTINF:-1 ,Arena_Sport_4 HD
-http://78.108.251.7/Arena_Sport_4/index.m3u8
-#EXTINF:-1 ,Arena_Sport_5 HD
-http://78.108.251.7/Arena_Sport_5/index.m3u8
-#EXTINF:-1 ,MovieStar HD
-http://78.108.251.7/MovieStar/index.m3u8
-#EXTINF:-1 ,Diema HD
-http://78.108.251.7/Diema/index.m3u8
-#EXTINF:-1 ,MagicTV HD
-http://78.108.251.7/MagicTV/index.m3u8
-#EXTINF:-1 ,DMSat
-http://78.108.251.7/DMSat/index.m3u8
-#EXTINF:-1 ,EKids
-http://78.108.251.7/EKids/index.m3u8
-#EXTINF:-1 ,RodinaTV HD
-http://78.108.251.7/RodinaTV/index.m3u8
-#EXTINF:-1 ,DaVinciLearning
-http://78.108.251.7/DaVinciLearning/index.m3u8
-#EXTINF:-1 ,DuckTV
-http://78.108.251.7/DuckTV/index.m3u8
-#EXTINF:-1 ,MTVEurope
-http://78.108.251.7/MTVEurope/index.m3u8
-#EXTINF:-1 ,EpicDrama HD
-http://78.108.251.7/EpicDrama/index.m3u8
-#EXTINF:-1 ,DiemaFamily
-http://78.108.251.7/DiemaFamily/index.m3u8
-#EXTINF:-1 ,BabyTV
-http://78.108.251.7/BabyTV/index.m3u8
-#EXTINF:-1 ,NickToons
-http://78.108.251.7/NickToons/index.m3u8
-#EXTINF:-1 ,amc
-http://78.108.251.7/amc/index.m3u8
-#EXTINF:-1 ,A&E
-http://190.60.48.149:8000/play/AE
 #EXTINF:-1 ,RTA Sports
 https://rtatv.akamaized.net/Content/HLS/Live/channel(RTA3)/03.m3u8
 #EXTINF:-1 ,Deepto TV
@@ -537,5 +471,3 @@ https://d2lmgfyblo9rak.cloudfront.net/playlist.m3u8
 http://fl1.moveonjoy.com/NICKELODEON/index.m3u8
 #EXTINF:-1 ,PBS Kids
 https://2-fss-2.streamhoster.com/pl_140/amlst:200914-1298290/playlist.m3u8
-#EXTINF:-1 ,Zoo Moo
-https://zoomoo-samsungau.amagi.tv/playlist.m3u8
