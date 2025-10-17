@@ -43,21 +43,117 @@
 
   <!-- Critical CSS (Inline for Faster Loading) -->
   <style>
-    body {font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; text-align: center;}
-    header {background: #0073e6; color: #fff; padding: 20px;}
-    h1 {margin: 0; font-size: 2rem;}
-    p {font-size: 1.1rem;}
-    .btn {display: inline-block; margin-top: 15px; padding: 12px 20px; background: #28a745; color: #fff; text-decoration: none; border-radius: 6px; font-weight: bold; transition: .3s;}
-    .btn:hover {background: #218838;}
-    .social-links {margin-top: 25px;}
-    .social-links a {display: inline-block; margin: 8px; padding: 10px 18px; color: #fff; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 1rem; transition: .3s;}
-    .social-links a i {margin-right: 6px;}
-    .telegram {background: #0088cc;}
-    .telegram:hover {background: #006f9e;}
-    .facebook {background: #1877f2;}
-    .facebook:hover {background: #0d5eca;}
-    .whatsapp {background: #25d366;}
-    .whatsapp:hover {background: #1da851;}
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #0073e6, #00b4cc);
+      color: #333;
+      text-align: center;
+      overflow-x: hidden;
+      transition: background 0.3s ease;
+    }
+
+    header {
+      background: #005bb5;
+      color: #fff;
+      padding: 20px;
+      border-bottom: 5px solid #28a745;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      animation: fadeIn 1s ease-out;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-top: 10px;
+      animation: fadeIn 1.5s ease-out;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 20px;
+      background: #28a745;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: .3s;
+      animation: fadeIn 2s ease-out;
+    }
+
+    .btn:hover {
+      background: #218838;
+      transform: translateY(-3px);
+    }
+
+    .social-links {
+      margin-top: 25px;
+    }
+
+    .social-links a {
+      display: inline-block;
+      margin: 8px;
+      padding: 10px 18px;
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: .3s;
+    }
+
+    .social-links a i {
+      margin-right: 6px;
+    }
+
+    .telegram { background: #0088cc; }
+    .telegram:hover { background: #006f9e; transform: translateY(-3px); }
+
+    .facebook { background: #1877f2; }
+    .facebook:hover { background: #0d5eca; transform: translateY(-3px); }
+
+    .whatsapp { background: #25d366; }
+    .whatsapp:hover { background: #1da851; transform: translateY(-3px); }
+
+    /* Fade In Animation */
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Footer */
+    footer {
+      padding: 20px;
+      background: #222;
+      color: #fff;
+      margin-top: 30px;
+    }
+
+    footer p {
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    /* Visitor Counter */
+    .counter {
+      margin-top: 20px;
+      font-size: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .counter img {
+      margin-left: 10px;
+      animation: fadeIn 3s ease-out;
+    }
   </style>
 </head>
 <body>
@@ -72,11 +168,11 @@
     <a href="https://streamecho.top/" class="btn">Visit StreamEcho Website</a>
 
     <!-- Visitor Counter (Lazy Loaded) -->
-    <div style="margin-top:20px;font-size:18px">
-      <span style="font-size:22px;">👁️</span>
+    <div class="counter">
+      <span>👁️</span>
       <a href="https://www.hitwebcounter.com/" target="_blank" rel="nofollow noopener">
         <img src="https://hitwebcounter.com/counter/counter.php?page=21445331&style=0006&nbdigits=5&type=page&initCount=0" 
-             alt="Visitors" width="100" height="30" loading="lazy" style="vertical-align:middle;border:0"/>
+             alt="Visitors" width="100" height="30" loading="lazy" />
       </a>
     </div>
 
