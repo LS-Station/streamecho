@@ -1,6 +1,9 @@
 #EXTM3U
 #EXTINF:-1 ,BTV World
 http://103.230.105.252:1935/live/btv/manifest.m3u8
+#EXTINF:-1,FOX 501
+http://185.46.40.10/~acc877klivfun/opo13/stream.php?id=167593
+http://185.46.40.10/~acc877klivfun/opo13/stream.php?id=167593&format=.m3u8
 #EXTINF:-1 ,Sony Liv
 https://dai.google.com/ssai/event/X9tnEM9wQHKUIX6nWcZ4TA/master.m3u8
 #EXTINF:-1,Gopal Bhar
