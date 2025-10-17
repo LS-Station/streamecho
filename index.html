@@ -3,283 +3,97 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>StreamEcho - Free IPTV M3U Playlists 2025 | Sports, Movies & Live TV</title>
-
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="🚀 StreamEcho – Free IPTV M3U Playlists 2025 📺 | Daily Updated Sports, Movies & Live TV Channels 🌍 | Smooth Streaming Guaranteed!">
-  <meta name="keywords" content="StreamEcho, Free IPTV, IPTV M3U Playlist 2025, Sports IPTV, Movies IPTV, BDIX IPTV, Live TV, IPTV Player, M3U Links">
-  <meta name="author" content="StreamEcho">
-  <link rel="canonical" href="https://streamecho.top/">
-
-  <!-- Preload Critical Resources for Fast Load -->
-  <link rel="preload" href="https://streamecho.top/logo.png" as="image">
-  <link rel="preload" href="favicon.png" as="image">
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.rel='stylesheet'">
-
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="StreamEcho - Free IPTV M3U Playlists 2025">
-  <meta property="og:description" content="Download free IPTV M3U playlists for sports, movies & live TV. Daily updated and 100% working links!">
-  <meta property="og:url" content="https://streamecho.top/">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://streamecho.top/logo.png">
-
-  <!-- Twitter Card Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="StreamEcho - Free IPTV M3U Playlists 2025">
-  <meta name="twitter:description" content="Daily updated IPTV M3U playlists for sports, movies & TV 📺 Free worldwide streaming 🌍">
-  <meta name="twitter:image" content="https://streamecho.top/logo.png">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png">
-
-  <!-- Google Analytics (Defer Script to Improve Page Speed) -->
-  <script defer src="https://www.googletagmanager.com/gtag/js?id=G-ZKJ2RFDP8R"></script>
-  <script defer>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-ZKJ2RFDP8R');
-  </script>
-
-  <!-- Critical CSS (Inline for Faster Loading) -->
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f8f8f8;
-      color: #333;
-      text-align: center;
-      padding-top: 20px;
-      position: relative;
-      background-image: url('https://www.transparenttextures.com/patterns/pencil-sketched.png');
-      background-size: cover;
-      background-position: center;
-      background-repeat: repeat;
-      animation: backgroundAnimation 20s linear infinite;
-      overflow-x: hidden;
-    }
-
-    @keyframes backgroundAnimation {
-      0% {
-        background-position: top center;
-      }
-      100% {
-        background-position: bottom center;
-      }
-    }
-
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding: 15px 0;
-      z-index: 100;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      animation: fadeIn 1s ease-out;
-    }
-
-    header p {
-      font-size: 1rem;
-      margin-top: 10px;
-      animation: fadeIn 1.2s ease-out;
-    }
-
-    /* Visitor Counter */
-    .counter {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      font-size: 18px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: rgba(0, 0, 0, 0.5);
-      color: white;
-      padding: 8px 12px;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    }
-
-    .counter img {
-      margin-left: 10px;
-      animation: fadeIn 3s ease-out;
-    }
-
-    main {
-      margin-top: 150px;
-      padding: 20px;
-      text-align: center;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    h2 {
-      font-size: 2.2rem;
-      margin-bottom: 20px;
-      color: #007bff;
-      font-weight: bold;
-    }
-
-    p {
-      font-size: 1.1rem;
-      color: #555;
-      margin-bottom: 30px;
-      animation: fadeIn 1.4s ease-out;
-    }
-
-    .btn {
-      display: inline-block;
-      background-color: #28a745;
-      color: white;
-      font-weight: bold;
-      text-decoration: none;
-      padding: 15px 25px;
-      border-radius: 50px;
-      transition: transform 0.3s ease, background-color 0.3s ease;
-      margin-top: 20px;
-      animation: fadeIn 1.6s ease-out;
-    }
-
-    .btn:hover {
-      transform: translateY(-5px);
-      background-color: #218838;
-    }
-
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 40px;
-      flex-wrap: wrap;
-    }
-
-    .social-links a {
-      display: inline-block;
-      padding: 10px 20px;
-      font-size: 1.2rem;
-      color: white;
-      text-decoration: none;
-      border-radius: 50px;
-      transition: transform 0.3s ease, background-color 0.3s ease;
-    }
-
-    .social-links a:hover {
-      transform: translateY(-5px);
-    }
-
-    .telegram { background-color: #0088cc; }
-    .facebook { background-color: #1877f2; }
-    .whatsapp { background-color: #25d366; }
-
-    .telegram:hover { background-color: #006f9e; }
-    .facebook:hover { background-color: #0d5eca; }
-    .whatsapp:hover { background-color: #1da851; }
-
-    footer {
-      margin-top: 60px;
-      padding: 20px;
-      background-color: #fff;
-      color: #333;
-    }
-
-    footer p {
-      font-size: 0.9rem;
-    }
-
-    /* Fade In Animation */
-    @keyframes fadeIn {
-      0% {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Mobile Optimization */
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 1.8rem;
-      }
-
-      .btn {
-        font-size: 1rem;
-        padding: 12px 22px;
-      }
-
-      .social-links a {
-        font-size: 1rem;
-        padding: 8px 16px;
-      }
-
-      footer p {
-        font-size: 0.8rem;
-      }
-
-    }
-  </style>
+  <title>GitHub Promotion</title>
+  <link rel="stylesheet" href="styles.css"> <!-- এখানে CSS ফাইল লিঙ্ক করেছেন -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
+  <!-- Header Section -->
   <header>
-    <h1>🚀 StreamEcho – Free IPTV M3U Playlists 2025</h1>
-    <p>Sports, Movies & Live TV Streaming | 100% Free & Daily Updated 📺</p>
+    <div class="logo">
+      <img src="github-logo.png" alt="GitHub Logo">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="#" class="cta-btn">Start for Free</a>
   </header>
 
-  <!-- Visitor Counter (Fixed at Top Right) -->
-  <div class="counter">
-    <span>👁️</span>
-    <a href="https://www.hitwebcounter.com/" target="_blank" rel="nofollow noopener">
-      <img src="https://hitwebcounter.com/counter/counter.php?page=21445331&style=0006&nbdigits=5&type=page&initCount=0" 
-           alt="Visitors" width="100" height="30" loading="lazy" />
-    </a>
-  </div>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Code, Build, and Ship with GitHub</h1>
+    <p>GitHub helps you build better software, faster. Collaborate on code, automate workflows, and scale your development process.</p>
+    <a href="#" class="cta-btn">Start Your Free Trial</a>
+  </section>
 
-  <main>
-    <h2>🔥 Latest Free IPTV M3U Playlists</h2>
-    <p>Get daily updated IPTV M3U playlists for sports, movies, news & worldwide live TV. Smooth, buffer-free streaming with StreamEcho!</p>
-    <a href="https://streamecho.top/" class="btn">Visit StreamEcho Website</a>
-
-    <!-- Social Links -->
-    <div class="social-links">
-      <a href="https://t.me/manikcable" target="_blank" class="telegram" rel="nofollow"><i class="fab fa-telegram"></i> Telegram Group</a>
-      <a href="https://t.me/bdixftpiptv" target="_blank" class="telegram" rel="nofollow"><i class="fab fa-telegram-plane"></i> Telegram Channel</a>
-      <a href="https://www.facebook.com/groups/nexttech" target="_blank" class="facebook" rel="nofollow"><i class="fab fa-facebook"></i> Facebook Group</a>
-      <a href="https://chat.whatsapp.com/H0mKsjcqR9Y9y23Y4UX5xE?mode=ems_share_t" target="_blank" class="whatsapp" rel="nofollow"><i class="fab fa-whatsapp"></i> WhatsApp Group</a>
+  <!-- Features Section -->
+  <section class="features">
+    <div class="feature">
+      <h3>Collaborative Code Editing</h3>
+      <p>Work with your team in real-time and streamline your workflow.</p>
     </div>
-  </main>
+    <div class="feature">
+      <h3>Version Control</h3>
+      <p>Track your code changes and collaborate seamlessly.</p>
+    </div>
+    <div class="feature">
+      <h3>Automation</h3>
+      <p>Automate your development cycle with GitHub Actions.</p>
+    </div>
+    <div class="feature">
+      <h3>Security</h3>
+      <p>Ensure your code is secure with GitHub’s advanced security features.</p>
+    </div>
+  </section>
 
+  <!-- Graph Section -->
+  <section class="graph-section">
+    <h2>GitHub Features Usage</h2>
+    <canvas id="featureChart" width="400" height="200"></canvas>
+  </section>
+
+  <!-- Footer Section -->
   <footer>
-    <p>© 2025 StreamEcho. All rights reserved.</p>
+    <ul>
+      <li><a href="#">Privacy</a></li>
+      <li><a href="#">Terms</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <div class="social-links">
+      <a href="#">Twitter</a> | <a href="#">LinkedIn</a> | <a href="#">Facebook</a>
+    </div>
   </footer>
 
-  <!-- Schema Markup (Enhanced for Rich Snippets) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "StreamEcho",
-    "url": "https://streamecho.top/",
-    "description": "StreamEcho – Free IPTV M3U Playlists 2025 for Sports, Movies & Live TV",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://streamecho.top/?s={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  }
+  <!-- Script to render the graph -->
+  <script>
+    const ctx = document.getElementById('featureChart').getContext('2d');
+    const featureChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Collaborative Code Editing', 'Version Control', 'Automation', 'Security'],
+        datasets: [{
+          label: 'Feature Usage (%)',
+          data: [85, 90, 80, 95],
+          backgroundColor: ['#2cbe4e', '#24292f', '#f6f8fa', '#f1f1f1'],
+          borderColor: ['#2cbe4e', '#24292f', '#f6f8fa', '#f1f1f1'],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true,
+            max: 100
+          }
+        }
+      }
+    });
   </script>
 </body>
 </html>
