@@ -1,6 +1,8 @@
 #EXTM3U
 #EXTINF:-1 ,BTV World
 http://103.230.105.252:1935/live/btv/manifest.m3u8
+#EXTINF:-1 ,Sony Liv
+https://dai.google.com/ssai/event/X9tnEM9wQHKUIX6nWcZ4TA/master.m3u8
 #EXTINF:-1,Gopal Bhar
 https://cloudfrontnet.vercel.app/tplay/playout/209611/master.m3u8
 #EXTINF:-1 ,SonyAath
