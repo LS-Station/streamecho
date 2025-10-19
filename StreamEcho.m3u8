@@ -1,4 +1,32 @@
 #EXTM3U
+#EXTINF:-1 ,National_Geo_HD
+http://151.80.18.177:86/National_Geo_HD/index.m3u8
+#EXTINF:-1 ,Histoire HD
+http://151.80.18.177:86/Histoire/index.m3u8
+#EXTINF:-1 ,TF1_HD
+http://151.80.18.177:86/TF1_HD/index.m3u8
+#EXTINF:-1 ,RTL9 HD
+http://151.80.18.177:86/RTL9/index.m3u8
+#EXTINF:-1 ,Discovery_HD
+http://151.80.18.177:86/Discovery_HD/index.m3u8
+#EXTINF:-1 ,Eurosport_HD
+http://151.80.18.177:86/Eurosport_HD/index.m3u8
+#EXTINF:-1 ,Eurosport_2_HD
+http://151.80.18.177:86/Eurosport_2_HD/index.m3u8
+#EXTINF:-1,Zee Bangla
+http://103.175.242.10:8080/zeebangla/index.m3u8
+#EXTINF:-1,Tsports
+http://103.175.242.10:8080/tsports1/index.m3u8
+#EXTINF:-1,Sony Ten 5
+http://103.175.242.10:8080/sonyten5/index.m3u8
+#EXTINF:-1,Somoy
+http://103.175.242.10:8080/somoy/index.m3u8
+#EXTINF:-1,Movie Bangla
+http://103.175.242.10:8080/moviebangla/index.m3u8
+#EXTINF:-1,Me TV
+http://103.175.242.10:8080/metv/index.m3u8
+#EXTINF:-1,Channel i
+http://103.175.242.10:8080/channeli/index.m3u8
 #EXTINF:-1 ,zeebangla
 https://tvsen3.aynaott.com/PNEb3v2q6GBk/index.m3u8
 #EXTINF:-1 ,colorsbanglahd
