@@ -1,4 +1,12 @@
 #EXTM3U
+#EXTINF:-1,Live Sports
+http://103.175.242.10:8080/tencricket/tracks-v1a1/mono.m3u8
+#EXTINF:-1,Live Sports
+http://103.175.242.10:8080/sonyten1/index.m3u8
+#EXTINF:-1,Live Sports
+http://103.175.242.10:8080/sonyten2/index.m3u8
+#EXTINF:-1,Live Sports
+http://103.175.242.10:8080/sonyten5/index.m3u8
 #EXTINF:-1 ,National_Geo_HD
 http://151.80.18.177:86/National_Geo_HD/index.m3u8
 #EXTINF:-1 ,Histoire HD
