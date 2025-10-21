@@ -1,12 +1,4 @@
 #EXTM3U
-#EXTINF:-1,Live Sports
-http://103.175.242.10:8080/tencricket/tracks-v1a1/mono.m3u8
-#EXTINF:-1,Live Sports
-http://103.175.242.10:8080/sonyten1/index.m3u8
-#EXTINF:-1,Live Sports
-http://103.175.242.10:8080/sonyten2/index.m3u8
-#EXTINF:-1,Live Sports
-http://103.175.242.10:8080/sonyten5/index.m3u8
 #EXTINF:-1 ,National_Geo_HD
 http://151.80.18.177:86/National_Geo_HD/index.m3u8
 #EXTINF:-1 ,Histoire HD
@@ -21,19 +13,15 @@ http://151.80.18.177:86/Discovery_HD/index.m3u8
 http://151.80.18.177:86/Eurosport_HD/index.m3u8
 #EXTINF:-1 ,Eurosport_2_HD
 http://151.80.18.177:86/Eurosport_2_HD/index.m3u8
-#EXTINF:-1,Zee Bangla
-http://103.175.242.10:8080/zeebangla/index.m3u8
-#EXTINF:-1,Tsports
+#EXTINF:-1 ,Tsports
 http://103.175.242.10:8080/tsports1/index.m3u8
-#EXTINF:-1,Sony Ten 5
-http://103.175.242.10:8080/sonyten5/index.m3u8
-#EXTINF:-1,Somoy
+#EXTINF:-1 ,Somoy
 http://103.175.242.10:8080/somoy/index.m3u8
-#EXTINF:-1,Movie Bangla
+#EXTINF:-1 ,Movie Bangla
 http://103.175.242.10:8080/moviebangla/index.m3u8
-#EXTINF:-1,Me TV
+#EXTINF:-1 ,Me TV
 http://103.175.242.10:8080/metv/index.m3u8
-#EXTINF:-1,Channel i
+#EXTINF:-1 ,Channel i
 http://103.175.242.10:8080/channeli/index.m3u8
 #EXTINF:-1 ,zeebangla
 https://tvsen3.aynaott.com/PNEb3v2q6GBk/index.m3u8
@@ -55,8 +43,6 @@ http://smart.bengaldigital.live/Zee-Bangla/index.m3u8
 http://smart.bengaldigital.live/ZeeCinema/index.m3u8
 #EXTINF:-1 ,NICKTOONS
 http://143.244.60.30/NICKTOONS/index.m3u8
-#EXTINF:-1 ,Movie Bangla
-http://103.175.242.10:8080/moviebangla/index.m3u8
 #EXTINF:-1 ,Disney_Junior
 http://78.108.251.7/Disney_Junior/index.m3u8
 #EXTINF:-1 ,Cartoon_Network
@@ -67,18 +53,6 @@ http://78.108.251.7/Boomerang/index.m3u8
 http://78.108.251.7/Nick_Jr/index.m3u8
 #EXTINF:-1 ,Discovery_HD
 http://78.108.251.7/Discovery_HD/index.m3u8
-#EXTINF:-1 ,Histoire HD
-http://151.80.18.177:86/Histoire/index.m3u8
-#EXTINF:-1 ,TF1_HD
-http://151.80.18.177:86/TF1_HD/index.m3u8
-#EXTINF:-1 ,RTL9 HD
-http://151.80.18.177:86/RTL9/index.m3u8
-#EXTINF:-1 ,Discovery_HD
-http://151.80.18.177:86/Discovery_HD/index.m3u8
-#EXTINF:-1 ,Eurosport_HD
-http://151.80.18.177:86/Eurosport_HD/index.m3u8
-#EXTINF:-1 ,TSports
-http://103.175.242.10:8080/tsports1/index.m3u8
 #EXTINF:-1 ,T Sports
 http://147.93.154.65/Bein3/index.m3u8
 #EXTINF:-1 ,True Vision Sports
