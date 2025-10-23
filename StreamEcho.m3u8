@@ -53,8 +53,6 @@ http://78.108.251.7/Boomerang/index.m3u8
 http://78.108.251.7/Nick_Jr/index.m3u8
 #EXTINF:-1 ,Discovery_HD
 http://78.108.251.7/Discovery_HD/index.m3u8
-#EXTINF:-1 ,T Sports
-http://147.93.154.65/Bein3/index.m3u8
 #EXTINF:-1 ,True Vision Sports
 http://195.128.27.141:80/play/live.php?mac=00:1A:79:24:1B:18&stream=191873&extension=m3u8
 #EXTINF:-1 ,PassionXXX HD
@@ -69,8 +67,6 @@ http://78.108.251.7/RTVi/index.m3u8
 http://78.108.251.7/Travel_Channel_HD/index.m3u8
 #EXTINF:-1 ,Movie Bangla
 http://stvlive.net:8080/moviebangla/index.m3u8
-#EXTINF:-1 ,Star Sports 1 HD Tamil
-http://ptu.ridsys.in/riptv/live/stream20/index.m3u8
 #EXTINF:-1 ,Disney Channel
 http://103.182.170.32:8888/play/a04g
 #EXTINF:-1 ,DEPTO BANGLA HD
