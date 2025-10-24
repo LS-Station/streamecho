@@ -1,14 +1,10 @@
 #EXTM3U
-#EXTINF:-1,Live Cricket
+#EXTINF:-1 ,Live Cricket
 https://ams.sandbrix.live/LiveApp/streams/H8YbJkA5EROi48mK344053877989566.m3u8
-#EXTINF:-1,Live Cricket
+#EXTINF:-1 ,Live Cricket
 https://cdn-bunny.styxsports.live/LiveApp/streams/s60pMVtEyH73a8Im22027794991194.m3u8
-#EXTINF:-1,sandbrix
+#EXTINF:-1 ,sandbrix
 https://ams.sandbrix.live/LiveApp/streams/d8dG8ew76tuf4Zhk242747603365482.m3u8
-#EXTINF:-1,fancode Live
-https://bd-mc-fdlive.fancode.com/mumbai/137702_english_hls_a99a194daf68548ta-di_h264/index.m3u8
-#EXTINF:-1,Fox 501 Cricket
-https://hugh.cdn.rumble.cloud/live/d5a20b4d/slot-141/u49a-lu5c/chunklist.m3u8
 #EXTINF:-1 ,National_Geo_HD
 http://151.80.18.177:86/National_Geo_HD/index.m3u8
 #EXTINF:-1 ,Histoire HD
@@ -23,8 +19,6 @@ http://151.80.18.177:86/Discovery_HD/index.m3u8
 http://151.80.18.177:86/Eurosport_HD/index.m3u8
 #EXTINF:-1 ,Eurosport_2_HD
 http://151.80.18.177:86/Eurosport_2_HD/index.m3u8
-#EXTINF:-1 ,Tsports
-http://103.175.242.10:8080/tsports1/index.m3u8
 #EXTINF:-1 ,Somoy
 http://103.175.242.10:8080/somoy/index.m3u8
 #EXTINF:-1 ,Movie Bangla
@@ -51,8 +45,6 @@ http://146.59.253.52:8080/hindihitshd/index.m3u8
 http://smart.bengaldigital.live/Zee-Bangla/index.m3u8
 #EXTINF:-1 ,ZeeCinema
 http://smart.bengaldigital.live/ZeeCinema/index.m3u8
-#EXTINF:-1 ,NICKTOONS
-http://143.244.60.30/NICKTOONS/index.m3u8
 #EXTINF:-1 ,Disney_Junior
 http://78.108.251.7/Disney_Junior/index.m3u8
 #EXTINF:-1 ,Cartoon_Network
@@ -87,8 +79,6 @@ https://server.thelegitpro.in/rongeentv/rongeentv/tracks-v1a1/mono.m3u8
 https://ythls.armelin.one/channel/UCATUkaOHwO9EP_W87zCiPbA.m3u8
 #EXTINF:-1 ,JAMUNA TV
 https://ythls.armelin.one/channel/UCDj9HHrRUzlsTuPQN0PHxjw.m3u8
-#EXTINF:-1 ,EKUSHEY TV HD
-http://210.4.72.204/hls-live/livepkgr/_definst_/liveevent/livestream3.m3u8
 #EXTINF:-1 ,MY TV HD
 https://mytvbangla.com/0.m3u8
 #EXTINF:-1 ,Discovery Kids
@@ -107,8 +97,6 @@ https://rtatv.akamaized.net/Content/HLS/Live/channel(RTA3)/03.m3u8
 https://byphdgllyk.gpcdn.net/hls/deeptotv/0_1/index.m3u8
 #EXTINF:-1 ,Duck TV
 https://d2lmgfyblo9rak.cloudfront.net/playlist.m3u8
-#EXTINF:-1 ,Nick
-http://fl1.moveonjoy.com/NICKELODEON/index.m3u8
 #EXTINF:-1 ,PBS Kids
 https://2-fss-2.streamhoster.com/pl_140/amlst:200914-1298290/playlist.m3u8
 #EXTINF:-1 ,WILLOW CRICKET HD
