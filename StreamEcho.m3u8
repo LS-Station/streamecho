@@ -1,28 +1,20 @@
 #EXTM3U
-#EXTINF:-1,Nat Geo Wild
+#EXTINF:-1 ,Nat Geo Wild
 http://143.244.60.30/Nat_Geo_Wild/index.m3u8
-#EXTINF:-1,TSN 1
+#EXTINF:-1 ,TSN 1
 http://143.244.60.30/TSN_1/index.m3u8
-
-#EXTINF:-1,TSN 2
+#EXTINF:-1 ,TSN 2
 http://143.244.60.30/TSN_2/index.m3u8
-
-#EXTINF:-1,TSN 3
+#EXTINF:-1 ,TSN 3
 http://143.244.60.30/TSN_3/index.m3u8
-
-#EXTINF:-1,TSN 4
+#EXTINF:-1 ,TSN 4
 http://143.244.60.30/TSN_4/index.m3u8
-
 #EXTINF:-1 ,PTV Sports
 http://66.102.120.18:8000/play/a04w/index.m3u8
 #EXTINF:-1 ,Colors Cineplex Bollywood
 http://66.102.120.18:8000/play/a01a/index.m3u8
 #EXTINF:-1 ,Live Cricket
-https://ams.sandbrix.live/LiveApp/streams/H8YbJkA5EROi48mK344053877989566.m3u8
-#EXTINF:-1 ,Live Cricket
 https://cdn-bunny.styxsports.live/LiveApp/streams/s60pMVtEyH73a8Im22027794991194.m3u8
-#EXTINF:-1 ,sandbrix
-https://ams.sandbrix.live/LiveApp/streams/d8dG8ew76tuf4Zhk242747603365482.m3u8
 #EXTINF:-1 ,National_Geo_HD
 http://151.80.18.177:86/National_Geo_HD/index.m3u8
 #EXTINF:-1 ,Histoire HD
