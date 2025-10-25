@@ -111,3 +111,11 @@ https://d2lmgfyblo9rak.cloudfront.net/playlist.m3u8
 https://2-fss-2.streamhoster.com/pl_140/amlst:200914-1298290/playlist.m3u8
 #EXTINF:-1 ,WILLOW CRICKET HD
 http://main.epgmaker.com/live/Ali130225/Cpyej2JL56Xy/517.m3u8
+#EXTINF:-1,STAR BHARAT (IND)
+http://87.255.35.150:18853/
+#EXTINF:-1,STAR PLUS HD (IND)
+http://87.255.35.150:18850/
+#EXTINF:-1,STAR GOLD HD (IND)
+http://87.255.35.150:18859/
+#EXTINF:-1,STAR SPORTS 1 HD (IND)
+http://87.255.35.150:18923/
