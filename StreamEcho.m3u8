@@ -25,17 +25,17 @@ http://151.80.18.177:86/TF1_HD/index.m3u8
 http://151.80.18.177:86/RTL9/index.m3u8
 #EXTINF:-1 ,Discovery_HD
 http://151.80.18.177:86/Discovery_HD/index.m3u8
-#EXTINF:-1,Disney Channel (576p) [Not 24/7]
+#EXTINF:-1 ,Disney Channel (576p) [Not 24/7]
 http://116.90.120.149:8000/play/a0bx/index.m3u8
 #EXTINF:-1 ,Eurosport_HD
 http://151.80.18.177:86/Eurosport_HD/index.m3u8
-#EXTINF:-1,Star Sports 1 HD (1080p) [Geo-blocked]
+#EXTINF:-1 ,Star Sports 1 HD (1080p) [Geo-blocked]
 http://116.90.120.149:8000/play/a0ba/index.m3u8
-#EXTINF:-1,Disney International HD (1080p)
+#EXTINF:-1 ,Disney International HD (1080p)
 http://116.90.120.149:8000/play/a0e9/index.m3u8
-#EXTINF:-1,Disney Junior (576p)
+#EXTINF:-1 ,Disney Junior (576p)
 http://116.90.120.149:8000/play/a0b3/index.m3u8
-#EXTINF:-1,Star Sports 1 Hindi HD (1080p)
+#EXTINF:-1 ,Star Sports 1 Hindi HD (1080p)
 http://116.90.120.149:8000/play/a0bv/index.m3u8
 #EXTINF:-1 ,Eurosport_2_HD
 http://151.80.18.177:86/Eurosport_2_HD/index.m3u8
@@ -47,8 +47,6 @@ http://103.175.242.10:8080/moviebangla/index.m3u8
 http://103.175.242.10:8080/metv/index.m3u8
 #EXTINF:-1 ,Channel i
 http://103.175.242.10:8080/channeli/index.m3u8
-#EXTINF:-1 ,zeebangla
-https://tvsen3.aynaott.com/PNEb3v2q6GBk/index.m3u8
 #EXTINF:-1 ,colorsbanglahd
 https://tvsen3.aynaott.com/u3LkNQ7UHhFX/index.m3u8
 #EXTINF:-1 ,Enter 10 Bangla
@@ -83,17 +81,17 @@ http://195.128.27.141:80/play/live.php?mac=00:1A:79:24:1B:18&stream=191873&exten
 http://78.108.251.7/PassionXXX/index.m3u8
 #EXTINF:-1 ,BBC
 http://78.108.251.7/BBC/index.m3u8
-#EXTINF:-1,Colors Kannada (1080p)
+#EXTINF:-1 ,Colors Kannada (1080p)
 http://87.255.35.150:18219
-#EXTINF:-1,Colors Kannada Cinema (576p)
+#EXTINF:-1 ,Colors Kannada Cinema (576p)
 http://87.255.35.150:18940/
-#EXTINF:-1,Colors Marathi (1080p)
+#EXTINF:-1 ,Colors Marathi (1080p)
 http://87.255.35.150:18233/
-#EXTINF:-1,Colors Rishtey Asia (576p)
+#EXTINF:-1 ,Colors Rishtey Asia (576p)
 http://87.255.35.150:18886/
-#EXTINF:-1,Colors Super (576p)
+#EXTINF:-1 ,Colors Super (576p)
 http://87.255.35.150:18445/
-#EXTINF:-1,Colors Tamil (1080p)
+#EXTINF:-1 ,Colors Tamil (1080p)
 http://87.255.35.150:18225/
 #EXTINF:-1 ,CNN HD
 http://78.108.251.7/CNN/index.m3u8
@@ -115,9 +113,9 @@ https://ythls.armelin.one/channel/UCATUkaOHwO9EP_W87zCiPbA.m3u8
 https://ythls.armelin.one/channel/UCDj9HHrRUzlsTuPQN0PHxjw.m3u8
 #EXTINF:-1 ,MY TV HD
 https://mytvbangla.com/0.m3u8
-#EXTINF:-1,Colors Bangla (1080p)
+#EXTINF:-1 ,Colors Bangla (1080p)
 http://87.255.35.150:18236/
-#EXTINF:-1,Colors Cineplex (1080p)
+#EXTINF:-1 ,Colors Cineplex (1080p)
 http://87.255.35.150:18296/
 #EXTINF:-1 ,Discovery Kids
 https://dplus.gammacdn.workers.dev/videos/113.m3u8
@@ -139,79 +137,33 @@ https://d2lmgfyblo9rak.cloudfront.net/playlist.m3u8
 https://2-fss-2.streamhoster.com/pl_140/amlst:200914-1298290/playlist.m3u8
 #EXTINF:-1 ,WILLOW CRICKET HD
 http://main.epgmaker.com/live/Ali130225/Cpyej2JL56Xy/517.m3u8
-#EXTINF:-1,STAR BHARAT (IND)
+#EXTINF:-1 ,STAR BHARAT (IND)
 http://87.255.35.150:18853/
-#EXTINF:-1,STAR PLUS HD (IND)
+#EXTINF:-1 ,STAR PLUS HD (IND)
 http://87.255.35.150:18850/
-#EXTINF:-1,STAR GOLD HD (IND)
+#EXTINF:-1 ,STAR GOLD HD (IND)
 http://87.255.35.150:18859/
-#EXTINF:-1,STAR SPORTS 1 HD (IND)
+#EXTINF:-1 ,STAR SPORTS 1 HD (IND)
 http://87.255.35.150:18923/
-#EXTINF:-1,Sony Sports Ten 1 (1080p)
+#EXTINF:-1 ,Sony Sports Ten 1 (1080p)
 http://87.255.35.150:18926/
-#EXTINF:-1,Sony Sports Ten 2 (1080p)
+#EXTINF:-1 ,Sony Sports Ten 2 (1080p)
 http://87.255.35.150:18927/
-#EXTINF:-1,Sony Sports Ten 3 (1080p)
+#EXTINF:-1 ,Sony Sports Ten 3 (1080p)
 http://87.255.35.150:18848/
-#EXTINF:-1,Sony Sports Ten 5 (1080p)
+#EXTINF:-1 ,Sony Sports Ten 5 (1080p)
 http://87.255.35.150:18818/
-#EXTINF:-1,Star Sports 1 HD (1080p) [Geo-blocked]
-http://116.90.120.149:8000/play/a0ba/index.m3u8
-#EXTINF:-1,Star Sports 1 Hindi HD (1080p)
-http://116.90.120.149:8000/play/a0bv/index.m3u8
-#EXTINF:-1,Star Sports 1 Tamil HD (1080p)
+#EXTINF:-1 ,Star Sports 1 Tamil HD (1080p)
 http://87.255.35.150:18844/
-#EXTINF:-1,Star Sports 1 Telugu HD (1080p)
+#EXTINF:-1 ,Star Sports 1 Telugu HD (1080p)
 http://87.255.35.150:18881/
-#EXTINF:-1,Star Sports 2 HD (1080p)
+#EXTINF:-1 ,Star Sports 2 HD (1080p)
 http://87.255.35.150:18828/
-#EXTINF:-1,Star Sports 2 Hindi (1080p)
+#EXTINF:-1 ,Star Sports 2 Hindi (1080p)
 http://116.90.120.149:8000/play/a0cs/index.m3u8
-#EXTINF:-1,Star Sports 3 (576p)
+#EXTINF:-1 ,Star Sports 3 (576p)
 http://87.255.35.150:18804/
-#EXTINF:-1 tvg-logo="https://i.imgur.com/Mh9tKPx.png" group-title="Sports",Star Sports Select 1 HD (1080p)
+#EXTINF:-1 group-title="Sports" tvg-logo="https://i.imgur.com/Mh9tKPx.png",Star Sports Select 1 HD (1080p)
 http://116.90.120.149:8000/play/a0cl/index.m3u8
-#EXTINF:-1,Star Sports Select 2 HD (1080p)
+#EXTINF:-1 ,Star Sports Select 2 HD (1080p)
 http://116.90.120.149:8000/play/a0cm/index.m3u8
-#EXTINF:-1,DUBAI SPORTS
-http://dmitnthvll.cdn.mangomolo.com/dubaisports/smil:dubaisports.smil/chunklist_b1500000.m3u8
-#EXTINF:-1,GAZI TV
-http://cdn.ihub.live:8082/GaziTV/tracks-v1a1/mono.m3u8?token=795a506b95a9de467cbad3a3bcf57d7a6964897c-1ed7e1d9c73531e2b6f5b5b4e9a69d5c-1668513182-1668502382
-#EXTINF:-1,T SPORTS
-http://cdn.ihub.live:8082/j-TSports/tracks-v1a1/mono.m3u8?token=0337229c3f681692019b28082560988b23e7b4c9-84859c699a15f1d6158d2418836e3885-1668513342-1668502542
-#EXTINF:-1,TEN SPORTS HD
-http://cdn.ihub.live:8082/TenSports/tracks-v1a1/mono.m3u8?token=4436465386012de943174e9c7ae782a2ebade926-7b65d9f8419eca5a6d83d60bf7be91d0-1668515563-1668504763
-#EXTINF:-1,PTV SPORTS HD
-http://cdn.ihub.live:8082/j-PTV/tracks-v1a1/mono.m3u8?token=eb74063a50b0e8187bb6d0db2328c06cee8d13b3-c01afef73680b78f149758869a5b89d8-1668515662-1668504862
-#EXTINF:-1,SONY SPORTS 1 HD
-http://cdn.ihub.live:8082/SonyTen1/tracks-v1a1/mono.m3u8?token=19199fd3e3f6d6eebbde1dcebcdc8fa29d2dfdc4-2b256685e8225bf60dabf7b983852f53-1668515740-1668504940
-#EXTINF:-1,SONY SPORTS 2 HD
-http://cdn.ihub.live:8082/SonyTen2/tracks-v1a1/mono.m3u8?token=a11178fdd226a02edd39e187afc89f6741d818f0-26f6b6510737de660efc66921afb49bc-1668515815-1668505015
-#EXTINF:-1,SONY SPORTS 3 HD
-http://cdn.ihub.live:8082/SonyTen3/tracks-v1a1/mono.m3u8?token=7a0fde2d0cf89a0990737216c0dbd50217759fb0-eeb95e38b4814a2dc28a246e340b9277-1668515900-1668505100
-#EXTINF:-1 ,STAR SPORTS SELECT 1 HD
-http://cdn.ihub.live:8082/StarSportsSelect1/tracks-v1a1/mono.m3u8?token=3aa3e2d5bac8f479af67e3dc31bac22f825f8b79-13638c56d95dd56ca5b0bce502135b32-1668515962-1668505162
-#EXTINF:-1,STAR SPORTS SELECT 2 HD
-http://cdn.ihub.live:8082/StarSportsSelect2/tracks-v1a1/mono.m3u8?token=fe451ac983f74014ca6ddf809bf77aa3117243fd-7afb539c463f8b9abdaefd14a8810b60-1668516024-1668505224
-#EXTINF:-1,STAR SPORTS 1 HD
-http://cdn.ihub.live:8082/j-starsports-1/tracks-v1a1/mono.m3u8?token=930dd688c97f8c2f618cb710658601f93ba7134a-8db13f690679c4a8e8a0a32e7277634c-1668516193-1668505393
-#EXTINF:-1,STAR SPORTS 2 HD
-http://cdn.ihub.live:8082/StarSports2HD/tracks-v1a1/mono.m3u8?token=5ec0fb0f0e4a9b8bfd6939c11ed16c49377ead41-f79b4543eae4ed1e744a85e17f816c70-1668516343-1668505543
-#EXTINF:-1,A SPORTS HD
-http://208.86.19.13:81/602.stream/index.m3u8
-#EXTINF:-1,ABU DHABI SPORTS 1 HD
-https://admdn1.cdn.mangomolo.com/adsports1/smil:adsports1.stream.smil/playlist.m3u8
-#EXTINF:-1,ABU DHABI SPORTS 2 HD
-https://admdn5.cdn.mangomolo.com/adsports2/smil:adsports2.stream.smil/playlist.m3u8
-#EXTINF:-1,ABU DHABI SPORTS 3 HD
-https://admdn3.cdn.mangomolo.com/adsports3/smil:adsports3.stream.smil/playlist.m3u8
-#EXTINF:-1,BEIN SPORTS EXTRA
-https://siloh.pluto.tv/lilo/production/BEIN/ES/master_2.m3u8
-#EXTINF:-1,STAR SPORTS SELECT 1 HD
-http://172.16.29.28:8080/hls/live1-fnet.m3u8
-#EXTINF:-1,Disney Channel (576p) [Not 24/7]
-http://116.90.120.149:8000/play/a0bx/index.m3u8
-#EXTINF:-1,Disney International HD (1080p)
-http://116.90.120.149:8000/play/a0e9/index.m3u8
-#EXTINF:-1,Disney Junior (576p)
-http://116.90.120.149:8000/play/a0b3/index.m3u8
