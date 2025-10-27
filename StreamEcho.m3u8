@@ -1,4 +1,8 @@
 #EXTM3U
+#EXTINF:-1 ,SONY LIV
+https://dai.google.com/linear/hls/event/biQJgf06SJCitj-nd502ow/master.m3u8
+#EXTINF:-1 ,SONY LIV2
+https://dai.google.com/linear/hls/event/tG04-ukTSleEi0819p-EqA/master.m3u8
 #EXTINF:-1 ,Hindi Hits HD
 http://146.59.253.52:8080/hindihitshd/index.m3u8
 #EXTINF:-1 ,Nat Geo Wild
@@ -37,10 +41,7 @@ http://103.175.242.10:8080/moviebangla/index.m3u8
 http://103.175.242.10:8080/metv/index.m3u8
 #EXTINF:-1 ,Channel i
 http://103.175.242.10:8080/channeli/index.m3u8
-#EXTINF:-1 ,SONY LIV
-https://dai.google.com/linear/hls/event/biQJgf06SJCitj-nd502ow/master.m3u8
-#EXTINF:-1 ,SONY LIV2
-https://dai.google.com/linear/hls/event/tG04-ukTSleEi0819p-EqA/master.m3u8
+
 #EXTINF:-1 ,Hindi Hits HD
 http://146.59.253.52:8080/hindihitshd/index.m3u8
 #EXTINF:-1 ,Zee-Bangla
