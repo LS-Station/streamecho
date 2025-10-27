@@ -59,8 +59,7 @@ http://78.108.251.7/Nick_Jr/index.m3u8
 http://78.108.251.7/Discovery_HD/index.m3u8
 #EXTINF:-1 ,True Vision Sports
 http://195.128.27.141:80/play/live.php?mac=00:1A:79:24:1B:18&stream=191873&extension=m3u8
-#EXTINF:-1 ,PassionXXX HD
-http://78.108.251.7/PassionXXX/index.m3u8
+
 #EXTINF:-1 ,BBC
 http://78.108.251.7/BBC/index.m3u8
 #EXTINF:-1 ,Colors Kannada (1080p)
