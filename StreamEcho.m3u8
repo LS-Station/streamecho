@@ -13,8 +13,6 @@ http://143.244.60.30/TSN_4/index.m3u8
 http://66.102.120.18:8000/play/a04w/index.m3u8
 #EXTINF:-1 ,Colors Cineplex Bollywood
 http://66.102.120.18:8000/play/a01a/index.m3u8
-#EXTINF:-1 ,Live Cricket
-https://cdn-bunny.styxsports.live/LiveApp/streams/s60pMVtEyH73a8Im22027794991194.m3u8
 #EXTINF:-1 ,National_Geo_HD
 http://151.80.18.177:86/National_Geo_HD/index.m3u8
 #EXTINF:-1 ,Histoire HD
@@ -25,18 +23,8 @@ http://151.80.18.177:86/TF1_HD/index.m3u8
 http://151.80.18.177:86/RTL9/index.m3u8
 #EXTINF:-1 ,Discovery_HD
 http://151.80.18.177:86/Discovery_HD/index.m3u8
-#EXTINF:-1 ,Disney Channel (576p) [Not 24/7]
-http://116.90.120.149:8000/play/a0bx/index.m3u8
 #EXTINF:-1 ,Eurosport_HD
 http://151.80.18.177:86/Eurosport_HD/index.m3u8
-#EXTINF:-1 ,Star Sports 1 HD (1080p) [Geo-blocked]
-http://116.90.120.149:8000/play/a0ba/index.m3u8
-#EXTINF:-1 ,Disney International HD (1080p)
-http://116.90.120.149:8000/play/a0e9/index.m3u8
-#EXTINF:-1 ,Disney Junior (576p)
-http://116.90.120.149:8000/play/a0b3/index.m3u8
-#EXTINF:-1 ,Star Sports 1 Hindi HD (1080p)
-http://116.90.120.149:8000/play/a0bv/index.m3u8
 #EXTINF:-1 ,Eurosport_2_HD
 http://151.80.18.177:86/Eurosport_2_HD/index.m3u8
 #EXTINF:-1 ,Somoy
@@ -47,12 +35,6 @@ http://103.175.242.10:8080/moviebangla/index.m3u8
 http://103.175.242.10:8080/metv/index.m3u8
 #EXTINF:-1 ,Channel i
 http://103.175.242.10:8080/channeli/index.m3u8
-#EXTINF:-1 ,colorsbanglahd
-https://tvsen3.aynaott.com/u3LkNQ7UHhFX/index.m3u8
-#EXTINF:-1 ,Enter 10 Bangla
-https://live-bangla.akamaized.net/liveabr/pub-iobanglakp3sff/live_720p/chunks.m3u8
-#EXTINF:-1 ,Zee Bangla Cinema
-https://smart.bengaldigital.live/Zee-Bangla-Cinema/tracks-v1a1/mono.m3u8
 #EXTINF:-1 ,SONY LIV
 https://dai.google.com/linear/hls/event/biQJgf06SJCitj-nd502ow/master.m3u8
 #EXTINF:-1 ,SONY LIV2
@@ -103,40 +85,18 @@ http://78.108.251.7/Travel_Channel_HD/index.m3u8
 http://stvlive.net:8080/moviebangla/index.m3u8
 #EXTINF:-1 ,Disney Channel
 http://103.182.170.32:8888/play/a04g
-#EXTINF:-1 ,DEPTO BANGLA HD
-https://byphdgllyk.gpcdn.net/hls/deeptotv/index.m3u8
-#EXTINF:-1 ,RogeenTV
-https://server.thelegitpro.in/rongeentv/rongeentv/tracks-v1a1/mono.m3u8
-#EXTINF:-1 ,INDEPENDENT TV
-https://ythls.armelin.one/channel/UCATUkaOHwO9EP_W87zCiPbA.m3u8
-#EXTINF:-1 ,JAMUNA TV
-https://ythls.armelin.one/channel/UCDj9HHrRUzlsTuPQN0PHxjw.m3u8
 #EXTINF:-1 ,MY TV HD
 https://mytvbangla.com/0.m3u8
 #EXTINF:-1 ,Colors Bangla (1080p)
 http://87.255.35.150:18236/
 #EXTINF:-1 ,Colors Cineplex (1080p)
 http://87.255.35.150:18296/
-#EXTINF:-1 ,Discovery Kids
-https://dplus.gammacdn.workers.dev/videos/113.m3u8
-#EXTINF:-1 ,Rishtey
-http://mydsat85.cbilant.com/iptv/E2DFKS2LWK569Q/6586/index.m3u8
 #EXTINF:-1 ,US-BD Journal 24 TV
 http://208.86.19.13:81/510.stream/index.m3u8?
 #EXTINF:-1 ,Zee Bangla HD
 https://smart.bengaldigital.live/Zee-Bangla/index.m3u8
 #EXTINF:-1 ,Sananda TV
 https://live.sanonda.tv/sanonda/index.m3u8
-#EXTINF:-1 ,RTA Sports
-https://rtatv.akamaized.net/Content/HLS/Live/channel(RTA3)/03.m3u8
-#EXTINF:-1 ,Deepto TV
-https://byphdgllyk.gpcdn.net/hls/deeptotv/0_1/index.m3u8
-#EXTINF:-1 ,Duck TV
-https://d2lmgfyblo9rak.cloudfront.net/playlist.m3u8
-#EXTINF:-1 ,PBS Kids
-https://2-fss-2.streamhoster.com/pl_140/amlst:200914-1298290/playlist.m3u8
-#EXTINF:-1 ,WILLOW CRICKET HD
-http://main.epgmaker.com/live/Ali130225/Cpyej2JL56Xy/517.m3u8
 #EXTINF:-1 ,STAR BHARAT (IND)
 http://87.255.35.150:18853/
 #EXTINF:-1 ,STAR PLUS HD (IND)
@@ -159,11 +119,5 @@ http://87.255.35.150:18844/
 http://87.255.35.150:18881/
 #EXTINF:-1 ,Star Sports 2 HD (1080p)
 http://87.255.35.150:18828/
-#EXTINF:-1 ,Star Sports 2 Hindi (1080p)
-http://116.90.120.149:8000/play/a0cs/index.m3u8
 #EXTINF:-1 ,Star Sports 3 (576p)
 http://87.255.35.150:18804/
-#EXTINF:-1 group-title="Sports" tvg-logo="https://i.imgur.com/Mh9tKPx.png",Star Sports Select 1 HD (1080p)
-http://116.90.120.149:8000/play/a0cl/index.m3u8
-#EXTINF:-1 ,Star Sports Select 2 HD (1080p)
-http://116.90.120.149:8000/play/a0cm/index.m3u8
