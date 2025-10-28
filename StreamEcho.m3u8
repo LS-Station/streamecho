@@ -3,6 +3,18 @@
 https://dai.google.com/linear/hls/event/biQJgf06SJCitj-nd502ow/master.m3u8
 #EXTINF:-1 ,SONY LIV2
 https://dai.google.com/linear/hls/event/tG04-ukTSleEi0819p-EqA/master.m3u8
+#EXTINF:-1 ,Fox Sports 501 HD
+http://y3fqd48g.megatv.fun/iptv/NRLXRWSBWBPLN4/19146/index.m3u8
+#EXTINF:-1 ,Sky Sports Cricket
+http://y3fqd48g.megatv.fun/iptv/NRLXRWSBWBPLN4/9258/index.m3u8
+#EXTINF:-1 ,T Sports
+http://116.204.149.16/t_sports/index.m3u8
+#EXTINF:-1 ,Sony Ten 1
+http://87.255.35.150:18926
+#EXTINF:-1 ,Sony Ten 2
+http://87.255.35.150:18927
+#EXTINF:-1 ,Sony Ten 5
+http://87.255.35.150:18818
 #EXTINF:-1 ,Hindi Hits HD
 http://146.59.253.52:8080/hindihitshd/index.m3u8
 #EXTINF:-1 ,Nat Geo Wild
@@ -41,9 +53,6 @@ http://103.175.242.10:8080/moviebangla/index.m3u8
 http://103.175.242.10:8080/metv/index.m3u8
 #EXTINF:-1 ,Channel i
 http://103.175.242.10:8080/channeli/index.m3u8
-
-#EXTINF:-1 ,Hindi Hits HD
-http://146.59.253.52:8080/hindihitshd/index.m3u8
 #EXTINF:-1 ,Zee-Bangla
 http://smart.bengaldigital.live/Zee-Bangla/index.m3u8
 #EXTINF:-1 ,ZeeCinema
@@ -62,7 +71,6 @@ http://78.108.251.7/Nick_Jr/index.m3u8
 http://78.108.251.7/Discovery_HD/index.m3u8
 #EXTINF:-1 ,True Vision Sports
 http://195.128.27.141:80/play/live.php?mac=00:1A:79:24:1B:18&stream=191873&extension=m3u8
-
 #EXTINF:-1 ,BBC
 http://78.108.251.7/BBC/index.m3u8
 #EXTINF:-1 ,Colors Kannada (1080p)
@@ -83,13 +91,11 @@ http://78.108.251.7/CNN/index.m3u8
 http://78.108.251.7/RTVi/index.m3u8
 #EXTINF:-1 ,Travel_Channel_HD
 http://78.108.251.7/Travel_Channel_HD/index.m3u8
-#EXTINF:-1, HYP 🇪🇸
+#EXTINF:-1 ,HYP 🇪🇸
 http://172.93.102.112:8989/278842_.m3u8
-
-#EXTINF:-1, HYP 🇪🇸
+#EXTINF:-1 ,HYP 🇪🇸
 http://89.29.219.116:9981/stream/channelid/366103458?profile=pass
-
-#EXTINF:-1,Arena_Sport_5 HD 🇷🇸
+#EXTINF:-1 ,Arena_Sport_5 HD 🇷🇸
 http://78.108.251.7/Arena_Sport_5/index.m3u8
 #EXTINF:-1 ,Movie Bangla
 http://stvlive.net:8080/moviebangla/index.m3u8
@@ -131,69 +137,67 @@ http://87.255.35.150:18881/
 http://87.255.35.150:18828/
 #EXTINF:-1 ,Star Sports 3 (576p)
 http://87.255.35.150:18804/
-#EXTINF:-1,Discovery_HD
+#EXTINF:-1 ,Discovery_HD
 http://78.108.251.7/Discovery_HD/mono.m3u8
-#EXTINF:-1,Cinemax_HD
+#EXTINF:-1 ,Cinemax_HD
 http://78.108.251.7/Cinemax_HD/mono.m3u8
-#EXTINF:-1,Disney_Junior
+#EXTINF:-1 ,Disney_Junior
 http://78.108.251.7/Disney_Junior/mono.m3u8
-#EXTINF:-1,Food_Network_HD
+#EXTINF:-1 ,Food_Network_HD
 http://78.108.251.7/Food_Network_HD/mono.m3u8
-#EXTINF:-1,HBO2_HD
+#EXTINF:-1 ,HBO2_HD
 http://78.108.251.7/HBO2_HD/mono.m3u8
-#EXTINF:-1,HBO_HD
+#EXTINF:-1 ,HBO_HD
 http://78.108.251.7/HBO_HD/mono.m3u8
-#EXTINF:-1,HBO3_HD
+#EXTINF:-1 ,HBO3_HD
 http://78.108.251.7/HBO3_HD/mono.m3u8
-#EXTINF:-1,Arena_Sport_1 HD
+#EXTINF:-1 ,Arena_Sport_1 HD
 http://78.108.251.7/Arena_Sport_1/mono.m3u8
-#EXTINF:-1,Arena_Sport_2 HD
+#EXTINF:-1 ,Arena_Sport_2 HD
 http://78.108.251.7/Arena_Sport_2/mono.m3u8
-#EXTINF:-1,Arena_Sport_3 HD
+#EXTINF:-1 ,Arena_Sport_3 HD
 http://78.108.251.7/Arena_Sport_3/mono.m3u8
-#EXTINF:-1,MovieStar HD
+#EXTINF:-1 ,MovieStar HD
 http://78.108.251.7/MovieStar/mono.m3u8
-#EXTINF:-1,Diema HD
+#EXTINF:-1 ,Diema HD
 http://78.108.251.7/Diema/mono.m3u8
-#EXTINF:-1,MagicTV HD
+#EXTINF:-1 ,MagicTV HD
 http://78.108.251.7/MagicTV/mono.m3u8
-#EXTINF:-1,DMSat
+#EXTINF:-1 ,DMSat
 http://78.108.251.7/DMSat/mono.m3u8
-#EXTINF:-1,EKids
+#EXTINF:-1 ,EKids
 http://78.108.251.7/EKids/mono.m3u8
-#EXTINF:-1,RodinaTV HD
+#EXTINF:-1 ,RodinaTV HD
 http://78.108.251.7/RodinaTV/mono.m3u8
-#EXTINF:-1,DaVinciLearning
+#EXTINF:-1 ,DaVinciLearning
 http://78.108.251.7/DaVinciLearning/mono.m3u8
-#EXTINF:-1,DuckTV
+#EXTINF:-1 ,DuckTV
 http://78.108.251.7/DuckTV/mono.m3u8
-#EXTINF:-1,MTVEurope
+#EXTINF:-1 ,MTVEurope
 http://78.108.251.7/MTVEurope/mono.m3u8
-#EXTINF:-1,EpicDrama HD
+#EXTINF:-1 ,EpicDrama HD
 http://78.108.251.7/EpicDrama/mono.m3u8
-#EXTINF:-1,DiemaFamily
+#EXTINF:-1 ,DiemaFamily
 http://78.108.251.7/DiemaFamily/mono.m3u8
-#EXTINF:-1,BabyTV
+#EXTINF:-1 ,BabyTV
 http://78.108.251.7/BabyTV/mono.m3u8
-#EXTINF:-1,NickToons
+#EXTINF:-1 ,NickToons
 http://78.108.251.7/NickToons/mono.m3u8
-#EXTINF:-1,amc
+#EXTINF:-1 ,amc
 http://78.108.251.7/amc/mono.m3u8
-#EXTINF:-1,T Sports
+#EXTINF:-1 ,T Sports
 http://103.151.60.204/T-Sports/tracks-v1a1/mono.m3u8
-#EXTINF:-1,BBC
+#EXTINF:-1 ,BBC
 http://78.108.251.7/BBC/mono.m3u8
-#EXTINF:-1,CNN HD
+#EXTINF:-1 ,CNN HD
 http://78.108.251.7/CNN/mono.m3u8
-#EXTINF:-1,RTVi
+#EXTINF:-1 ,RTVi
 http://78.108.251.7/RTVi/mono.m3u8
-#EXTINF:-1,Travel_Channel_HD
+#EXTINF:-1 ,Travel_Channel_HD
 http://78.108.251.7/Travel_Channel_HD/mono.m3u8
-#EXTINF:-1,Cartoon_Network
+#EXTINF:-1 ,Cartoon_Network
 http://78.108.251.7/Cartoon_Network/mono.m3u8
-#EXTINF:-1,Boomerang
+#EXTINF:-1 ,Boomerang
 http://78.108.251.7/Boomerang/mono.m3u8
-#EXTINF:-1,Nick_Jr
+#EXTINF:-1 ,Nick_Jr
 http://78.108.251.7/Nick_Jr/mono.m3u8
-#EXTINF:-1,T Sports Raja
-http://116.204.149.16/t_sports/index.m3u8
