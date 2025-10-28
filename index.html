@@ -12,7 +12,6 @@
     <meta name="language" content="en">
     <meta name="rating" content="general">
     <meta name="distribution" content="global">
-
     <!-- Open Graph / Social Media Meta Tags (Facebook, WhatsApp, LinkedIn) -->
     <meta property="og:title" content="StreamEcho: Free IPTV M3U Playlist 2025 | Daily Updated Live TV">
     <meta property="og:description" content="Get FREE Daily M3U Playlists for Sports, Bangla, Indian & Global Channels. Join 50K+ Community on Telegram & WhatsApp!">
@@ -23,7 +22,6 @@
     <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="StreamEcho">
     <meta property="og:locale" content="en_US">
-
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="StreamEcho: Free IPTV M3U Playlist 2025 | Daily Updated Live TV">
@@ -31,18 +29,16 @@
     <meta name="twitter:image" content="https://www.streamecho.top/twitter-card.jpg">
     <meta name="twitter:site" content="@StreamEchoIPTV">
     <meta name="twitter:creator" content="@StreamEchoIPTV">
-
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.streamecho.top/">
-
     <!-- Favicon -->
     <link rel="icon" href="https://www.streamecho.top/favicon.ico" type="image/x-icon">
-
     <!-- Preload Critical Resources -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" as="style">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
-    <!-- Structured Data (JSON-LD) - Boosts Google Rich Results -->
+    <!-- hls.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -63,10 +59,8 @@
       ]
     }
     </script>
-
     <!-- Title with Emoji & SEO Power -->
     <title>StreamEcho: Free IPTV M3U Playlist 2025 | Daily Updated Bangla, Indian, Sports & Global Live TV</title>
-
     <!-- Inline Critical CSS -->
     <style>
         :root {
@@ -80,13 +74,11 @@
             --text: #E0E0FF;
             --light: #AAAAAA;
         }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: 'Poppins', sans-serif;
             background: linear-gradient(135deg, var(--bg) 0%, #0A0A15 100%);
@@ -95,10 +87,49 @@
             overflow-x: hidden;
             animation: fadeIn 1s ease-in;
         }
-
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* === Web Player Styles === */
+        .live-player-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+            background: var(--card);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,212,255,0.2);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .live-player {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            aspect-ratio: 16 / 9;
+            border-radius: 12px;
+            background: #000;
+            display: block;
+            margin: 0 auto;
+        }
+        .player-title {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+        .player-status {
+            color: var(--light);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+        .loading {
+            color: var(--warning);
+        }
+        .error {
+            color: var(--danger);
         }
 
         header {
@@ -107,7 +138,6 @@
             background: linear-gradient(to bottom, rgba(10,26,62,0.9), transparent);
             border-bottom: 1px solid var(--accent);
         }
-
         h1 {
             font-size: 2.5rem;
             background: linear-gradient(90deg, #00D4FF, #FFFFFF);
@@ -116,18 +146,15 @@
             margin-bottom: 1rem;
             animation: glow 2s infinite alternate;
         }
-
         @keyframes glow {
             from { text-shadow: 0 0 10px rgba(0,212,255,0.5); }
             to { text-shadow: 0 0 20px rgba(0,212,255,0.8), 0 0 30px rgba(0,212,255,0.4); }
         }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 2rem 1rem;
         }
-
         .hero {
             text-align: center;
             padding: 3rem 1rem;
@@ -137,12 +164,10 @@
             box-shadow: 0 10px 30px rgba(0,212,255,0.1);
             animation: slideUp 1s ease-out;
         }
-
         @keyframes slideUp {
             from { transform: translateY(50px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
-
         .btn {
             display: inline-block;
             padding: 14px 32px;
@@ -157,33 +182,27 @@
             text-align: center;
             min-width: 200px;
         }
-
         .btn-primary {
             background: linear-gradient(45deg, #007BFF, #00D4FF);
             color: white;
             box-shadow: 0 5px 15px rgba(0,123,255,0.4);
         }
-
         .btn-telegram {
             background: #1D9BF0;
             color: white;
         }
-
         .btn-whatsapp {
             background: #25D366;
             color: white;
         }
-
         .btn-facebook {
             background: #1877F2;
             color: white;
         }
-
         .btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 25px rgba(0,0,0,0.3);
         }
-
         .btn::before {
             content: '';
             position: absolute;
@@ -192,18 +211,15 @@
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
             transition: 0.5s;
         }
-
         .btn:hover::before {
             left: 100%;
         }
-
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
             margin: 3rem 0;
         }
-
         .feature-card {
             background: var(--card);
             padding: 2rem;
@@ -212,19 +228,16 @@
             transition: 0.3s;
             border: 1px solid rgba(0,212,255,0.2);
         }
-
         .feature-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0,212,255,0.15);
             border-color: var(--accent);
         }
-
         .feature-icon {
             font-size: 3rem;
             margin-bottom: 1rem;
             display: block;
         }
-
         .social-proof {
             text-align: center;
             padding: 2rem;
@@ -232,7 +245,6 @@
             border-radius: 16px;
             margin: 2rem 0;
         }
-
         .channels {
             display: flex;
             flex-wrap: wrap;
@@ -240,7 +252,6 @@
             justify-content: center;
             margin: 2rem 0;
         }
-
         .channel-tag {
             background: rgba(0,212,255,0.2);
             color: var(--accent);
@@ -250,14 +261,12 @@
             font-weight: 500;
             border: 1px solid var(--accent);
         }
-
         .steps {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1.5rem;
             margin: 3rem 0;
         }
-
         .step {
             background: var(--card);
             padding: 1.5rem;
@@ -265,7 +274,6 @@
             position: relative;
             overflow: hidden;
         }
-
         .step-number {
             position: absolute;
             top: -10px;
@@ -281,7 +289,6 @@
             font-weight: bold;
             font-size: 1.2rem;
         }
-
         footer {
             text-align: center;
             padding: 3rem 1rem;
@@ -289,7 +296,6 @@
             margin-top: 4rem;
             border-top: 1px solid rgba(0,212,255,0.3);
         }
-
         .social-links {
             display: flex;
             justify-content: center;
@@ -297,7 +303,6 @@
             gap: 1rem;
             margin: 2rem 0;
         }
-
         .badge {
             display: inline-block;
             padding: 6px 14px;
@@ -308,16 +313,16 @@
             font-weight: 500;
             border: 1px dashed var(--accent);
         }
-
         @media (max-width: 768px) {
             h1 { font-size: 2rem; }
             .btn { display: block; margin: 10px auto; }
+            .live-player {
+                height: 220px;
+            }
         }
-
         .pulse {
             animation: pulse 2s infinite;
         }
-
         @keyframes pulse {
             0% { box-shadow: 0 0 0 0 rgba(0,212,255,0.7); }
             70% { box-shadow: 0 0 0 15px rgba(0,212,255,0); }
@@ -327,6 +332,13 @@
 </head>
 <body>
 
+    <!-- === LIVE WEB PLAYER (TOP OF PAGE) === -->
+    <div class="live-player-container">
+        <div class="player-title">🔴 LIVE: T Sports HD</div>
+        <video id="liveVideo" class="live-player" controls muted autoplay playsinline></video>
+        <div id="playerStatus" class="player-status loading">Loading stream...</div>
+    </div>
+
     <!-- Header -->
     <header>
         <h1>Free IPTV M3U Playlist 2025 - StreamEcho</h1>
@@ -334,7 +346,6 @@
     </header>
 
     <div class="container">
-
         <!-- Hero Section -->
         <section class="hero">
             <h2 style="background: linear-gradient(90deg, #00D4FF, #FFFFFF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 2rem; margin-bottom: 1rem;">
@@ -343,7 +354,6 @@
             <p style="font-size: 1.2rem; margin-bottom: 2rem; color: var(--light);">
                 Your #1 Source for <strong>Free IPTV M3U Playlists</strong> – No Signup, No Ads, Just Pure Streaming!
             </p>
-
             <!-- Main CTA Buttons -->
             <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin: 2rem 0;">
                 <a href="https://www.streamecho.top/" class="btn btn-primary pulse">
@@ -353,7 +363,6 @@
                     Telegram Channel
                 </a>
             </div>
-
             <!-- Social Proof -->
             <div class="social-proof">
                 <p><strong>50,000+</strong> Active Streamers • <strong>10,000+</strong> Daily M3U Downloads</p>
@@ -427,7 +436,6 @@
         <section style="text-align: center; margin: 4rem 0;">
             <h2>Join Our 50K+ Community</h2>
             <p>Get instant updates, request channels, report issues & more!</p>
-
             <div class="social-links">
                 <a href="https://t.me/manikcable" class="btn btn-telegram" target="_blank">
                     Telegram Group
@@ -443,7 +451,6 @@
                 </a>
             </div>
         </section>
-
     </div>
 
     <!-- Footer -->
@@ -460,13 +467,55 @@
         </p>
     </footer>
 
-    <!-- Google Analytics / Tracking (Optional - Add your ID) -->
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZKJ2RFDP8R"></script> -->
-    <!-- <script> ... </script> -->
+    <!-- HLS.js Player Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const video = document.getElementById('liveVideo');
+            const status = document.getElementById('playerStatus');
+            const streamUrl = 'https://anywhere.pwisetthon.com/http://116.204.149.16/t_sports/index.m3u8';
+
+            if (Hls.isSupported()) {
+                const hls = new Hls({
+                    enableWorker: true,
+                    lowLatencyMode: true,
+                    backBufferLength: 90
+                });
+
+                hls.loadSource(streamUrl);
+                hls.attachMedia(video);
+
+                hls.on(Hls.Events.MANIFEST_PARSED, function () {
+                    status.textContent = '🔴 LIVE • Playing T Sports HD';
+                    status.className = 'player-status';
+                    video.play().catch(() => {
+                        status.textContent = 'Click to play (autoplay blocked)';
+                    });
+                });
+
+                hls.on(Hls.Events.ERROR, function (event, data) {
+                    if (data.fatal) {
+                        status.textContent = 'Stream error. Retrying...';
+                        status.className = 'player-status error';
+                        setTimeout(() => hls.loadSource(streamUrl), 5000);
+                    }
+                });
+
+            } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                video.src = streamUrl;
+                video.addEventListener('loadedmetadata', function () {
+                    status.textContent = '🔴 LIVE • Playing T Sports HD';
+                    status.className = 'player-status';
+                    video.play();
+                });
+            } else {
+                status.textContent = 'Your browser does not support HLS streaming.';
+                status.className = 'player-status error';
+            }
+        });
+    </script>
 
     <!-- Auto Index Trigger for Search Engines -->
     <script>
-        // Ping Search Engines for Faster Indexing
         fetch('https://www.google.com/ping?sitemap=https://www.streamecho.top/sitemap.xml').catch(() => {});
         fetch('https://search.yahoo.com/ping?sitemap=https://www.streamecho.top/sitemap.xml').catch(() => {});
     </script>
