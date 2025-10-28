@@ -1,67 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Basic Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="StreamEcho - Get 100% Free IPTV M3U Playlists 2025 with Daily Updated Links for Bangla, Indian, Sports, Movies & Global Live TV. Join Telegram, WhatsApp & Facebook Groups for Instant Updates!">
-    <meta name="keywords" content="free IPTV 2025, M3U playlist, StreamEcho IPTV, Bangla IPTV, Indian sports IPTV, BDIX M3U, daily updated IPTV, live TV streaming, free M3U links, VLC IPTV, Smart TV playlist, Telegram IPTV group">
+    <meta name="description" content="StreamEcho - Free IPTV M3U Playlists 2025 with Live Web Player. 10+ Channels, Buffer-Free Streaming!">
+    <meta name="keywords" content="free IPTV, M3U playlist, live TV, T Sports, GTV, Star Sports, buffer free, web player">
     <meta name="author" content="StreamEcho">
     <meta name="robots" content="index, follow">
-    <meta name="revisit-after" content="1 day">
-    <meta name="language" content="en">
-    <meta name="rating" content="general">
-    <meta name="distribution" content="global">
-    <!-- Open Graph / Social Media Meta Tags (Facebook, WhatsApp, LinkedIn) -->
-    <meta property="og:title" content="StreamEcho: Free IPTV M3U Playlist 2025 | Daily Updated Live TV">
-    <meta property="og:description" content="Get FREE Daily M3U Playlists for Sports, Bangla, Indian & Global Channels. Join 50K+ Community on Telegram & WhatsApp!">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.streamecho.top/">
-    <meta property="og:image" content="https://www.streamecho.top/og-banner.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:site_name" content="StreamEcho">
-    <meta property="og:locale" content="en_US">
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="StreamEcho: Free IPTV M3U Playlist 2025 | Daily Updated Live TV">
-    <meta name="twitter:description" content="100% Free IPTV Links • Bangla • Indian • Sports • Movies • Join Telegram Group Now!">
-    <meta name="twitter:image" content="https://www.streamecho.top/twitter-card.jpg">
-    <meta name="twitter:site" content="@StreamEchoIPTV">
-    <meta name="twitter:creator" content="@StreamEchoIPTV">
-    <!-- Canonical URL -->
     <link rel="canonical" href="https://www.streamecho.top/">
-    <!-- Favicon -->
     <link rel="icon" href="https://www.streamecho.top/favicon.ico" type="image/x-icon">
-    <!-- Preload Critical Resources -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" as="style">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- hls.js CDN -->
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-    <!-- Structured Data (JSON-LD) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "StreamEcho",
-      "url": "https://www.streamecho.top/",
-      "description": "Free IPTV M3U Playlists with Daily Updates for Bangla, Indian, Sports & Global Channels.",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://www.streamecho.top/search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      },
-      "sameAs": [
-        "https://t.me/manikcable",
-        "https://t.me/bdixftpiptv",
-        "https://www.facebook.com/groups/nexttech",
-        "https://chat.whatsapp.com/H0mKsjcqR9Y9y23Y4UX5xE"
-      ]
-    }
-    </script>
-    <!-- Title with Emoji & SEO Power -->
-    <title>StreamEcho: Free IPTV M3U Playlist 2025 | Daily Updated Bangla, Indian, Sports & Global Live TV</title>
-    <!-- Inline Critical CSS -->
+
+    <title>StreamEcho: 10+ Live Channels | Buffer-Free Web Player 2025</title>
+
     <style>
         :root {
             --primary: #0A1A3E;
@@ -74,35 +26,56 @@
             --text: #E0E0FF;
             --light: #AAAAAA;
         }
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Poppins', sans-serif;
             background: linear-gradient(135deg, var(--bg) 0%, #0A0A15 100%);
             color: var(--text);
             line-height: 1.7;
             overflow-x: hidden;
-            animation: fadeIn 1s ease-in;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
-        /* === Web Player Styles === */
-        .live-player-container {
-            width: 100%;
+        /* === TAB SYSTEM === */
+        .player-section {
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 1rem auto;
             padding: 1rem;
             background: var(--card);
             border-radius: 16px;
             box-shadow: 0 10px 30px rgba(0,212,255,0.2);
-            margin-bottom: 2rem;
+        }
+        .tab-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 1rem;
+            justify-content: center;
+        }
+        .tab-btn {
+            padding: 10px 16px;
+            background: rgba(0,212,255,0.1);
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .tab-btn.active {
+            background: var(--accent);
+            color: var(--bg);
+        }
+        .tab-btn:hover {
+            background: rgba(0,212,255,0.3);
+        }
+
+        .tab-content {
+            display: none;
             text-align: center;
+        }
+        .tab-content.active {
+            display: block;
         }
         .live-player {
             width: 100%;
@@ -111,13 +84,13 @@
             aspect-ratio: 16 / 9;
             border-radius: 12px;
             background: #000;
-            display: block;
             margin: 0 auto;
+            display: block;
         }
         .player-title {
             color: var(--accent);
             font-weight: 600;
-            margin-bottom: 0.5rem;
+            margin: 0.5rem 0;
             font-size: 1.3rem;
         }
         .player-status {
@@ -125,49 +98,23 @@
             font-size: 0.9rem;
             margin-top: 0.5rem;
         }
-        .loading {
-            color: var(--warning);
-        }
-        .error {
-            color: var(--danger);
-        }
+        .loading { color: var(--warning); }
+        .error { color: var(--danger); }
 
-        header {
-            text-align: center;
-            padding: 3rem 1rem;
-            background: linear-gradient(to bottom, rgba(10,26,62,0.9), transparent);
-            border-bottom: 1px solid var(--accent);
-        }
+        header, .container, footer { max-width: 1200px; margin: 0 auto; padding: 1rem; }
+        header { text-align: center; padding: 3rem 1rem; border-bottom: 1px solid var(--accent); }
         h1 {
             font-size: 2.5rem;
             background: linear-gradient(90deg, #00D4FF, #FFFFFF);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 1rem;
             animation: glow 2s infinite alternate;
         }
         @keyframes glow {
             from { text-shadow: 0 0 10px rgba(0,212,255,0.5); }
-            to { text-shadow: 0 0 20px rgba(0,212,255,0.8), 0 0 30px rgba(0,212,255,0.4); }
+            to { text-shadow: 0 0 20px rgba(0,212,255,0.8); }
         }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-        }
-        .hero {
-            text-align: center;
-            padding: 3rem 1rem;
-            background: var(--card);
-            border-radius: 20px;
-            margin: 2rem 0;
-            box-shadow: 0 10px 30px rgba(0,212,255,0.1);
-            animation: slideUp 1s ease-out;
-        }
-        @keyframes slideUp {
-            from { transform: translateY(50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
+
         .btn {
             display: inline-block;
             padding: 14px 32px;
@@ -177,347 +124,159 @@
             border-radius: 50px;
             margin: 10px;
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            text-align: center;
             min-width: 200px;
-        }
-        .btn-primary {
-            background: linear-gradient(45deg, #007BFF, #00D4FF);
-            color: white;
-            box-shadow: 0 5px 15px rgba(0,123,255,0.4);
-        }
-        .btn-telegram {
-            background: #1D9BF0;
-            color: white;
-        }
-        .btn-whatsapp {
-            background: #25D366;
-            color: white;
-        }
-        .btn-facebook {
-            background: #1877F2;
-            color: white;
-        }
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-        }
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0; left: -100%;
-            width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: 0.5s;
-        }
-        .btn:hover::before {
-            left: 100%;
-        }
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin: 3rem 0;
-        }
-        .feature-card {
-            background: var(--card);
-            padding: 2rem;
-            border-radius: 16px;
             text-align: center;
-            transition: 0.3s;
-            border: 1px solid rgba(0,212,255,0.2);
         }
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,212,255,0.15);
-            border-color: var(--accent);
-        }
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            display: block;
-        }
-        .social-proof {
-            text-align: center;
-            padding: 2rem;
-            background: rgba(0,212,255,0.1);
-            border-radius: 16px;
-            margin: 2rem 0;
-        }
-        .channels {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            justify-content: center;
-            margin: 2rem 0;
-        }
-        .channel-tag {
-            background: rgba(0,212,255,0.2);
-            color: var(--accent);
-            padding: 8px 16px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            border: 1px solid var(--accent);
-        }
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin: 3rem 0;
-        }
-        .step {
-            background: var(--card);
-            padding: 1.5rem;
-            border-radius: 16px;
-            position: relative;
-            overflow: hidden;
-        }
-        .step-number {
-            position: absolute;
-            top: -10px;
-            right: -10px;
-            background: var(--accent);
-            color: var(--bg);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-        footer {
-            text-align: center;
-            padding: 3rem 1rem;
-            background: var(--card);
-            margin-top: 4rem;
-            border-top: 1px solid rgba(0,212,255,0.3);
-        }
-        .social-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-        .badge {
-            display: inline-block;
-            padding: 6px 14px;
-            background: rgba(0,212,255,0.2);
-            color: var(--accent);
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            border: 1px dashed var(--accent);
-        }
+        .btn-primary { background: linear-gradient(45deg, #007BFF, #00D4FF); color: white; }
+        .btn-telegram { background: #1D9BF0; color: white; }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
+
         @media (max-width: 768px) {
             h1 { font-size: 2rem; }
-            .btn { display: block; margin: 10px auto; }
-            .live-player {
-                height: 220px;
-            }
-        }
-        .pulse {
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(0,212,255,0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(0,212,255,0); }
-            100% { box-shadow: 0 0 0 0 rgba(0,212,255,0); }
+            .tab-btn { font-size: 0.8rem; padding: 8px 12px; }
+            .live-player { height: 220px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- === LIVE WEB PLAYER (TOP OF PAGE) === -->
-    <div class="live-player-container">
-        <div class="player-title">🔴 LIVE: T Sports HD</div>
-        <video id="liveVideo" class="live-player" controls muted autoplay playsinline></video>
-        <div id="playerStatus" class="player-status loading">Loading stream...</div>
+    <!-- 10 CHANNEL TAB PLAYER -->
+    <div class="player-section">
+        <div class="tab-buttons" id="tabButtons"></div>
+
+        <div id="tabContents">
+            <!-- Tabs will be injected here by JS -->
+        </div>
     </div>
 
     <!-- Header -->
     <header>
-        <h1>Free IPTV M3U Playlist 2025 - StreamEcho</h1>
-        <p style="color: var(--light); font-size: 1.1rem;">Daily Updated • 100% Free • Bangla, Indian, Sports & Global Channels</p>
+        <h1>StreamEcho Live TV</h1>
+        <p style="color: var(--light);">10+ Channels • Buffer-Free • Click & Play</p>
     </header>
 
     <div class="container">
-        <!-- Hero Section -->
-        <section class="hero">
-            <h2 style="background: linear-gradient(90deg, #00D4FF, #FFFFFF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 2rem; margin-bottom: 1rem;">
-                Welcome to StreamEcho
-            </h2>
-            <p style="font-size: 1.2rem; margin-bottom: 2rem; color: var(--light);">
-                Your #1 Source for <strong>Free IPTV M3U Playlists</strong> – No Signup, No Ads, Just Pure Streaming!
-            </p>
-            <!-- Main CTA Buttons -->
-            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin: 2rem 0;">
-                <a href="https://www.streamecho.top/" class="btn btn-primary pulse">
-                    Get Free M3U Now
-                </a>
-                <a href="https://t.me/bdixftpiptv" class="btn btn-telegram" target="_blank">
-                    Telegram Channel
-                </a>
-            </div>
-            <!-- Social Proof -->
-            <div class="social-proof">
-                <p><strong>50,000+</strong> Active Streamers • <strong>10,000+</strong> Daily M3U Downloads</p>
-                <span class="badge">Updated Every 6 Hours</span>
-                <span class="badge">BDIX Optimized</span>
-                <span class="badge">99.9% Uptime</span>
-            </div>
-        </section>
-
-        <!-- Features Grid -->
-        <section class="features">
-            <div class="feature-card">
-                <span class="feature-icon">Free</span>
-                <h3>100% Free Access</h3>
-                <p>No subscription, no hidden fees. Stream unlimited!</p>
-            </div>
-            <div class="feature-card">
-                <span class="feature-icon">Global</span>
-                <h3>Global Channels</h3>
-                <p>Bangla, Indian, UK, USA, Arabic, Sports & More</p>
-            </div>
-            <div class="feature-card">
-                <span class="feature-icon">Refresh</span>
-                <h3>Daily Updates</h3>
-                <p>Fresh M3U links every 6 hours – never miss a match!</p>
-            </div>
-            <div class="feature-card">
-                <span class="feature-icon">Compatible</span>
-                <h3>All Devices</h3>
-                <p>VLC, MX Player, Kodi, Smart TV, Firestick, Android</p>
-            </div>
-        </section>
-
-        <!-- Channel Categories -->
-        <section style="text-align: center;">
-            <h2>Popular Channels Available</h2>
-            <div class="channels">
-                <span class="channel-tag">GTV HD</span>
-                <span class="channel-tag">Star Sports</span>
-                <span class="channel-tag">Sony LIV</span>
-                <span class="channel-tag">BBC News</span>
-                <span class="channel-tag">beIN Sports</span>
-                <span class="channel-tag">Zee Cinema</span>
-                <span class="channel-tag">Channel i</span>
-                <span class="channel-tag">Nat Geo</span>
-                <span class="channel-tag">MTV</span>
-                <span class="channel-tag">Cartoon Network</span>
-            </div>
-        </section>
-
-        <!-- How to Use -->
-        <section class="steps">
-            <div class="step">
-                <div class="step-number">1</div>
-                <h3>Copy M3U Link</h3>
-                <p>Get latest playlist from Telegram Channel or Website</p>
-            </div>
-            <div class="step">
-                <div class="step-number">2</div>
-                <h3>Open Player</h3>
-                <p>Use VLC, MX Player, GSE IPTV or Smart TV App</p>
-            </div>
-            <div class="step">
-                <div class="step-number">3</div>
-                <h3>Paste & Play</h3>
-                <p>Load URL → Enjoy Buffer-Free HD Streaming!</p>
-            </div>
-        </section>
-
-        <!-- Community Join Section -->
-        <section style="text-align: center; margin: 4rem 0;">
-            <h2>Join Our 50K+ Community</h2>
-            <p>Get instant updates, request channels, report issues & more!</p>
-            <div class="social-links">
-                <a href="https://t.me/manikcable" class="btn btn-telegram" target="_blank">
-                    Telegram Group
-                </a>
-                <a href="https://t.me/bdixftpiptv" class="btn btn-telegram" target="_blank">
-                    Telegram Channel
-                </a>
-                <a href="https://chat.whatsapp.com/H0mKsjcqR9Y9y23Y4UX5xE" class="btn btn-whatsapp" target="_blank">
-                    WhatsApp Group
-                </a>
-                <a href="https://www.facebook.com/groups/nexttech" class="btn btn-facebook" target="_blank">
-                    Facebook Group
-                </a>
-            </div>
+        <section style="text-align: center; margin: 2rem 0;">
+            <a href="https://www.streamecho.top/" class="btn btn-primary">Get M3U Playlists</a>
+            <a href="https://t.me/bdixftpiptv" class="btn btn-telegram" target="_blank">Join Telegram</a>
         </section>
     </div>
 
     <!-- Footer -->
-    <footer>
-        <p><strong>StreamEcho</strong> – Free IPTV M3U Playlists 2025</p>
-        <p style="color: var(--light); font-size: 0.9rem;">
-            Last Updated: October 28, 2025 | 100% Legal & Free Streaming Links
-        </p>
-        <p style="margin-top: 1rem;">
-            <a href="https://www.streamecho.top/" style="color: var(--accent); text-decoration: none;">www.streamecho.top</a>
-        </p>
-        <p style="margin-top: 1rem; font-size: 0.8rem; color: var(--light);">
-            © 2025 StreamEcho. All Rights Reserved. | Made with ❤️ for Streamers
-        </p>
+    <footer style="text-align: center; padding: 2rem; color: var(--light); font-size: 0.9rem;">
+        © 2025 StreamEcho • Buffer-Free Web Player • Last Updated: October 28, 2025
     </footer>
 
-    <!-- HLS.js Player Script -->
+    <!-- CHANNELS DATA (এখানে তুমি শুধু original m3u8 লিংক বসাবে - proxy অটো যোগ হবে) -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const video = document.getElementById('liveVideo');
-            const status = document.getElementById('playerStatus');
-            const streamUrl = 'https://anywhere.pwisetthon.com/http://116.204.149.16/t_sports/index.m3u8';
+        const channelList = [
+            { name: "T Sports HD", url: "http://116.204.149.16/t_sports/index.m3u8" },
+            { name: "GTV HD", url: "http://116.204.149.16/gtv/index.m3u8" },
+            { name: "Star Sports 1", url: "http://116.204.149.16/star_sports1/index.m3u8" },
+            { name: "Sony Six HD", url: "http://116.204.149.16/sony_six/index.m3u8" },
+            { name: "Channel i", url: "http://116.204.149.16/channel_i/index.m3u8" },
+            { name: "Zee Bangla", url: "http://116.204.149.16/zee_bangla/index.m3u8" },
+            { name: "Nat Geo", url: "http://116.204.149.16/nat_geo/index.m3u8" },
+            { name: "Cartoon Network", url: "http://116.204.149.16/cartoon_network/index.m3u8" },
+            { name: "BBC News", url: "http://116.204.149.16/bbc_news/index.m3u8" },
+            { name: "MTV India", url: "http://116.204.149.16/mtv_india/index.m3u8" }
+        ];
+
+        const tabButtons = document.getElementById('tabButtons');
+        const tabContents = document.getElementById('tabContents');
+        let currentHls = null;
+
+        // Create Tabs
+        channelList.forEach((channel, index) => {
+            // Tab Button
+            const btn = document.createElement('button');
+            btn.className = 'tab-btn';
+            btn.textContent = channel.name;
+            btn.onclick = () => openTab(index);
+            tabButtons.appendChild(btn);
+
+            // Tab Content
+            const content = document.createElement('div');
+            content.className = 'tab-content';
+            content.innerHTML = `
+                <div class="player-title">LIVE: ${channel.name}</div>
+                <video id="video-${index}" class="live-player" controls muted playsinline></video>
+                <div id="status-${index}" class="player-status loading">Loading...</div>
+            `;
+            tabContents.appendChild(content);
+        });
+
+        // Open Tab Function
+        function openTab(index) {
+            document.querySelectorAll('.tab-btn').forEach((b, i) => {
+                b.classList.toggle('active', i === index);
+            });
+            document.querySelectorAll('.tab-content').forEach((c, i) => {
+                c.classList.toggle('active', i === index);
+            });
+
+            // Destroy previous player
+            if (currentHls) {
+                currentHls.destroy();
+                currentHls = null;
+            }
+
+            const video = document.getElementById(`video-${index}`);
+            const status = document.getElementById(`status-${index}`);
+            
+            // প্রতিটা লিংকের সামনে https://anywhere.pwisetthon.com/ যোগ করো
+            const proxyUrl = 'https://anywhere.pwisetthon.com/' + channelList[index].url;
 
             if (Hls.isSupported()) {
-                const hls = new Hls({
-                    enableWorker: true,
+                currentHls = new Hls({
+                    maxBufferLength: 6,
+                    maxMaxBufferLength: 10,
+                    liveSyncDurationCount: 2,
                     lowLatencyMode: true,
-                    backBufferLength: 90
+                    backBufferLength: 2,
+                    enableWorker: true
                 });
 
-                hls.loadSource(streamUrl);
-                hls.attachMedia(video);
+                currentHls.loadSource(proxyUrl);
+                currentHls.attachMedia(video);
 
-                hls.on(Hls.Events.MANIFEST_PARSED, function () {
-                    status.textContent = '🔴 LIVE • Playing T Sports HD';
+                currentHls.on(Hls.Events.MANIFEST_PARSED, () => {
+                    status.textContent = 'LIVE • Playing';
                     status.className = 'player-status';
                     video.play().catch(() => {
-                        status.textContent = 'Click to play (autoplay blocked)';
+                        status.textContent = 'Tap to play';
                     });
                 });
 
-                hls.on(Hls.Events.ERROR, function (event, data) {
+                currentHls.on(Hls.Events.ERROR, (event, data) => {
                     if (data.fatal) {
-                        status.textContent = 'Stream error. Retrying...';
+                        status.textContent = 'Reconnecting...';
                         status.className = 'player-status error';
-                        setTimeout(() => hls.loadSource(streamUrl), 5000);
+                        setTimeout(() => currentHls.loadSource(proxyUrl), 2000);
                     }
                 });
 
-            } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-                video.src = streamUrl;
-                video.addEventListener('loadedmetadata', function () {
-                    status.textContent = '🔴 LIVE • Playing T Sports HD';
+                video.addEventListener('waiting', () => {
+                    status.textContent = 'Buffering...';
+                    status.className = 'player-status loading';
+                });
+                video.addEventListener('canplay', () => {
+                    status.textContent = 'LIVE • Playing';
                     status.className = 'player-status';
+                });
+
+            } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                video.src = proxyUrl;
+                video.addEventListener('loadedmetadata', () => {
+                    status.textContent = 'LIVE';
                     video.play();
                 });
-            } else {
-                status.textContent = 'Your browser does not support HLS streaming.';
-                status.className = 'player-status error';
             }
-        });
-    </script>
+        }
 
-    <!-- Auto Index Trigger for Search Engines -->
-    <script>
-        fetch('https://www.google.com/ping?sitemap=https://www.streamecho.top/sitemap.xml').catch(() => {});
-        fetch('https://search.yahoo.com/ping?sitemap=https://www.streamecho.top/sitemap.xml').catch(() => {});
+        // Auto-open first channel
+        openTab(0);
+        document.querySelector('.tab-btn').classList.add('active');
     </script>
 </body>
 </html>
