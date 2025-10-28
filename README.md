@@ -7,8 +7,6 @@
 ![StreamEcho Banner](https://1.bp.blogspot.com/-h5fUZDgfXe8/YR87osMq6UI/AAAAAAAAAYk/18JeDAzajvYhKnMnllSf_DSWAm51cueuQCLcBGAsYHQ/s728/placeholder.jpg)  
 *✨ **Daily Fresh M3U Links** • **100% Free** • **Global Live TV** ✨*
 
-> **"Stream Without Limits – Sports, Movies, Bangla, Indian & International Channels!"** 📺
-
 </div>
 
 [![Website](https://img.shields.io/badge/🌍_Website-StreamEcho.top-0A1A3E?style=for-the-badge&logo=google-chrome&logoColor=white)](https://streamecho.top)  
