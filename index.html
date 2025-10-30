@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Cache-Control" content="public, max-age=3600">
     <meta name="description" content="StreamEcho - Free IPTV M3U Playlists 2025 with Live Web Player. 10+ Channels, Buffer-Free Streaming!">
     <meta name="keywords" content="free IPTV, M3U playlist, live TV, T Sports, GTV, Star Sports, buffer free, web player">
     <meta name="author" content="StreamEcho">
@@ -11,8 +10,6 @@
     <link rel="canonical" href="https://www.streamecho.top/">
     <link rel="icon" href="https://www.streamecho.top/favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://corsproxy.io">
-    <link rel="dns-prefetch" href="https://corsproxy.io">
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
     <title>StreamEcho: 10+ Live Channels | Buffer-Free Web Player 2025</title>
     <style>
@@ -88,7 +85,6 @@
             background: #000;
             margin: 0 auto;
             display: block;
-            preload: none;
         }
         .player-title {
             color: var(--accent);
@@ -160,7 +156,7 @@
     </footer>
 
     <script>
-        // === OBFUSCATED CHANNEL DATA ===
+        // === তোমার আগের চ্যানেল লিস্ট (যা চলতো) ===
         const encNames = [
             "VCBTcG9ydHMgSEQ=", "VCBTcG9ydHMgSEQ=", "U3RhciBTcG9ydHMgMQ==", "U29saCBMaXZlIFNwb3J0cw==",
             "VCBTcG9ydHM=", "V2lsbG93IFNwb3J0cw==", "U3RhciBTcG9ydHMgU2UgMg==", "VCBTcG9ydHM=", "YmVJTiBTUE9SVFMgMQ=="
@@ -197,7 +193,7 @@
             div.className = 'tab-content';
             div.innerHTML = `
                 <div class="player-title">LIVE: ${ch.name}</div>
-                <video id="video-${i}" class="live-player" controls playsinline preload="none" x-webkit-airplay="allow" webkit-playsinline="true"></video>
+                <video id="video-${i}" class="live-player" controls playsinline preload="none"></video>
                 <div id="status-${i}" class="player-status loading">Loading...</div>
             `;
             tabContents.appendChild(div);
@@ -211,25 +207,18 @@
 
             const video = document.getElementById(`video-${idx}`);
             const status = document.getElementById(`status-${idx}`);
-            const rawUrl = channelList[idx].url;
-            const proxy = 'https://corsproxy.io/?' + encodeURIComponent(rawUrl);
+            const proxy = 'https://anywhere.pwisetthon.com/' + channelList[idx].url; // ← your 
 
             if (Hls.isSupported()) {
                 currentHls = new Hls({
-                    maxBufferLength: 2,
+                    maxBufferLength: 2,           // ← your
                     maxMaxBufferLength: 4,
                     liveSyncDurationCount: 1,
-                    lowLatencyMode: true,
+                    lowLatencyMode: true,         // ← your
                     backBufferLength: 0,
                     enableWorker: true,
-                    startLevel: (window.innerWidth < 768) ? 0 : -1,
-                    capLevelToPlayerSize: true,
-                    abrEwmaFastLive: 1.0,
-                    abrEwmaSlowLive: 3.0,
-                    xhrSetup: function(xhr) {
-                        xhr.withCredentials = false;
-                        xhr.timeout = 8000;
-                    }
+                    startLevel: 0,                // ← শুরুতে লো কোয়ালিটি
+                    capLevelToPlayerSize: true
                 });
 
                 currentHls.loadSource(proxy);
@@ -240,7 +229,7 @@
                     status.className = 'player-status';
                     video.play().catch(() => {
                         video.muted = true;
-                        video.play().then(() => status.textContent = 'LIVE • Playing');
+                        video.play();
                     });
                 });
 
@@ -248,7 +237,7 @@
                     if (d.fatal) {
                         status.textContent = 'Reconnecting...';
                         status.className = 'player-status error';
-                        setTimeout(() => currentHls.loadSource(proxy), 1000);
+                        setTimeout(() => currentHls.loadSource(proxy), 1500); // ← দ্রুত রিট্রাই
                     }
                 });
 
