@@ -3,195 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="StreamEcho - Free IPTV M3U Playlists 2025 with Live Web Player. 10+ Channels, Buffer-Free Streaming!">
-    <meta name="keywords" content="free IPTV, M3U playlist, live TV, T Sports, GTV, Star Sports, buffer free, web player">
-    <meta name="author" content="StreamEcho">
-    <meta name="robots" content="noindex, nofollow">
-    <link rel="canonical" href="https://www.streamecho.top/">
-    <link rel="icon" href="https://www.streamecho.top/favicon.ico" type="image/x-icon">
+    <meta name="description" content="StreamEcho - Buffer-Free IPTV Player 2025">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-    <title>StreamEcho: 10+ Live Channels | Buffer-Free Web Player 2025</title>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.15"></script>
+    <title>StreamEcho: Never Stop Player</title>
     <style>
-        :root {
-            --primary: #0A1A3E;
-            --accent: #00D4FF;
-            --success: #25D366;
-            --warning: #FFA41C;
-            --danger: #FF3B30;
-            --bg: #0F0F1A;
-            --card: #1A1A2E;
-            --text: #E0E0FF;
-            --light: #AAAAAA;
-        }
+        :root { --accent: #00D4FF; --bg: #0F0F1A; --card: #1A1A2E; --text: #E0E0FF; --light: #AAAAAA; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, var(--bg) 0%, #0A0A15 100%);
-            color: var(--text);
-            line-height: 1.7;
-            overflow-x: hidden;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-        .player-section {
-            max-width: 1200px;
-            margin: 1rem auto;
-            padding: 1rem;
-            background: var(--card);
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,212,255,0.2);
-        }
-        .tab-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 1rem;
-            justify-content: center;
-        }
-        .tab-btn {
-            padding: 10px 16px;
-            background: rgba(0,212,255,0.1);
-            color: var(--accent);
-            border: 1px solid var(--accent);
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .tab-btn.active {
-            background: var(--accent);
-            color: var(--bg);
-        }
-        .tab-btn:hover {
-            background: rgba(0,212,255,0.3);
-        }
-        .tab-content {
-            display: none;
-            text-align: center;
-        }
-        .tab-content.active {
-            display: block;
-        }
-        .live-player {
-            width: 100%;
-            max-width: 100%;
-            height: auto;
-            aspect-ratio: 16 / 9;
-            border-radius: 12px;
-            background: #000;
-            margin: 0 auto;
-            display: block;
-        }
-        .player-title {
-            color: var(--accent);
-            font-weight: 600;
-            margin: 0.5rem 0;
-            font-size: 1.3rem;
-        }
-        .player-status {
-            color: var(--light);
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
-        }
-        .loading { color: var(--warning); }
-        .error { color: var(--danger); }
-        header, .container, footer { max-width: 1200px; margin: 0 auto; padding: 1rem; }
-        header { text-align: center; padding: 3rem 1rem; border-bottom: 1px solid var(--accent); }
-        h1 {
-            font-size: 2.5rem;
-            background: linear-gradient(90deg, #00D4FF, #FFFFFF);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: glow 2s infinite alternate;
-        }
-        @keyframes glow {
-            from { text-shadow: 0 0 10px rgba(0,212,255,0.5); }
-            to { text-shadow: 0 0 20px rgba(0,212,255,0.8); }
-        }
-        .btn {
-            display: inline-block;
-            padding: 14px 32px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 50px;
-            margin: 10px;
-            transition: all 0.3s ease;
-            min-width: 200px;
-            text-align: center;
-        }
-        .btn-primary { background: linear-gradient(45deg, #007BFF, #00D4FF); color: white; }
-        .btn-telegram { background: #1D9BF0; color: white; }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
-        @media (max-width: 768px) {
-            h1 { font-size: 2rem; }
-            .tab-btn { font-size: 0.8rem; padding: 8px 12px; }
-            .live-player { height: 220px; }
-        }
+        body { font-family: 'Poppins', sans-serif; background: #0F0F1A; color: var(--text); padding: 1rem; }
+        .player-section { max-width: 1200px; margin: 0 auto; background: var(--card); padding: 1rem; border-radius: 16px; }
+        .tab-buttons { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1rem; justify-content: center; }
+        .tab-btn { padding: 10px 16px; background: rgba(0,212,255,0.1); color: var(--accent); border: 1px solid var(--accent); border-radius: 50px; font-size: 0.9rem; cursor: pointer; }
+        .tab-btn.active { background: var(--accent); color: var(--bg); }
+        .tab-content { display: none; text-align: center; }
+        .tab-content.active { display: block; }
+        .live-player { width: 100%; aspect-ratio: 16/9; background: #000; border-radius: 12px; margin: 1rem 0; }
+        .player-title { color: var(--accent); font-weight: 600; margin: 0.5rem 0; font-size: 1.3rem; }
+        .player-status { color: var(--light); font-size: 0.9rem; margin-top: 0.5rem; }
+        .loading { color: #FFA41C; } .error { color: #FF3B30; }
+        .retry-btn { background: #FF3B30; color: white; border: none; padding: 8px 16px; border-radius: 50px; cursor: pointer; margin-top: 10px; }
+        @media (max-width: 768px) { .live-player { height: 220px; } }
     </style>
 </head>
-<body oncontextmenu="return false;" onkeydown="return (event.keyCode!=123);">
+<body>
     <div class="player-section">
         <div class="tab-buttons" id="tabButtons"></div>
         <div id="tabContents"></div>
     </div>
 
-    <header>
-        <h1>StreamEcho Live TV</h1>
-        <p style="color: var(--light);">10+ Channels • Buffer-Free • Click & Play</p>
-    </header>
-    <div class="container">
-        <section style="text-align: center; margin: 2rem 0;">
-            <a href="https://www.streamecho.top/" class="btn btn-primary">Get M3U Playlists</a>
-            <a href="https://t.me/bdixftpiptv" class="btn btn-telegram" target="_blank">Join Telegram</a>
-        </section>
-    </div>
-
-    <footer style="text-align: center; padding: 2rem; color: var(--light); font-size: 0.9rem;">
-        © 2025 StreamEcho • Buffer-Free Web Player • Last Updated: October 30, 2025
-    </footer>
-
     <script>
-        // === তোমার আগের চ্যানেল লিস্ট (Base64) ===
+        // === তোমার চ্যানেল লিস্ট (Base64) ===
         const encNames = [
-            "U3RyZWFtIDE=", "VCBTcG9ydHMgSEQ=", "U3RhciBTcG9ydHMgMQ==", "U29saCBMaXZlIFNwb3J0cw==",
-            "VCBTcG9ydHM=", "V2lsbG93IFNwb3J0cw==", "U3RhciBTcG9ydHMgU2UgMg==", "VCBTcG9ydHM=", "YmVJTiBTUE9SVFMgMQ=="
+            "VCBTcG9ydHMgSEQ=", "U3RhciBTcG9ydHMgMQ==", "U29saCBMaXZlIFNwb3J0cw==", "YmVJTiBTUE9SVFMgMQ=="
         ];
         const encUrls = [
-            "aHR0cDovL2lwdHZ0cmVlLm5ldDo4MDgwL0YyODMxMi9jYzFkYzEzOC8xNTc1NjU=",
-            "aHR0cDovLzEwMy4xNTEuNjAuMjA0L1QtU3BvcnRzL3RyYWNrcy12MWExL21vbm8ubTN1OA==",
+            "aHR0cDovLzExNi4yMDQuMTQ5LjE2L3Rfc3BvcnRzL2luZGV4Lm0zdTg=",
             "aHR0cDovLzQxLjIwNS45My4xNTQvU1RBUlNQT1JUUzEvaW5kZXgubTN1OA==",
-            "aHR0cDovL2NvcnMudHVuZHJhY2FzdC5jb206MjAwMC9odHRwczovL3dvLmNtYS5mb290YmFsbGlpLmlyL2hsczIvc29saC5tM3U4",
-            "aHR0cDovL3N0dmxpdmUubmV0OjgwODAvdHNwb3J0czEvaW5kZXgubTN1OA==",
-            "aHR0cDovL3h4aXA5LnRvcDo4MDgwL2xpdmUvNzY1NjY5MTMwMy9jaHJpc2JvbGRlbjc2NUBpY2xvdWQuY29tLzU4ODQ3Lm0zdTg=",
-            "aHR0cDovLzExNi45MC4xMjAuMTQ5OjgwMDAvcGxheS9hMGNtL2luZGV4Lm0zdTg=",
-            "aHR0cDovLzEwMy4xNzUuMjQyLjEwOjgwODAvdHNwb3J0czEvaW5kZXgubTN1OA==",
+            "aHR0cDovL2NvcnMudHVuZGRhY2FzdC5jb206MjAwMC9odHRwczovL3dvLmNtYS5mb290YmFsbGlpLmlyL2hsczIvc29saC5tM3U4",
             "aHR0cHM6Ly9iYWxhbmNlLmZvb3RiYWxsaWkuaXIvaGxzMi9iZWluMS5tM3U4"
         ];
 
-        // Decode at runtime
-        const channelList = encNames.map((n, i) => ({
-            name: atob(n),
-            url: atob(encUrls[i])
-        }));
+        const channelList = encNames.map((n, i) => ({ name: atob(n), url: atob(encUrls[i]) }));
 
         const tabButtons = document.getElementById('tabButtons');
         const tabContents = document.getElementById('tabContents');
         let currentHls = null;
-        let currentProxyIndex = 0;
+        let retryCount = 0;
+        const MAX_RETRY = 10;
 
-        // Multiple Proxies (Auto-switch if one fails)
-        const proxies = [
-            'https://anywhere.pwisetthon.com/',
-            'https://api.allorigins.win/raw?url=',
-            'https://corsproxy.io/?'
-        ];
+        // Smart Proxy List (Auto-switch every retry)
+        const getProxy = () => {
+            const proxies = [
+                'https://anywhere.pwisetthon.com/',
+                'https://api.allorigins.win/raw?url=',
+                'https://corsproxy.io/?',
+                'https://thingproxy.freeboard.io/fetch/',
+                'https://cors-anywhere.herokuapp.com/' // backup
+            ];
+            return proxies[retryCount % proxies.length];
+        };
 
-        // Create Tabs
         channelList.forEach((ch, i) => {
             const btn = document.createElement('button');
             btn.className = 'tab-btn';
@@ -203,53 +74,56 @@
             div.className = 'tab-content';
             div.innerHTML = `
                 <div class="player-title">LIVE: ${ch.name}</div>
-                <video id="video-${i}" class="live-player" controls playsinline preload="none"></video>
-                <div id="status-${i}" class="player-status loading">Loading...</div>
+                <video id="video-${i}" class="live-player" controls playsinline preload="none" muted></video>
+                <div id="status-${i}" class="player-status loading">Loading... (Retry 0)</div>
+                <button id="retry-${i}" class="retry-btn" style="display:none;">Retry Now</button>
             `;
             tabContents.appendChild(div);
         });
 
-        // Open Tab with Smart Proxy & Buffer-Free
         function openTab(idx) {
             document.querySelectorAll('.tab-btn').forEach((b, i) => b.classList.toggle('active', i === idx));
             document.querySelectorAll('.tab-content').forEach((c, i) => c.classList.toggle('active', i === idx));
 
             if (currentHls) { currentHls.destroy(); currentHls = null; }
-            currentProxyIndex = 0;
+            retryCount = 0;
 
             const video = document.getElementById(`video-${idx}`);
             const status = document.getElementById(`status-${idx}`);
+            const retryBtn = document.getElementById(`retry-${idx}`);
             const rawUrl = channelList[idx].url;
 
-            tryLoadWithProxy(video, status, rawUrl);
+            video.muted = true; // Auto-play fix
+            loadWithRetry(video, status, retryBtn, rawUrl);
         }
 
-        function tryLoadWithProxy(video, status, rawUrl) {
-            if (currentProxyIndex >= proxies.length) {
-                status.textContent = 'All proxies failed. Try VPN.';
+        function loadWithRetry(video, status, retryBtn, rawUrl) {
+            if (retryCount >= MAX_RETRY) {
+                status.textContent = 'Failed after 10 retries. Try VPN.';
                 status.className = 'player-status error';
+                retryBtn.style.display = 'block';
+                retryBtn.onclick = () => { retryCount = 0; loadWithRetry(video, status, retryBtn, rawUrl); };
                 return;
             }
 
-            const proxy = proxies[currentProxyIndex];
+            const proxy = getProxy();
             const proxyUrl = proxy.endsWith('/') ? proxy + rawUrl : proxy + encodeURIComponent(rawUrl);
 
-            status.textContent = `Trying Proxy ${currentProxyIndex + 1}...`;
+            status.textContent = `Trying Proxy ${retryCount + 1}...`;
             status.className = 'player-status loading';
+            retryBtn.style.display = 'none';
 
             if (Hls.isSupported()) {
                 currentHls = new Hls({
-                    maxBufferLength: 2,
-                    maxMaxBufferLength: 4,
-                    liveSyncDurationCount: 1,
-                    lowLatencyMode: true,
-                    backBufferLength: 0,
+                    maxBufferLength: 10,           // ← বেশি রাখো যাতে segment আসে
+                    maxMaxBufferLength: 30,
+                    liveSyncDurationCount: 3,
+                    lowLatencyMode: false,         // ← live-এর জন্য off
+                    backBufferLength: 60,          // ← পিছনে buffer রাখো
                     enableWorker: true,
-                    startLevel: 0,
-                    capLevelToPlayerSize: true,
+                    startLevel: -1,                // ← auto quality
                     xhrSetup: (xhr) => {
-                        xhr.timeout = 6000;
-                        xhr.withCredentials = false;
+                        xhr.timeout = 15000;       // ← 15 sec timeout
                     }
                 });
 
@@ -259,47 +133,38 @@
                 currentHls.on(Hls.Events.MANIFEST_PARSED, () => {
                     status.textContent = 'LIVE • Playing';
                     status.className = 'player-status';
-                    video.play().catch(() => {
-                        video.muted = true;
-                        video.play();
-                    });
+                    video.play();
+                    retryCount = 0; // Reset on success
                 });
 
                 currentHls.on(Hls.Events.ERROR, (e, d) => {
-                    if (d.fatal) {
+                    if (d.fatal || d.type === 'networkError') {
+                        console.log(`Error (Retry ${retryCount + 1}):`, d);
                         currentHls.destroy();
-                        currentHls = null;
-                        currentProxyIndex++;
-                        setTimeout(() => tryLoadWithProxy(video, status, rawUrl), 1000);
+                        retryCount++;
+                        setTimeout(() => loadWithRetry(video, status, retryBtn, rawUrl), 2000);
                     }
                 });
 
                 video.addEventListener('waiting', () => {
-                    status.textContent = 'Buffering...';
-                    status.className = 'player-status loading';
+                    if (video.buffered.length > 0 && video.currentTime < video.buffered.end(0)) {
+                        status.textContent = 'Buffering...';
+                    }
                 });
                 video.addEventListener('canplay', () => {
                     status.textContent = 'LIVE • Playing';
-                    status.className = 'player-status';
                 });
 
-            } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+            } else {
                 video.src = proxyUrl;
-                video.play().catch(() => { video.muted = true; video.play(); });
+                video.play();
             }
         }
 
-        // Auto Start First Channel
+        // Auto Start
         setTimeout(() => {
-            if (channelList.length > 0) {
-                openTab(0);
-                document.querySelector('.tab-btn').classList.add('active');
-            }
-        }, 300);
-
-        // Anti-Inspect
-        document.oncontextmenu = () => false;
-        document.onkeydown = e => (e.keyCode === 123 || (e.ctrlKey && e.shiftKey && e.keyCode === 73)) ? false : true;
+            if (channelList.length > 0) openTab(0);
+        }, 500);
     </script>
 </body>
 </html>
