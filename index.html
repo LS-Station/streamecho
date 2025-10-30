@@ -6,14 +6,12 @@
     <meta name="description" content="StreamEcho - Free IPTV M3U Playlists 2025 with Live Web Player. 10+ Channels, Buffer-Free Streaming!">
     <meta name="keywords" content="free IPTV, M3U playlist, live TV, T Sports, GTV, Star Sports, buffer free, web player">
     <meta name="author" content="StreamEcho">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="noindex, nofollow">
     <link rel="canonical" href="https://www.streamecho.top/">
     <link rel="icon" href="https://www.streamecho.top/favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-
     <title>StreamEcho: 10+ Live Channels | Buffer-Free Web Player 2025</title>
-
     <style>
         :root {
             --primary: #0A1A3E;
@@ -33,9 +31,11 @@
             color: var(--text);
             line-height: 1.7;
             overflow-x: hidden;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
         }
-
-        /* === TAB SYSTEM === */
         .player-section {
             max-width: 1200px;
             margin: 1rem auto;
@@ -69,7 +69,6 @@
         .tab-btn:hover {
             background: rgba(0,212,255,0.3);
         }
-
         .tab-content {
             display: none;
             text-align: center;
@@ -100,7 +99,6 @@
         }
         .loading { color: var(--warning); }
         .error { color: var(--danger); }
-
         header, .container, footer { max-width: 1200px; margin: 0 auto; padding: 1rem; }
         header { text-align: center; padding: 3rem 1rem; border-bottom: 1px solid var(--accent); }
         h1 {
@@ -114,7 +112,6 @@
             from { text-shadow: 0 0 10px rgba(0,212,255,0.5); }
             to { text-shadow: 0 0 20px rgba(0,212,255,0.8); }
         }
-
         .btn {
             display: inline-block;
             padding: 14px 32px;
@@ -130,31 +127,25 @@
         .btn-primary { background: linear-gradient(45deg, #007BFF, #00D4FF); color: white; }
         .btn-telegram { background: #1D9BF0; color: white; }
         .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
-
         @media (max-width: 768px) {
             h1 { font-size: 2rem; }
             .tab-btn { font-size: 0.8rem; padding: 8px 12px; }
             .live-player { height: 220px; }
         }
+        /* Anti-Inspect */
+        body::-webkit-scrollbar { display: none; }
     </style>
 </head>
-<body>
-
-    <!-- 10 CHANNEL TAB PLAYER -->
+<body oncontextmenu="return false;" onkeydown="return (event.keyCode!=123 && event.ctrlKey!=true && event.shiftKey!=true);">
     <div class="player-section">
         <div class="tab-buttons" id="tabButtons"></div>
-
-        <div id="tabContents">
-            <!-- Tabs will be injected here by JS -->
-        </div>
+        <div id="tabContents"></div>
     </div>
 
-    <!-- Header -->
     <header>
         <h1>StreamEcho Live TV</h1>
         <p style="color: var(--light);">10+ Channels • Buffer-Free • Click & Play</p>
     </header>
-
     <div class="container">
         <section style="text-align: center; margin: 2rem 0;">
             <a href="https://www.streamecho.top/" class="btn btn-primary">Get M3U Playlists</a>
@@ -162,79 +153,75 @@
         </section>
     </div>
 
-    <!-- Footer -->
     <footer style="text-align: center; padding: 2rem; color: var(--light); font-size: 0.9rem;">
-        © 2025 StreamEcho • Buffer-Free Web Player • Last Updated: October 28, 2025
+        © 2025 StreamEcho • Buffer-Free Web Player • Last Updated: October 30, 2025
     </footer>
 
-    <!-- CHANNELS DATA (এখানে তুমি শুধু original m3u8 লিংক বসাবে - proxy অটো যোগ হবে) -->
+    <!-- ENCRYPTED CHANNEL DATA -->
     <script>
-        const channelList = [
-            { name: "T Sports HD", url: "http://116.204.149.16/t_sports/index.m3u8" },
-            { name: "T Sports HD", url: "http://103.151.60.204/T-Sports/tracks-v1a1/mono.m3u8" },
-            { name: "Star Sports 1", url: "http://41.205.93.154/STARSPORTS1/index.m3u8" },
-            { name: "Solh Live Sports", url: "http://cors.tundracast.com:2000/https://wo.cma.footballii.ir/hls2/solh.m3u8" },
-            { name: "T Sports", url: "http://stvlive.net:8080/tsports1/index.m3u8" },
-            { name: "Willow Sports", url: "http://xxip9.top:8080/live/7656691303/chrisbolden765%40icloud.com/58847.m3u8" },
-            { name: "Star Sports Se 2", url: "http://116.90.120.149:8000/play/a0cm/index.m3u8" },
-            { name: "T Sports", url: "http://103.175.242.10:8080/tsports1/index.m3u8" },
-            { name: "Fancode", url: "https://bd-mc-fdlive.fancode.com/mumbai/134022_english_hls_7444b7efc152344ta-di_h264/index.m3u8" }
-           
-        ];
+        // XOR + Base64 Encrypted Channel List
+        const _0x4f3c = ['aHR0cDovLzExNi4yMDQuMTQ5LjE2L3Rfc3BvcnRzL2luZGV4Lm0zdTg=', 'aHR0cDovLzEwMy4xNTEuNjAuMjA0L1QtU3BvcnRzL3RyYWNrcy12MWExL21vbm8ubTN1OA==', 'aHR0cDovLzQxLjIwNS45My4xNTQvU1RBUlNQT1JUUzEvaW5kZXgubTN1OA==', 'aHR0cDovL2NvcnMudHVuZHJhY2FzdC5jb206MjAwMC9odHRwczovL3dvLmNtYS5mb290YmFsbGlpLmlyL2hsczIvc29saC5tM3U4', 'aHR0cDovL3N0dmxpdmUubmV0OjgwODAvdHNwb3J0czEvaW5kZXgubTN1OA==', 'aHR0cDovL3h4aXA5LnRvcDo4MDgwL2xpdmUvNzY1NjY5MTMwMy9jaHJpc2JvbGRlbjc2NUBpY2xvdWQuY29tLzU4ODQ3Lm0zdTg=', 'aHR0cDovLzExNi45MC4xMjAuMTQ5OjgwMDAvcGxheS9hMGNtL2luZGV4Lm0zdTg=', 'aHR0cDovLzEwMy4xNzUuMjQyLjEwOjgwODAvdHNwb3J0czEvaW5kZXgubTN1OA==', 'aHR0cHM6Ly9iZC1tYy1mZGxpdmUuZmFuY29kZS5jb20vbXVtYmFpLzEzNDAyMl9lbmdsaXNoX2hsc184NzQ0YjdlZmMxNTIzNDR0YS1kaV9oMjY0L2luZGV4Lm0zdTg='];
+        const _0x5a2b = ['VCBTcG9ydHMgSEQ=', 'VCBTcG9ydHMgSEQ=', 'U3RhciBTcG9ydHMgMQ==', 'U29saCBMaXZlIFNwb3J0cw==', 'VCBTcG9ydHM=', 'V2lsbG93IFNwb3J0cw==', 'U3RhciBTcG9ydHMgU2UgMg==', 'VCBTcG9ydHM=', 'RmFuY29kZQ=='];
+
+        // XOR Decrypt Function
+        function _0x9f1a(_0x3d2e, _0x4b5c = 42) {
+            let _0x1a2b = '';
+            for (let _0x5e3f = 0; _0x5e3f < _0x3d2e.length; _0x5e3f++) {
+                _0x1a2b += String.fromCharCode(_0x3d2e.charCodeAt(_0x5e3f) ^ _0x4b5c);
+            }
+            return atob(_0x1a2b);
+        }
+
+        // Decrypt All
+        const channelList = _0x5a2b.map((name, i) => ({
+            name: atob(name),
+            url: _0x9f1a(_0x4f3c[i])
+        }));
 
         const tabButtons = document.getElementById('tabButtons');
         const tabContents = document.getElementById('tabContents');
         let currentHls = null;
 
-        // Create Tabs
         channelList.forEach((channel, index) => {
-            // Tab Button
             const btn = document.createElement('button');
             btn.className = 'tab-btn';
             btn.textContent = channel.name;
             btn.onclick = () => openTab(index);
             tabButtons.appendChild(btn);
 
-            // Tab Content
             const content = document.createElement('div');
             content.className = 'tab-content';
             content.innerHTML = `
                 <div class="player-title">LIVE: ${channel.name}</div>
-                <video id="video-${index}" class="live-player" controls muted playsinline></video>
+                <video id="video-${index}" class="live-player" controls playsinline></video>
                 <div id="status-${index}" class="player-status loading">Loading...</div>
             `;
             tabContents.appendChild(content);
         });
 
-        // Open Tab Function
         function openTab(index) {
-            document.querySelectorAll('.tab-btn').forEach((b, i) => {
-                b.classList.toggle('active', i === index);
-            });
-            document.querySelectorAll('.tab-content').forEach((c, i) => {
-                c.classList.toggle('active', i === index);
-            });
+            document.querySelectorAll('.tab-btn').forEach((b, i) => b.classList.toggle('active', i === index));
+            document.querySelectorAll('.tab-content').forEach((c, i) => c.classList.toggle('active', i === index));
 
-            // Destroy previous player
-            if (currentHls) {
-                currentHls.destroy();
-                currentHls = null;
-            }
+            if (currentHls) { currentHls.destroy(); currentHls = null; }
 
             const video = document.getElementById(`video-${index}`);
             const status = document.getElementById(`status-${index}`);
-            
-            // প্রতিটা লিংকের সামনে https://anywhere.pwisetthon.com/ যোগ করো
             const proxyUrl = 'https://anywhere.pwisetthon.com/' + channelList[index].url;
 
             if (Hls.isSupported()) {
                 currentHls = new Hls({
-                    maxBufferLength: 6,
-                    maxMaxBufferLength: 10,
-                    liveSyncDurationCount: 2,
+                    maxBufferLength: 3,
+                    maxMaxBufferLength: 5,
+                    liveSyncDurationCount: 1,
                     lowLatencyMode: true,
-                    backBufferLength: 2,
-                    enableWorker: true
+                    backBufferLength: 0,
+                    enableWorker: true,
+                    startLevel: 0,
+                    capLevelToPlayerSize: true,
+                    xhrSetup: function(xhr) {
+                        xhr.withCredentials = false;
+                    }
                 });
 
                 currentHls.loadSource(proxyUrl);
@@ -243,16 +230,14 @@
                 currentHls.on(Hls.Events.MANIFEST_PARSED, () => {
                     status.textContent = 'LIVE • Playing';
                     status.className = 'player-status';
-                    video.play().catch(() => {
-                        status.textContent = 'Tap to play';
-                    });
+                    video.play().catch(() => status.textContent = 'Tap to Play');
                 });
 
                 currentHls.on(Hls.Events.ERROR, (event, data) => {
                     if (data.fatal) {
                         status.textContent = 'Reconnecting...';
                         status.className = 'player-status error';
-                        setTimeout(() => currentHls.loadSource(proxyUrl), 2000);
+                        setTimeout(() => currentHls.loadSource(proxyUrl), 3000);
                     }
                 });
 
@@ -264,24 +249,26 @@
                     status.textContent = 'LIVE • Playing';
                     status.className = 'player-status';
                 });
-
             } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
                 video.src = proxyUrl;
-                video.addEventListener('loadedmetadata', () => {
-                    status.textContent = 'LIVE';
-                    video.play();
-                });
+                video.addEventListener('loadedmetadata', () => video.play());
             }
         }
 
-        // Auto-open first channel
-        openTab(0);
-        document.querySelector('.tab-btn').classList.add('active');
+        // Auto-open first
+        if (channelList.length > 0) {
+            setTimeout(() => openTab(0), 500);
+            setTimeout(() => document.querySelector('.tab-btn').classList.add('active'), 600);
+        }
+
+        // Anti-Inspect
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        document.addEventListener('keydown', e => {
+            if (e.keyCode === 123 || (e.ctrlKey && e.shiftKey && e.keyCode === 73)) {
+                e.preventDefault();
+                return false;
+            }
+        });
     </script>
 </body>
 </html>
-
-
-
-
-
