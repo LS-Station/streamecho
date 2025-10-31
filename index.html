@@ -74,7 +74,7 @@
             div.className = 'tab-content';
             div.innerHTML = `
                 <div class="player-title">LIVE: ${ch.name}</div>
-                <video id="video-${i}" class="live-player" controls playsinline preload="none" muted></video>
+                <video id="video-${i}" class="live-player" controls playsinline preload="auto" muted></video>
                 <div id="status-${i}" class="player-status loading">Loading... (Retry 0)</div>
                 <button id="retry-${i}" class="retry-btn" style="display:none;">Retry Now</button>
             `;
@@ -115,21 +115,21 @@
 
             if (Hls.isSupported()) {
                 currentHls = new Hls({
-                    maxBufferLength: 10,
-                    maxMaxBufferLength: 30,
-                    liveSyncDurationCount: 3,
-                    lowLatencyMode: false,
-                    backBufferLength: 60,
+                    maxBufferLength: 30,
+                    maxMaxBufferLength: 60,
+                    liveSyncDurationCount: 4,
+                    lowLatencyMode: true,
+                    backBufferLength: 90,
                     enableWorker: true,
                     startLevel: -1,
-                    xhrSetup: (xhr) => { xhr.timeout = 15000; }
+                    xhrSetup: (xhr) => { xhr.timeout = 30000; }
                 });
 
                 currentHls.loadSource(proxyUrl);
                 currentHls.attachMedia(video);
 
                 currentHls.on(Hls.Events.MANIFEST_PARSED, () => {
-                    status.textContent = 'LIVE • Playing';
+                    status.textContent = 'LIVE • Buffering Ahead (Enhanced)';
                     status.className = 'player-status';
                     video.play();
                     retryCount = 0;
@@ -140,17 +140,26 @@
                         console.log(`Error (Retry ${retryCount + 1}):`, d);
                         currentHls.destroy();
                         retryCount++;
-                        setTimeout(() => loadWithRetry(video, status, retryBtn, rawUrl), 2000);
+                        setTimeout(() => loadWithRetry(video, status, retryBtn, rawUrl), 3000);
                     }
                 });
 
                 video.addEventListener('waiting', () => {
                     if (video.buffered.length > 0 && video.currentTime < video.buffered.end(0)) {
-                        status.textContent = 'Buffering...';
+                        status.textContent = 'Heavy Buffering for Stability...';
                     }
                 });
                 video.addEventListener('canplay', () => {
-                    status.textContent = 'LIVE • Playing';
+                    status.textContent = 'LIVE • Playing (Buffered)';
+                });
+                video.addEventListener('progress', () => {
+                    const buffered = video.buffered;
+                    if (buffered.length > 0) {
+                        const bufferedSeconds = buffered.end(0) - buffered.start(0);
+                        if (bufferedSeconds > 20) {
+                            status.textContent = 'LIVE • Fully Buffered';
+                        }
+                    }
                 });
 
             } else {
