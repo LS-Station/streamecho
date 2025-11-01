@@ -7,8 +7,6 @@ https://dai.google.com/linear/hls/event/tG04-ukTSleEi0819p-EqA/master.m3u8
 http://y3fqd48g.megatv.fun/iptv/NRLXRWSBWBPLN4/19146/index.m3u8
 #EXTINF:-1 ,Sky Sports Cricket
 http://y3fqd48g.megatv.fun/iptv/NRLXRWSBWBPLN4/9258/index.m3u8
-#EXTINF:-1 ,T Sports
-http://116.204.149.16/t_sports/index.m3u8
 #EXTINF:-1 ,Sony Ten 1
 http://87.255.35.150:18926
 #EXTINF:-1 ,Sony Ten 2
@@ -83,8 +81,6 @@ http://78.108.251.7/Travel_Channel_HD/index.m3u8
 http://172.93.102.112:8989/278842_.m3u8
 #EXTINF:-1 ,Arena_Sport_5 HD 🇷🇸
 http://78.108.251.7/Arena_Sport_5/index.m3u8
-#EXTINF:-1 ,Disney Channel
-http://103.182.170.32:8888/play/a04g
 #EXTINF:-1 ,MY TV HD
 https://mytvbangla.com/0.m3u8
 #EXTINF:-1 ,Colors Bangla (1080p)
@@ -307,8 +303,6 @@ http://fl2.moveonjoy.com/NFL_12/index.m3u8
 http://fl2.moveonjoy.com/NFL_13/index.m3u8
 #EXTINF:-1 group-title="Sports",NFL Sunday Ticket 14
 http://fl2.moveonjoy.com/NFL_14/index.m3u8
-#EXTINF:-1 group-title="Sports",NFL Sunday Ticket 15
-http://fl2.moveonjoy.com/NFL_15/index.m3u8
 #EXTINF:-1 group-title="Sports",NHL
 https://nhl-firetv.amagi.tv/playlist.m3u8
 #EXTINF:-1 group-title="Sports",NHRA TV (720p)
@@ -391,8 +385,6 @@ https://fl1.moveonjoy.com/TSN_4/index.m3u8
 https://fl1.moveonjoy.com/TSN_5/index.m3u8
 #EXTINF:-1 group-title="Sports",TSN The Ocho
 https://d3pnbvng3bx2nj.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-rds8g35qfqrnv/TSN_The_Ocho.m3u8
-#EXTINF:-1 group-title="Sports",Türkmenistan Sport (406p) [Not 24/7]
-https://alpha.tv.online.tm/hls/ch004.m3u8
 #EXTINF:-1 group-title="Sports",TVRI Sport (720p)
 https://ott-balancer.tvri.go.id/live/eds/SportHD/hls/SportHD.m3u8
 #EXTINF:-1 group-title="Sports",Unbeaten (1080p)
