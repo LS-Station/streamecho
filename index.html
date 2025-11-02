@@ -40,6 +40,8 @@
 
         .website-btn { background: #4CAF50; color: white; } 
         .telegram-btn { background: #0088CC; color: white; } 
+        .status-direct { color: white; background: #4CAF50; } /* সরাসরি লোড */
+        .status-fixed { color: white; background: #0088CC; } /* ফিক্সড প্রক্সি */
 
         @media (max-width: 768px) { .live-player { height: 220px; } .promo-btn { padding: 10px 18px; font-size: 0.9rem; } }
     </style>
@@ -72,22 +74,27 @@
         const tabContents = document.getElementById('tabContents');
         const m3uStatus = document.getElementById('m3uStatus');
         let currentHls = null;
-        let retryCount = 0;
-        const MAX_RETRY = 10;
+        let currentChannelIndex = -1; // বর্তমানে কোন চ্যানেল চলছে
         
-        // **স্থায়ী প্রক্সি ইনজেকশনের জন্য ব্যবহৃত ফিক্সড প্রক্সি**
-        const FIXED_PROXY = 'https://api.allorigins.win/raw?url='; // এটি GIST-এর জন্য কার্যকর
-        
-        // M3U ফাইল আনার জন্য প্রক্সি (প্লে-লিস্টের ভেতরের চ্যানেলের জন্য নয়, শুধু M3U ফাইলটির জন্য)
-        const getProxy = () => {
-            const proxies = [
-                'http://cors.tundracast.com:2000/', 
-                'https://api.allorigins.win/raw?url=', 
-                'https://r34-cors-bypass.deno.dev/?url=',
-                'https://api.codetabs.com/v1/proxy?quest=', 
-            ];
-            return proxies[retryCount % proxies.length]; 
-        };
+        // **M3U ফাইল লোড করার জন্য প্রক্সি লিস্ট (এটি কখনোই চ্যানেলের লিংকের জন্য ব্যবহার হবে না)**
+        const M3U_FETCH_PROXIES = [
+            'http://cors.tundracast.com:2000/', 
+            'https://api.allorigins.win/raw?url=', 
+            'https://r34-cors-bypass.deno.dev/?url=',
+            'https://api.codetabs.com/v1/proxy?quest=', 
+        ];
+
+        // **চ্যানেল লোড করার জন্য প্রক্সি লিস্ট**
+        const CHANNEL_PROXIES = [
+            'http://cors.tundracast.com:2000/', 
+            'https://api.allorigins.win/raw?url=', 
+            'https://r34-cors-bypass.deno.dev/?url=',
+            'https://api.codetabs.com/v1/proxy?quest=', 
+            'https://corsproxy.io/?',
+            'https://thingproxy.freeboard.io/fetch/',
+            'https://anywhere.pwisetthon.com/',
+            'https://cors-anywhere.herokuapp.com/'
+        ];
 
         // Function to parse the M3U content and build the channel list
         function parseM3u(m3uContent) {
@@ -101,15 +108,8 @@
                     const nameMatch = line.match(/,(.+)$/);
                     currentName = nameMatch ? nameMatch[1].trim() : 'Unknown Channel';
                 } else if (line.startsWith('http') || line.startsWith('https')) {
-                    let channelUrl = line;
-                    
-                    // **🔥 মেইন ট্রিক: প্লে-লিস্টের ভেতরের প্রতিটি লিংকে ফিক্সড প্রক্সি যুক্ত করা 🔥**
-                    // যদি লিংকটি ইতিমধ্যেই কোনো প্রক্সি বা অন্য CDN থেকে না আসে তবেই প্রক্সি যোগ করা হবে।
-                    if (!channelUrl.includes('corsproxy') && !channelUrl.includes('workers.dev')) {
-                         channelUrl = FIXED_PROXY + channelUrl;
-                    }
-
-                    newChannels.push({ name: currentName, url: channelUrl });
+                    // M3U পার্স করার সময় কোনো প্রক্সি যুক্ত করা হলো না
+                    newChannels.push({ name: currentName, url: line, retry: 0, fixedProxy: null }); 
                 }
             }
             return newChannels;
@@ -118,17 +118,17 @@
         // Main function to load and process the M3U playlist
         async function loadM3uPlaylist() {
             const m3uUrl = atob(encodedM3uUrl); 
-
             tabButtons.innerHTML = '';
             tabContents.innerHTML = '';
-            channelList = [];
             
             m3uStatus.textContent = 'Loading M3U file via proxy...';
             m3uStatus.className = 'player-status loading';
             
-            // Loop through proxies to fetch the M3U file itself
-            for (let i = 0; i < getProxy().length && i < MAX_RETRY; i++) {
-                const proxy = getProxy(); 
+            let fetchRetry = 0;
+
+            // Loop through M3U FETCH PROXIES until successful
+            for (let i = 0; i < M3U_FETCH_PROXIES.length; i++) {
+                const proxy = M3U_FETCH_PROXIES[i];
                 const fullUrl = m3uUrl.startsWith('http') ? m3uUrl : 'https://' + m3uUrl;
                 
                 let proxyUrl;
@@ -140,12 +140,10 @@
 
                 try {
                     const response = await fetch(proxyUrl, { signal: AbortSignal.timeout(15000) });
-                    if (!response.ok) {
-                        throw new Error(`HTTP status ${response.status} from proxy ${i + 1}`);
-                    }
+                    if (!response.ok) throw new Error(`HTTP status ${response.status}`);
                     const m3uContent = await response.text();
                     
-                    channelList = parseM3u(m3uContent); // M3U পার্স হবে এবং প্রক্সি ইনজেক্ট হবে
+                    channelList = parseM3u(m3uContent);
 
                     if (channelList.length === 0) {
                         m3uStatus.textContent = 'Error: No channels found in the playlist, but link loaded.';
@@ -166,95 +164,179 @@
                         div.innerHTML = `
                             <div class="player-title">LIVE: ${ch.name}</div>
                             <video id="video-${index}" class="live-player" controls playsinline preload="auto" muted></video>
-                            <div id="status-${index}" class="player-status loading">Loading... (Retry 0)</div>
+                            <div id="status-${index}" class="player-status loading">Loading...</div>
                             <button id="retry-${index}" class="retry-btn" style="display:none;">Retry Now</button>
                         `;
                         tabContents.appendChild(div);
                     });
                     
-                    m3uStatus.textContent = `Success! ${channelList.length} channels loaded via Proxy ${i + 1}. Select a channel to play.`;
-                    m3uStatus.className = 'player-status';
+                    m3uStatus.textContent = `Success! ${channelList.length} channels loaded. Select a channel to play.`;
+                    m3uStatus.className = 'player-status`;
                     
                     if (channelList.length > 0) openTab(0);
-                    return;
+                    return; // Exit the loop on success
 
                 } catch (error) {
                     console.error(`M3U Fetch Attempt ${i + 1} failed:`, error.message);
-                    m3uStatus.textContent = `Proxy attempt ${i + 1} failed. Retrying...`;
-                    retryCount++;
+                    m303Status.textContent = `Proxy attempt ${i + 1} failed. Retrying...`;
+                    fetchRetry++;
                     await new Promise(resolve => setTimeout(resolve, 1000));
                 }
             }
 
-            m3uStatus.textContent = `Failed to load M3U: Failed to fetch after ${MAX_RETRY} attempts. Try another URL or VPN.`;
+            m3uStatus.textContent = `Failed to load M3U: Failed to fetch after ${M3U_FETCH_PROXIES.length} attempts. Try another URL or VPN.`;
             m3uStatus.className = 'player-status error';
         }
 
 
-        // Individual channel loading function (uses the already proxified channel URL)
+        // Individual channel loading function (Uses the new smart logic)
         function openTab(idx) {
             document.querySelectorAll('.tab-btn').forEach((b, i) => b.classList.toggle('active', i === idx));
             document.querySelectorAll('.tab-content').forEach((c, i) => c.classList.toggle('active', i === idx));
 
             if (currentHls) { currentHls.destroy(); currentHls = null; }
-            retryCount = 0;
+            currentChannelIndex = idx;
+            
+            // Channel retry logic reset only if changing channels
+            if (channelList[idx].retry !== 0) {
+                 channelList[idx].retry = 0;
+                 channelList[idx].fixedProxy = null;
+            }
 
             const video = document.getElementById(`video-${idx}`);
             const status = document.getElementById(`status-${idx}`);
             const retryBtn = document.getElementById(`retry-${idx}`);
-            
-            // URL is already proxified in parseM3u
-            const proxifiedUrl = channelList[idx].url; 
+            const channel = channelList[idx];
 
             video.muted = true;
-            // No need for proxy switching logic here, as the URL is already prepared.
-            loadStreamDirectly(video, status, retryBtn, proxifiedUrl);
+            
+            // **SMART SWITCHING LOGIC START**
+            if (channel.fixedProxy !== null) {
+                // 3. যদি আগে কোনো প্রক্সি কাজ করে থাকে, তাহলে সেটি দিয়েই ফিক্সড লোড হবে।
+                const fixedProxyUrl = CHANNEL_PROXIES[channel.fixedProxy];
+                const proxifiedUrl = getFinalProxyUrl(fixedProxyUrl, channel.url);
+                loadStreamAttempt(proxifiedUrl, channel, 'fixed');
+
+            } else {
+                // 1. প্রথমে সরাসরি লোড করার চেষ্টা।
+                loadStreamAttempt(channel.url, channel, 'direct');
+            }
+        }
+        
+        // URL প্রস্তুত করার ফাংশন
+        function getFinalProxyUrl(proxy, rawUrl) {
+            if (proxy.includes('tundracast.com') || proxy.includes('raw?url=') || proxy.includes('deno.dev/?url=')) {
+                 return proxy + rawUrl;
+            } else {
+                 return proxy.endsWith('?') || proxy.endsWith('=') ? proxy + rawUrl : proxy + encodeURIComponent(rawUrl); 
+            }
         }
 
-        // Direct stream loading function (no more proxy looping for channels)
-        function loadStreamDirectly(video, status, retryBtn, url) {
-            status.textContent = `Loading Stream...`;
-            status.className = 'player-status loading';
-            retryBtn.style.display = 'none';
+        // রিকভারি এবং প্রক্সি সুইচিং লজিক
+        function handleError(channel, data) {
+            const video = document.getElementById(`video-${currentChannelIndex}`);
+            const status = document.getElementById(`status-${currentChannelIndex}`);
+            const retryBtn = document.getElementById(`retry-${currentChannelIndex}`);
 
+            // 1. যদি ফিক্সড প্রক্সি মোডে কোনো ত্রুটি হয়, রিকভার করার চেষ্টা করুন, প্রক্সি সুইচ নয়।
+            if (channel.fixedProxy !== null && data.type === 'networkError') {
+                 console.log(`Fixed Proxy Mode (${channel.fixedProxy + 1}): Attempting media recovery...`);
+                 status.textContent = `⚠️ Connection Lost. Recovering via fixed proxy...`;
+                 currentHls.recoverMediaError();
+                 return;
+            }
+            
+            // 2. প্রক্সি সুইচিং শুরু
+            if (channel.retry < CHANNEL_PROXIES.length) {
+                channel.retry++;
+                const nextProxyIndex = channel.retry - 1;
+                const nextProxyUrl = CHANNEL_PROXIES[nextProxyIndex];
+                const proxifiedUrl = getFinalProxyUrl(nextProxyUrl, channel.url);
+                
+                status.textContent = `Retrying: Proxy ${channel.retry}/${CHANNEL_PROXIES.length}...`;
+                
+                // 1 সেকেন্ড পরে লোড করার চেষ্টা
+                setTimeout(() => loadStreamAttempt(proxifiedUrl, channel, 'proxy', nextProxyIndex), 1000);
+            
+            } else {
+                // 3. সব চেষ্টা ব্যর্থ
+                status.textContent = `Failed after ${CHANNEL_PROXIES.length} retries. Link likely dead or Geo-blocked.`;
+                status.className = 'player-status error';
+                retryBtn.style.display = 'block';
+                channel.retry = 0; // Reset for manual retry
+            }
+        }
+
+        // লোড করার চেষ্টা (সরাসরি বা প্রক্সি সহ)
+        function loadStreamAttempt(url, channel, attemptType, proxyIndex = null) {
+            const video = document.getElementById(`video-${currentChannelIndex}`);
+            const status = document.getElementById(`status-${currentChannelIndex}`);
+            const retryBtn = document.getElementById(`retry-${currentChannelIndex}`);
+            
+            video.pause();
+            video.removeAttribute('src'); 
+
+            if (currentHls) { currentHls.destroy(); currentHls = null; }
+
+            if (attemptType === 'direct') {
+                status.textContent = 'Attempting Direct Load...';
+                status.className = 'player-status loading';
+            } else if (attemptType === 'proxy') {
+                status.textContent = `Retrying: Proxy ${channel.retry}/${CHANNEL_PROXIES.length}...`;
+                status.className = 'player-status loading';
+            }
+            
             if (Hls.isSupported()) {
                 currentHls = new Hls({
-                    maxBufferLength: 5, maxMaxBufferLength: 10, liveSyncDurationCount: 2, 
-                    lowLatencyMode: true, backBufferLength: 30, enableWorker: true,
-                    startLevel: -1, autoLevelCapping: 4, 
-                    xhrSetup: (xhr) => { xhr.timeout = 10000; } 
+                    lowLatencyMode: true,
+                    xhrSetup: (xhr) => { xhr.timeout = 8000; } // 8s timeout
                 });
 
                 currentHls.loadSource(url);
                 currentHls.attachMedia(video);
 
                 currentHls.on(Hls.Events.MANIFEST_PARSED, () => {
-                    status.textContent = '✅ LIVE • Playing via Fixed Proxy';
-                    status.className = 'player-status';
+                    if (attemptType === 'direct') {
+                        status.textContent = '✅ LIVE • Direct Load Successful.';
+                        status.className = 'player-status status-direct';
+                    } else {
+                        // যদি প্রক্সি সফল হয়, সেটি ফিক্সড প্রক্সি হিসেবে সেট হবে
+                        channel.fixedProxy = proxyIndex; 
+                        status.textContent = `✅ LIVE • Proxy ${proxyIndex + 1} Fixed.`;
+                        status.className = 'player-status status-fixed';
+                    }
                     video.play().catch(e => {
-                        console.log("Play failed, likely due to browser autoplay policy:", e);
                         status.textContent = '❌ Autoplay Blocked! Click Play.';
                         status.className = 'player-status error';
                     });
                 });
 
-                currentHls.on(Hls.Events.ERROR, (e, d) => {
-                    if (d.fatal || d.type === 'networkError') {
-                        // If it fails, try to recover the media on the SAME PROXY
-                        console.log("Fatal Error on proxified stream. Attempting recovery...");
-                        status.textContent = '⚠️ Connection Lost. Attempting to recover...';
-                        currentHls.recoverMediaError();
-                    } else if (d.details === Hls.ErrorDetails.MEDIA_ERROR) {
-                         currentHls.recoverMediaError();
+                currentHls.on(Hls.Events.ERROR, (e, data) => {
+                    if (data.fatal && (data.type === 'networkError' || data.details === Hls.ErrorDetails.MANIFEST_LOAD_ERROR)) {
+                         // যদি এটি সরাসরি লোড ব্যর্থ হয়, অথবা প্রক্সি ব্যর্থ হয়
+                         if (attemptType === 'direct' || channel.fixedProxy === null) {
+                             console.error("Fatal Error (Switching to Proxy/Next Proxy):", data);
+                             handleError(channel, data);
+                         } else {
+                             // ফিক্সড প্রক্সি মোডে থাকলে রিকভারির জন্য অপেক্ষা
+                             handleError(channel, data);
+                         }
+                    } else if (data.fatal) {
+                         status.textContent = '❌ Fatal Error. Link may be dead or format wrong.';
+                         status.className = 'player-status error';
                     }
                 });
 
-                video.addEventListener('playing', () => { status.textContent = '▶️ LIVE • Playing'; status.className = 'player-status'; });
+                video.addEventListener('playing', () => { 
+                    if (channel.fixedProxy === null) {
+                         status.textContent = '▶️ LIVE • Playing (Direct)';
+                    } else {
+                         status.textContent = `▶️ LIVE • Playing (Proxy ${channel.fixedProxy + 1})`;
+                    }
+                });
 
             } else {
-                video.src = url;
-                video.play();
-                status.textContent = '⚠️ HLS.js not supported, using native playback.';
+                status.textContent = '⚠️ HLS.js not supported.';
                 status.className = 'player-status error';
             }
         }
