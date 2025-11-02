@@ -78,6 +78,10 @@
         // Proxy List (Optimized and highly aggressive list for CORS bypass)
         const getProxy = () => {
             const proxies = [
+                // 🔥 NEW: High stability proxies added 🔥
+                'https://api.allorigins.win/raw?url=', // Often bypasses GIST blocking
+                'https://r34-cors-bypass.deno.dev/?url=', // New secure option
+                
                 // 1. Tundracast Proxy 
                 'http://cors.tundracast.com:2000/', 
                 
@@ -122,64 +126,73 @@
             m3uStatus.textContent = 'Loading M3U file via proxy...';
             m3uStatus.className = 'player-status loading';
 
-            try {
-                // Fetch M3U file using the first proxy to avoid CORS issues
+            // Loop through proxies until successful or max retries reached
+            for (let i = 0; i < getProxy().length && i < MAX_RETRY; i++) {
                 const proxy = getProxy(); 
                 const fullUrl = m3uUrl.startsWith('http') ? m3uUrl : 'https://' + m3uUrl;
                 
-                // Special handling for Tundracast proxy which sometimes doesn't need encoding
+                // Determine the correct proxy URL format
                 let proxyUrl;
                 if (proxy.includes('tundracast.com')) {
+                    proxyUrl = proxy + fullUrl;
+                } else if (proxy.includes('raw?url=') || proxy.includes('deno.dev/?url=')) {
                     proxyUrl = proxy + fullUrl;
                 } else {
                     proxyUrl = proxy.endsWith('?') || proxy.endsWith('=') ? proxy + fullUrl : proxy + encodeURIComponent(fullUrl); 
                 }
 
-                const response = await fetch(proxyUrl);
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
+                try {
+                    const response = await fetch(proxyUrl, { signal: AbortSignal.timeout(15000) }); // Added 15s timeout
+                    if (!response.ok) {
+                        throw new Error(`HTTP status ${response.status} from proxy ${i + 1}`);
+                    }
+                    const m3uContent = await response.text();
+                    
+                    channelList = parseM3u(m3uContent);
+
+                    if (channelList.length === 0) {
+                        m3uStatus.textContent = 'Error: No channels found in the playlist, but link loaded.';
+                        m3uStatus.className = 'player-status error';
+                        return;
+                    }
+
+                    // Success block
+                    channelList.forEach((ch, index) => {
+                        const btn = document.createElement('button');
+                        btn.className = 'tab-btn';
+                        btn.textContent = ch.name;
+                        btn.onclick = () => openTab(index);
+                        tabButtons.appendChild(btn);
+
+                        const div = document.createElement('div');
+                        div.className = 'tab-content';
+                        div.innerHTML = `
+                            <div class="player-title">LIVE: ${ch.name}</div>
+                            <video id="video-${index}" class="live-player" controls playsinline preload="auto" muted></video>
+                            <div id="status-${index}" class="player-status loading">Loading... (Retry 0)</div>
+                            <button id="retry-${index}" class="retry-btn" style="display:none;">Retry Now</button>
+                        `;
+                        tabContents.appendChild(div);
+                    });
+                    
+                    m3uStatus.textContent = `Success! ${channelList.length} channels loaded via Proxy ${i + 1}. Select a channel to play.`;
+                    m3uStatus.className = 'player-status';
+                    
+                    if (channelList.length > 0) openTab(0);
+                    return; // Exit the loop on success
+
+                } catch (error) {
+                    console.error(`Attempt ${i + 1} failed:`, error.message);
+                    m3uStatus.textContent = `Proxy attempt ${i + 1} failed. Retrying...`;
+                    retryCount++;
+                    // Short delay before next proxy attempt
+                    await new Promise(resolve => setTimeout(resolve, 1000));
                 }
-                const m3uContent = await response.text();
-                
-                channelList = parseM3u(m3uContent);
-
-                if (channelList.length === 0) {
-                    m3uStatus.textContent = 'Error: No channels found in the playlist.';
-                    m3uStatus.className = 'player-status error';
-                    return;
-                }
-
-                // Populate tabs and content
-                channelList.forEach((ch, i) => {
-                    const btn = document.createElement('button');
-                    btn.className = 'tab-btn';
-                    btn.textContent = ch.name;
-                    btn.onclick = () => openTab(i);
-                    tabButtons.appendChild(btn);
-
-                    const div = document.createElement('div');
-                    div.className = 'tab-content';
-                    div.innerHTML = `
-                        <div class="player-title">LIVE: ${ch.name}</div>
-                        <video id="video-${i}" class="live-player" controls playsinline preload="auto" muted></video>
-                        <div id="status-${i}" class="player-status loading">Loading... (Retry 0)</div>
-                        <button id="retry-${i}" class="retry-btn" style="display:none;">Retry Now</button>
-                    `;
-                    tabContents.appendChild(div);
-                });
-                
-                m3uStatus.textContent = `Success! ${channelList.length} channels loaded. Select a channel to play.`;
-                m3uStatus.className = 'player-status';
-                
-                // Automatically open the first channel
-                if (channelList.length > 0) openTab(0);
-
-
-            } catch (error) {
-                console.error("M3U Loading Error:", error);
-                m3uStatus.textContent = `Failed to load M3U: ${error.message}. Try another URL or VPN.`;
-                m3uStatus.className = 'player-status error';
             }
+
+            // If the loop completes without success
+            m3uStatus.textContent = `Failed to load M3U: Failed to fetch after ${MAX_RETRY} attempts. Try another URL or VPN.`;
+            m3uStatus.className = 'player-status error';
         }
 
 
@@ -189,7 +202,7 @@
             document.querySelectorAll('.tab-content').forEach((c, i) => c.classList.toggle('active', i === idx));
 
             if (currentHls) { currentHls.destroy(); currentHls = null; }
-            retryCount = 0;
+            retryCount = 0; // Reset retry count for stream loading (not M3U list loading)
 
             const video = document.getElementById(`video-${idx}`);
             const status = document.getElementById(`status-${idx}`);
@@ -211,9 +224,9 @@
 
             const proxy = getProxy();
             
-            // Special handling for Tundracast
+            // Special handling for Tundracast and others
             let proxyUrl;
-            if (proxy.includes('tundracast.com')) {
+            if (proxy.includes('tundracast.com') || proxy.includes('raw?url=') || proxy.includes('deno.dev/?url=')) {
                  proxyUrl = proxy + rawUrl;
             } else {
                  proxyUrl = proxy.endsWith('?') || proxy.endsWith('=') ? proxy + rawUrl : proxy + encodeURIComponent(rawUrl); 
