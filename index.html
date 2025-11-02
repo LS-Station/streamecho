@@ -58,12 +58,14 @@
     <script>
         // 9 Channels Encodings - REPLACE 'xxxxxx' WITH YOUR BASE64 ENCODED STRINGS
         const encNames = [
-            "U0tZIFNQT1JUIExBTElHQSDwn4ey8J+HvQ==", "QkVJTiAxIPCfh6vwn4e3", "xxxxxx",
+            "U0tZIFNQT1JUIExBTElHQQ==", // SKY SPORT LALIGA
+            "xxxxxx", "xxxxxx",
             "xxxxxx", "xxxxxx", "xxxxxx",
             "xxxxxx", "xxxxxx", "xxxxxx"
         ];
         const encUrls = [
-            "aHR0cDovLzE4MS43OC4xMDkuNDg6OTk5OC9wbGF5L2EwNnIvaW5kZXgubTN1OA==", "aHR0cDovLzUuOS4xMTkuMTQ2Ojg4ODMvYmVpbmZyMS9pbmRleC5tM3U4", "xxxxxx",
+            "aHR0cDovLzE4MS43OC4xMDkuNDg6OTk5OC9wbGF5L2EwNnIvaW5kZXgubTN1OA==", // http://181.78.109.48:9998/play/a06r/index.m3u8
+            "xxxxxx", "xxxxxx",
             "xxxxxx", "xxxxxx", "xxxxxx",
             "xxxxxx", "xxxxxx", "xxxxxx"
         ];
@@ -102,17 +104,25 @@
                 tabButtons.appendChild(btn);
 
                 const div = document.createElement('div');
+                const channelName = ch.name;
                 div.className = 'tab-content';
                 div.innerHTML = `
-                    <div class="player-title">LIVE: ${ch.name}</div>
+                    <div class="player-title">LIVE: ${channelName}</div>
                     <video id="video-${index}" class="live-player" controls playsinline preload="auto" muted></video>
                     <div id="status-${index}" class="player-status loading">Ready to play.</div>
                     <button id="retry-${index}" class="retry-btn" style="display:none;">Retry Now</button>
                 `;
                 tabContents.appendChild(div);
             });
-             document.getElementById('m3uStatus').textContent = 'Loaded. Select a channel.';
-             document.getElementById('m3uStatus').className = 'player-status';
+             
+             // Simple status message for static load
+             const statusDiv = document.createElement('div');
+             statusDiv.id = 'm3uStatus';
+             statusDiv.className = 'player-status';
+             statusDiv.style.textAlign = 'center';
+             statusDiv.style.marginBottom = '1rem';
+             statusDiv.textContent = 'Channels Loaded. Select a channel.';
+             document.querySelector('.player-section').insertBefore(statusDiv, document.getElementById('tabButtons'));
              
              if (channelList.length > 0) openTab(0);
         }
