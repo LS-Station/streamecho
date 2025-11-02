@@ -83,15 +83,16 @@
         let retryCount = 0;
         const MAX_RETRY = 10;
 
-        // Proxy List (Optimized for CORS issue resolution)
+        // Proxy List (Optimized and highly aggressive list for CORS bypass)
         const getProxy = () => {
             const proxies = [
-                'https://api.codetabs.com/v1/proxy?quest=', 
+                'https://api.codetabs.com/v1/proxy?quest=', // Most reliable
                 'https://corsproxy.io/?',
                 'https://thingproxy.freeboard.io/fetch/',
                 'https://anywhere.pwisetthon.com/',
-                'https://cors-anywhere.herokuapp.com/'
+                'https://cors-anywhere.herokuapp.com/' // Good fallback
             ];
+            // Cycle through proxies based on retry count
             return proxies[retryCount % proxies.length]; 
         };
 
@@ -139,6 +140,7 @@
             }
 
             const proxy = getProxy();
+            // Use encodeURIComponent for a safer URL format with proxies
             const proxyUrl = proxy.endsWith('?') || proxy.endsWith('=') ? proxy + rawUrl : proxy + encodeURIComponent(rawUrl); 
 
             status.textContent = `Attempting Proxy ${retryCount + 1}...`;
@@ -156,7 +158,8 @@
                     enableWorker: true,
                     startLevel: -1,
                     autoLevelCapping: 4, 
-                    xhrSetup: (xhr) => { xhr.timeout = 15000; } 
+                    // Lower timeout for quicker proxy cycling
+                    xhrSetup: (xhr) => { xhr.timeout = 10000; } 
                 });
 
                 currentHls.loadSource(proxyUrl);
@@ -174,13 +177,15 @@
                 });
 
                 currentHls.on(Hls.Events.ERROR, (e, d) => {
-                    if (d.fatal || d.type === 'networkError' || d.details === Hls.ErrorDetails.MANIFEST_LOAD_ERROR) {
-                        console.log(`Error (Retry ${retryCount + 1}):`, d);
+                    if (d.fatal || d.type === 'networkError' || d.details === Hls.ErrorDetails.MANIFEST_LOAD_ERROR || d.details === Hls.ErrorDetails.LEVEL_LOAD_ERROR) {
+                        console.log(`Fatal Error (Retry ${retryCount + 1}):`, d);
                         currentHls.destroy();
                         retryCount++;
-                        setTimeout(() => loadWithRetry(video, status, retryBtn, rawUrl), 3000); 
-                    } else if (d.details === Hls.ErrorDetails.LEVEL_LOAD_ERROR) {
-                        currentHls.recoverMediaError();
+                        // Fast retry with the next proxy (2 seconds delay)
+                        setTimeout(() => loadWithRetry(video, status, retryBtn, rawUrl), 2000); 
+                    } else if (d.details === Hls.ErrorDetails.MEDIA_ERROR) {
+                         // Attempt to recover media playback without changing proxy
+                         currentHls.recoverMediaError();
                     }
                 });
 
