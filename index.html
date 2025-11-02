@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,7 +25,7 @@
         .retry-btn { background: #FF3B30; color: white; border: none; padding: 8px 16px; border-radius: 50px; cursor: pointer; margin-top: 10px; transition: background 0.2s; }
         .retry-btn:hover { background: #E6342D; }
         
-        /* প্রমোশনাল বাটনগুলির স্টাইল */
+        /* Promotional Buttons Style */
         .promo-buttons { display: flex; justify-content: center; gap: 15px; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #2A2A45; }
         .promo-btn { 
             padding: 12px 25px; 
@@ -40,8 +40,8 @@
         }
         .promo-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
 
-        .website-btn { background: #4CAF50; color: white; } /* সবুজ */
-        .telegram-btn { background: #0088CC; color: white; } /* টেলিগ্রাম নীল */
+        .website-btn { background: #4CAF50; color: white; } 
+        .telegram-btn { background: #0088CC; color: white; } 
 
         @media (max-width: 768px) { .live-player { height: 220px; } .promo-btn { padding: 10px 18px; font-size: 0.9rem; } }
     </style>
@@ -53,23 +53,25 @@
 
         <div class="promo-buttons">
             <a href="https://streamecho.top" target="_blank" class="promo-btn website-btn">
-                🌐 আমাদের ওয়েবসাইট দেখুন
+                🌐 Visit Our Website
             </a>
-            <a href="https://t.me/bdixftpiptv" target="_blank" class="promo-btn telegram-btn">
-                📢 টেলিগ্রাম চ্যানেলে যোগ দিন
+            <a href="https://t.me/YourTelegramChannelLink" target="_blank" class="promo-btn telegram-btn">
+                📢 Join Telegram Channel
             </a>
         </div>
     </div>
 
     <script>
-        // তোমার চ্যানেল লিস্ট (এখানে নতুন যোগ করো)
+        // Channel List (First channel is the requested link)
         const encNames = [
-            "VCBTcG9ydHMgSEQ=", "U3RhciBTcG9ydHMgMQ==", "U29saCBMaXZlIFNwb3J0cw==", "YmVJTiBTUE9SVFMgMQ=="
+            "VFNwb3J0cyBIU2Q=", // TSports HSd
+            "U3RhciBTcG9ydHMgMQ==", "U29saHMgTGl2ZSBzUw==", "YmVJTiBTUE9SVFMgMQ=="
         ];
         const encUrls = [
+            // http://103.175.242.10:8080/tsports1/index.m3u8
             "aHR0cDovLzEwMy4xNzUuMjQyLjEwOjgwODAvdHNwb3J0czEvaW5kZXgubTN1OA==",
             "aHR0cDovLzQxLjIwNS45My4xNTQvU1RBUlNQT1JUUzEvaW5kZXgubTN1OA==",
-            "aHR0cDovL2NvcnMudHVuZHJhY2FzdC5jb206MjAwMC9odHRwczovL3dvLmNtYS5mb290YmFsbGlpLmlyL2hsczIvc29saC5tM3U4",
+            "aHR0cDovL2NvcnMudHVuZHJhY2FzdC5jb206MjAwMC9odHRwczovL3dvLmNtYS5mb290YmFsbGlpLnNvbi9obHMyL3NvbGgudjNy",
             "aHR0cHM6Ly9iYWxhbmNlLmZvb3RiYWxsaWkuaXIvaGxzMi9iZWluMS5tM3U4"
         ];
 
@@ -81,16 +83,16 @@
         let retryCount = 0;
         const MAX_RETRY = 10;
 
-        // প্রক্সি লিস্ট (অটো-সুইচ)
+        // Proxy List (Optimized for CORS issue resolution)
         const getProxy = () => {
             const proxies = [
-                'https://anywhere.pwisetthon.com/',
-                'https://api.allorigins.win/raw?url=',
+                'https://api.codetabs.com/v1/proxy?quest=', 
                 'https://corsproxy.io/?',
                 'https://thingproxy.freeboard.io/fetch/',
+                'https://anywhere.pwisetthon.com/',
                 'https://cors-anywhere.herokuapp.com/'
             ];
-            return proxies[retryCount % proxies.length];
+            return proxies[retryCount % proxies.length]; 
         };
 
         channelList.forEach((ch, i) => {
@@ -129,7 +131,7 @@
 
         function loadWithRetry(video, status, retryBtn, rawUrl) {
             if (retryCount >= MAX_RETRY) {
-                status.textContent = '১০ বার চেষ্টার পরেও ব্যর্থ। ভিপিএন (VPN) ব্যবহার করুন।';
+                status.textContent = 'Failed after 10 retries. Try using a VPN.';
                 status.className = 'player-status error';
                 retryBtn.style.display = 'block';
                 retryBtn.onclick = () => { retryCount = 0; loadWithRetry(video, status, retryBtn, rawUrl); };
@@ -137,39 +139,36 @@
             }
 
             const proxy = getProxy();
-            // কিছু প্রক্সি (যেমন corsproxy.io) URL এনকোড করার প্রয়োজন হতে পারে
-            const proxyUrl = proxy.endsWith('?') ? proxy + rawUrl : proxy + encodeURIComponent(rawUrl); 
+            const proxyUrl = proxy.endsWith('?') || proxy.endsWith('=') ? proxy + rawUrl : proxy + encodeURIComponent(rawUrl); 
 
-            status.textContent = `প্রক্সি ${retryCount + 1} দিয়ে চেষ্টা করা হচ্ছে...`;
+            status.textContent = `Attempting Proxy ${retryCount + 1}...`;
             status.className = 'player-status loading';
             retryBtn.style.display = 'none';
 
             if (Hls.isSupported()) {
                 currentHls = new Hls({
-                    // **বাফার-ফ্রি অপটিমাইজেশন:**
-                    maxBufferLength: 5, // বাফার সাইজ ৫ সেকেন্ডে কমিয়ে আনা হলো
-                    maxMaxBufferLength: 10, // সর্বোচ্চ বাফার সাইজও কমানো হলো
-                    liveSyncDurationCount: 2, // লাইভ সিঙ্ক ডিউরেশন ২ সেগমেন্টে কমানো হলো
-                    lowLatencyMode: true, // লো-ল্যাটেন্সি মোড সক্রিয়
-                    backBufferLength: 30, // ব্যাক বাফার ৩০ সেকেন্ড রাখা হলো
+                    // Buffer-Free Optimization Settings
+                    maxBufferLength: 5, 
+                    maxMaxBufferLength: 10, 
+                    liveSyncDurationCount: 2, 
+                    lowLatencyMode: true, 
+                    backBufferLength: 30, 
                     enableWorker: true,
                     startLevel: -1,
-                    // কোয়ালিটি সুইচিং-এর ক্ষেত্রে দ্রুত প্রতিক্রিয়া পেতে এটি কমানো হলো
                     autoLevelCapping: 4, 
-                    xhrSetup: (xhr) => { xhr.timeout = 15000; } // টাইমআউট ১৫ সেকেন্ডে কমানো হলো
+                    xhrSetup: (xhr) => { xhr.timeout = 15000; } 
                 });
 
                 currentHls.loadSource(proxyUrl);
                 currentHls.attachMedia(video);
 
                 currentHls.on(Hls.Events.MANIFEST_PARSED, () => {
-                    status.textContent = '✅ লাইভ • বাফারিং মুক্ত স্ট্রিমিং';
+                    status.textContent = '✅ LIVE • Buffer-Free Streaming';
                     status.className = 'player-status';
                     video.play().catch(e => {
                         console.log("Play failed, likely due to browser autoplay policy:", e);
-                        status.textContent = '❌ অটো-প্লে ব্লকড! প্লে বাটনে চাপুন।';
+                        status.textContent = '❌ Autoplay Blocked! Click Play.';
                         status.className = 'player-status error';
-                        // মিউট করা আছে, তাই সাধারণত কাজ করবে।
                     });
                     retryCount = 0;
                 });
@@ -179,28 +178,26 @@
                         console.log(`Error (Retry ${retryCount + 1}):`, d);
                         currentHls.destroy();
                         retryCount++;
-                        // ৩ সেকেন্ড পর পরের প্রক্সি দিয়ে আবার চেষ্টা
                         setTimeout(() => loadWithRetry(video, status, retryBtn, rawUrl), 3000); 
                     } else if (d.details === Hls.ErrorDetails.LEVEL_LOAD_ERROR) {
-                        // যদি শুধু লেভেল লোড না হয়, তাহলে শুধু রিকভারি চেষ্টা
                         currentHls.recoverMediaError();
                     }
                 });
 
                 video.addEventListener('waiting', () => {
-                    status.textContent = '⏳ অপেক্ষা করুন... বাফারিং চলছে';
+                    status.textContent = '⏳ Waiting... Buffering in progress';
                     status.className = 'player-status loading';
                 });
                 video.addEventListener('playing', () => {
-                    status.textContent = '▶️ লাইভ • প্লে হচ্ছে';
+                    status.textContent = '▶️ LIVE • Playing';
                     status.className = 'player-status';
                 });
 
             } else {
-                // HLS.js সাপোর্ট না করলে সাধারণ ভিডিও ট্যাগ ব্যবহার
+                // Fallback for browsers not supporting HLS.js
                 video.src = proxyUrl;
                 video.play();
-                status.textContent = '⚠️ HLS.js নেই, সাধারণ প্লেব্যাক।';
+                status.textContent = '⚠️ HLS.js not supported, using native playback.';
                 status.className = 'player-status error';
             }
         }
