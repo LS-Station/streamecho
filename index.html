@@ -3,15 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="StreamEcho - Buffer-Free IPTV Player 2025">
+    <meta name="description" content="StreamEcho - Universal M3U IPTV Player 2025">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.15"></script>
-    <title>StreamEcho: Never Stop Player</title>
+    <title>StreamEcho: M3U Playlist Player</title>
     <style>
         :root { --accent: #00D4FF; --bg: #0F0F1A; --card: #1A1A2E; --text: #E0E0FF; --light: #AAAAAA; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Poppins', sans-serif; background: #0F0F1A; color: var(--text); padding: 1rem; }
         .player-section { max-width: 1200px; margin: 0 auto; background: var(--card); padding: 1rem; border-radius: 16px; }
+        
+        /* M3U Input Section Style */
+        .m3u-input-section { margin-bottom: 1.5rem; padding: 1rem; background: #2A2A45; border-radius: 12px; }
+        .m3u-input-section input[type="text"] {
+            width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 6px; border: 1px solid #4A4A6A; 
+            background: #1A1A2E; color: var(--text); font-size: 1rem;
+        }
+        .m3u-input-section button {
+            background: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 6px; 
+            cursor: pointer; font-weight: 600; transition: background 0.2s;
+        }
+        .m3u-input-section button:hover { background: #45a049; }
+
+        /* Existing Styles */
         .tab-buttons { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1rem; justify-content: center; }
         .tab-btn { padding: 10px 16px; background: rgba(0,212,255,0.1); color: var(--accent); border: 1px solid var(--accent); border-radius: 50px; font-size: 0.9rem; cursor: pointer; transition: background 0.2s, color 0.2s; }
         .tab-btn:hover { background: rgba(0,212,255,0.2); }
@@ -25,18 +39,10 @@
         .retry-btn { background: #FF3B30; color: white; border: none; padding: 8px 16px; border-radius: 50px; cursor: pointer; margin-top: 10px; transition: background 0.2s; }
         .retry-btn:hover { background: #E6342D; }
         
-        /* Promotional Buttons Style */
         .promo-buttons { display: flex; justify-content: center; gap: 15px; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #2A2A45; }
         .promo-btn { 
-            padding: 12px 25px; 
-            font-size: 1rem; 
-            font-weight: 600;
-            border: none; 
-            border-radius: 8px; 
-            cursor: pointer;
-            text-decoration: none;
-            text-transform: uppercase;
-            transition: transform 0.2s, box-shadow 0.2s;
+            padding: 12px 25px; font-size: 1rem; font-weight: 600; border: none; border-radius: 8px; cursor: pointer;
+            text-decoration: none; text-transform: uppercase; transition: transform 0.2s, box-shadow 0.2s;
         }
         .promo-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
 
@@ -48,6 +54,15 @@
 </head>
 <body>
     <div class="player-section">
+        <div class="m3u-input-section" style="display: none;">
+            <label for="m3uUrlInput" style="font-weight: 600; display: block; margin-bottom: 5px;">Paste M3U Playlist URL:</label>
+            <input type="text" id="m3uUrlInput" placeholder="e.g., http://my-iptv-server.com/playlist.m3u">
+            <button onclick="loadM3uPlaylist()">Load M3U List</button>
+            <div id="m3uStatus" class="player-status" style="margin-top: 10px;">Ready to load playlist.</div>
+        </div>
+        
+        <div id="m3uStatus" class="player-status loading" style="text-align: center; margin-bottom: 1rem;">Loading encoded M3U playlist...</div>
+
         <div class="tab-buttons" id="tabButtons"></div>
         <div id="tabContents"></div>
 
@@ -62,23 +77,14 @@
     </div>
 
     <script>
-        // Channel List (First channel is the requested link)
-        const encNames = [
-            "VFNwb3J0cyBIU2Q=", // TSports HSd
-            "U3RhciBTcG9ydHMgMQ==", "U29saHMgTGl2ZSBzUw==", "YmVJTiBTUE9SVFMgMQ=="
-        ];
-        const encUrls = [
-            // http://103.175.242.10:8080/tsports1/index.m3u8
-            "aHR0cDovLzEwMy4xNzUuMjQyLjEwOjgwODAvdHNwb3J0czEvaW5kZXgubTN1OA==",
-            "aHR0cDovLzQxLjIwNS45My4xNTQvU1RBUlNQT1JUUzEvaW5kZXgubTN1OA==",
-            "aHR0cDovL2NvcnMudHVuZHJhY2FzdC5jb206MjAwMC9odHRwczovL3dvLmNtYS5mb290YmFsbGlpLnNvbi9obHMyL3NvbGgudjNy",
-            "aHR0cHM6Ly9iYWxhbmNlLmZvb3RiYWxsaWkuaXIvaGxzMi9iZWluMS5tM3U4"
-        ];
-
-        const channelList = encNames.map((n, i) => ({ name: atob(n), url: atob(encUrls[i]) }));
-
+        // The Base64 encoded M3U URL for security
+        // Original Link: raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/DaddyLive.m3u8
+        const encodedM3uUrl = "cmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9EcmV3c2tpMjQyMy9EcmV3TGl2ZS9yZWZzL2hlYWRzL21haW4vRGFkZHlMaXZlLm0zdTg=";
+        
+        let channelList = [];
         const tabButtons = document.getElementById('tabButtons');
         const tabContents = document.getElementById('tabContents');
+        const m3uStatus = document.getElementById('m3uStatus');
         let currentHls = null;
         let retryCount = 0;
         const MAX_RETRY = 10;
@@ -86,34 +92,105 @@
         // Proxy List (Optimized and highly aggressive list for CORS bypass)
         const getProxy = () => {
             const proxies = [
-                'https://api.codetabs.com/v1/proxy?quest=', // Most reliable
+                'https://api.codetabs.com/v1/proxy?quest=', 
                 'https://corsproxy.io/?',
                 'https://thingproxy.freeboard.io/fetch/',
                 'https://anywhere.pwisetthon.com/',
-                'https://cors-anywhere.herokuapp.com/' // Good fallback
+                'https://cors-anywhere.herokuapp.com/'
             ];
-            // Cycle through proxies based on retry count
             return proxies[retryCount % proxies.length]; 
         };
 
-        channelList.forEach((ch, i) => {
-            const btn = document.createElement('button');
-            btn.className = 'tab-btn';
-            btn.textContent = ch.name;
-            btn.onclick = () => openTab(i);
-            tabButtons.appendChild(btn);
+        // Function to parse the M3U content and build the channel list
+        function parseM3u(m3uContent) {
+            const lines = m3uContent.split('\n');
+            const newChannels = [];
+            let currentName = 'Unknown Channel';
 
-            const div = document.createElement('div');
-            div.className = 'tab-content';
-            div.innerHTML = `
-                <div class="player-title">LIVE: ${ch.name}</div>
-                <video id="video-${i}" class="live-player" controls playsinline preload="auto" muted></video>
-                <div id="status-${i}" class="player-status loading">Loading... (Retry 0)</div>
-                <button id="retry-${i}" class="retry-btn" style="display:none;">Retry Now</button>
-            `;
-            tabContents.appendChild(div);
-        });
+            for (let i = 0; i < lines.length; i++) {
+                const line = lines[i].trim();
+                if (line.startsWith('#EXTINF:')) {
+                    // Extract channel name from EXTINF line
+                    const nameMatch = line.match(/,(.+)$/);
+                    currentName = nameMatch ? nameMatch[1].trim() : 'Unknown Channel';
+                } else if (line.startsWith('http') || line.startsWith('https')) {
+                    // This is the channel URL
+                    newChannels.push({ name: currentName, url: line });
+                }
+            }
+            return newChannels;
+        }
 
+        // Main function to load and process the M3U playlist
+        async function loadM3uPlaylist() {
+            // Decode the URL here
+            const m3uUrl = atob(encodedM3uUrl); 
+
+            // Clear existing channels
+            tabButtons.innerHTML = '';
+            tabContents.innerHTML = '';
+            channelList = [];
+            
+            m3uStatus.textContent = 'Loading M3U file via proxy...';
+            m3uStatus.className = 'player-status loading';
+
+            try {
+                // Fetch M3U file using the first proxy to avoid CORS issues
+                const proxy = getProxy(); 
+                // Add the missing protocol (https://) if not present
+                const fullUrl = m3uUrl.startsWith('http') ? m3uUrl : 'https://' + m3uUrl;
+                
+                const proxyUrl = proxy.endsWith('?') || proxy.endsWith('=') ? proxy + fullUrl : proxy + encodeURIComponent(fullUrl); 
+
+                const response = await fetch(proxyUrl);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const m3uContent = await response.text();
+                
+                channelList = parseM3u(m3uContent);
+
+                if (channelList.length === 0) {
+                    m3uStatus.textContent = 'Error: No channels found in the playlist.';
+                    m3uStatus.className = 'player-status error';
+                    return;
+                }
+
+                // Populate tabs and content
+                channelList.forEach((ch, i) => {
+                    const btn = document.createElement('button');
+                    btn.className = 'tab-btn';
+                    btn.textContent = ch.name;
+                    btn.onclick = () => openTab(i);
+                    tabButtons.appendChild(btn);
+
+                    const div = document.createElement('div');
+                    div.className = 'tab-content';
+                    div.innerHTML = `
+                        <div class="player-title">LIVE: ${ch.name}</div>
+                        <video id="video-${i}" class="live-player" controls playsinline preload="auto" muted></video>
+                        <div id="status-${i}" class="player-status loading">Loading... (Retry 0)</div>
+                        <button id="retry-${i}" class="retry-btn" style="display:none;">Retry Now</button>
+                    `;
+                    tabContents.appendChild(div);
+                });
+                
+                m3uStatus.textContent = `Success! ${channelList.length} channels loaded. Select a channel to play.`;
+                m3uStatus.className = 'player-status';
+                
+                // Automatically open the first channel
+                if (channelList.length > 0) openTab(0);
+
+
+            } catch (error) {
+                console.error("M3U Loading Error:", error);
+                m3uStatus.textContent = `Failed to load M3U: ${error.message}. Try another URL or VPN.`;
+                m3uStatus.className = 'player-status error';
+            }
+        }
+
+
+        // Existing playback functions (modified to use dynamic channelList)
         function openTab(idx) {
             document.querySelectorAll('.tab-btn').forEach((b, i) => b.classList.toggle('active', i === idx));
             document.querySelectorAll('.tab-content').forEach((c, i) => c.classList.toggle('active', i === idx));
@@ -124,7 +201,8 @@
             const video = document.getElementById(`video-${idx}`);
             const status = document.getElementById(`status-${idx}`);
             const retryBtn = document.getElementById(`retry-${idx}`);
-            const rawUrl = channelList[idx].url;
+            // Use URL from the dynamically loaded channelList
+            const rawUrl = channelList[idx].url; 
 
             video.muted = true;
             loadWithRetry(video, status, retryBtn, rawUrl);
@@ -140,7 +218,6 @@
             }
 
             const proxy = getProxy();
-            // Use encodeURIComponent for a safer URL format with proxies
             const proxyUrl = proxy.endsWith('?') || proxy.endsWith('=') ? proxy + rawUrl : proxy + encodeURIComponent(rawUrl); 
 
             status.textContent = `Attempting Proxy ${retryCount + 1}...`;
@@ -150,16 +227,10 @@
             if (Hls.isSupported()) {
                 currentHls = new Hls({
                     // Buffer-Free Optimization Settings
-                    maxBufferLength: 5, 
-                    maxMaxBufferLength: 10, 
-                    liveSyncDurationCount: 2, 
-                    lowLatencyMode: true, 
-                    backBufferLength: 30, 
-                    enableWorker: true,
-                    startLevel: -1,
-                    autoLevelCapping: 4, 
-                    // Lower timeout for quicker proxy cycling
-                    xhrSetup: (xhr) => { xhr.timeout = 10000; } 
+                    maxBufferLength: 5, maxMaxBufferLength: 10, liveSyncDurationCount: 2, 
+                    lowLatencyMode: true, backBufferLength: 30, enableWorker: true,
+                    startLevel: -1, autoLevelCapping: 4, 
+                    xhrSetup: (xhr) => { xhr.timeout = 10000; } // 10 seconds timeout for quick retry
                 });
 
                 currentHls.loadSource(proxyUrl);
@@ -181,35 +252,29 @@
                         console.log(`Fatal Error (Retry ${retryCount + 1}):`, d);
                         currentHls.destroy();
                         retryCount++;
-                        // Fast retry with the next proxy (2 seconds delay)
                         setTimeout(() => loadWithRetry(video, status, retryBtn, rawUrl), 2000); 
                     } else if (d.details === Hls.ErrorDetails.MEDIA_ERROR) {
-                         // Attempt to recover media playback without changing proxy
                          currentHls.recoverMediaError();
                     }
                 });
 
-                video.addEventListener('waiting', () => {
-                    status.textContent = '⏳ Waiting... Buffering in progress';
-                    status.className = 'player-status loading';
-                });
-                video.addEventListener('playing', () => {
-                    status.textContent = '▶️ LIVE • Playing';
-                    status.className = 'player-status';
-                });
+                video.addEventListener('waiting', () => { status.textContent = '⏳ Waiting... Buffering in progress'; status.className = 'player-status loading'; });
+                video.addEventListener('playing', () => { status.textContent = '▶️ LIVE • Playing'; status.className = 'player-status'; });
 
             } else {
-                // Fallback for browsers not supporting HLS.js
                 video.src = proxyUrl;
                 video.play();
                 status.textContent = '⚠️ HLS.js not supported, using native playback.';
                 status.className = 'player-status error';
             }
         }
-
-        setTimeout(() => {
-            if (channelList.length > 0) openTab(0);
-        }, 500);
+        
+        // Auto-start the playlist loading process on page load
+        document.addEventListener('DOMContentLoaded', () => {
+             // Hide M3U input box and automatically call loadM3uPlaylist
+             document.querySelector('.m3u-input-section').style.display = 'none';
+             loadM3uPlaylist();
+        });
     </script>
 </body>
 </html>
