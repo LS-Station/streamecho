@@ -3,17 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="StreamEcho - Universal M3U IPTV Player 2025">
+    <meta name="description" content="StreamEcho - 9 Channel Static Encoded Player">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.15"></script>
-    <title>StreamEcho: M3U Playlist Player</title>
+    <title>StreamEcho: 9 Channel Player</title>
     <style>
         :root { --accent: #00D4FF; --bg: #0F0F1A; --card: #1A1A2E; --text: #E0E0FF; --light: #AAAAAA; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Poppins', sans-serif; background: #0F0F1A; color: var(--text); padding: 1rem; }
         .player-section { max-width: 1200px; margin: 0 auto; background: var(--card); padding: 1rem; border-radius: 16px; }
-        
-        .m3u-input-section { display: none; }
         .tab-buttons { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1rem; justify-content: center; }
         .tab-btn { padding: 10px 16px; background: rgba(0,212,255,0.1); color: var(--accent); border: 1px solid var(--accent); border-radius: 50px; font-size: 0.9rem; cursor: pointer; transition: background 0.2s, color 0.2s; }
         .tab-btn:hover { background: rgba(0,212,255,0.2); }
@@ -44,10 +42,6 @@
 </head>
 <body>
     <div class="player-section">
-        <div class="m3u-input-section"></div>
-        
-        <div id="m3uStatus" class="player-status loading" style="text-align: center; margin-bottom: 1rem;">Loading encoded M3U playlist...</div>
-
         <div class="tab-buttons" id="tabButtons"></div>
         <div id="tabContents"></div>
 
@@ -62,22 +56,33 @@
     </div>
 
     <script>
-        // The Base64 encoded M3U URL 
-        const encodedM3uUrl = "aHR0cHM6Ly9maWxlLmdhcmRlbi9hUG9yd3U4cjRXSUpTNlBQL1BsYXllci5tM3U=";
+        // 9 Channels Encodings - REPLACE 'xxxxxx' WITH YOUR BASE64 ENCODED STRINGS
+        const encNames = [
+            "U0tZIFNQT1JUIExBTElHQSDwn4ey8J+HvQ==", "QkVJTiAxIPCfh6vwn4e3", "xxxxxx",
+            "xxxxxx", "xxxxxx", "xxxxxx",
+            "xxxxxx", "xxxxxx", "xxxxxx"
+        ];
+        const encUrls = [
+            "aHR0cDovLzE4MS43OC4xMDkuNDg6OTk5OC9wbGF5L2EwNnIvaW5kZXgubTN1OA==", "aHR0cDovLzUuOS4xMTkuMTQ2Ojg4ODMvYmVpbmZyMS9pbmRleC5tM3U4", "xxxxxx",
+            "xxxxxx", "xxxxxx", "xxxxxx",
+            "xxxxxx", "xxxxxx", "xxxxxx"
+        ];
         
-        let channelList = [];
+        const channelList = encNames.map((n, i) => ({ 
+            name: atob(n), 
+            url: atob(encUrls[i]), 
+            retry: 0, 
+            fixedProxy: null // null for direct, index for proxy
+        }));
+        
         const tabButtons = document.getElementById('tabButtons');
         const tabContents = document.getElementById('tabContents');
-        const m3uStatus = document.getElementById('m3uStatus');
         let currentHls = null;
         let currentChannelIndex = -1; 
         
-        // **M3U ফাইল লোড করার জন্য প্রক্সি লিস্ট (সরাসরি ব্যবহার, লুপ নয়)**
-        const M3U_FETCH_PROXY = 'https://api.allorigins.win/raw?url='; // এটি GIST/File Garden এর জন্য সবচেয়ে নির্ভরযোগ্য
-        
         // **চ্যানেল লোড করার জন্য প্রক্সি লিস্ট**
         const CHANNEL_PROXIES = [
-            'https://api.allorigins.win/raw?url=', // M3U ফেচিং এ ব্যবহৃত প্রক্সিটিকেও এখানে রাখা হলো
+            'https://api.allorigins.win/raw?url=', 
             'http://cors.tundracast.com:2000/', 
             'https://r34-cors-bypass.deno.dev/?url=',
             'https://api.codetabs.com/v1/proxy?quest=', 
@@ -87,89 +92,32 @@
             'https://cors-anywhere.herokuapp.com/'
         ];
 
-        // Function to parse the M3U content and build the channel list
-        function parseM3u(m3uContent) {
-            const lines = m3uContent.split('\n');
-            const newChannels = [];
-            let currentName = 'Unknown Channel';
+        // Renders the channel tabs and contents
+        function renderChannels() {
+            channelList.forEach((ch, index) => {
+                const btn = document.createElement('button');
+                btn.className = 'tab-btn';
+                btn.textContent = ch.name;
+                btn.onclick = () => openTab(index);
+                tabButtons.appendChild(btn);
 
-            for (let i = 0; i < lines.length; i++) {
-                const line = lines[i].trim();
-                if (line.startsWith('#EXTINF:')) {
-                    const nameMatch = line.match(/,(.+)$/);
-                    currentName = nameMatch ? nameMatch[1].trim() : 'Unknown Channel';
-                } else if (line.startsWith('http') || line.startsWith('https')) {
-                    // channelList-এ যোগ করার সময় কোনো প্রক্সি যুক্ত করা হলো না
-                    newChannels.push({ name: currentName, url: line, retry: 0, fixedProxy: null }); 
-                }
-            }
-            return newChannels;
+                const div = document.createElement('div');
+                div.className = 'tab-content';
+                div.innerHTML = `
+                    <div class="player-title">LIVE: ${ch.name}</div>
+                    <video id="video-${index}" class="live-player" controls playsinline preload="auto" muted></video>
+                    <div id="status-${index}" class="player-status loading">Ready to play.</div>
+                    <button id="retry-${index}" class="retry-btn" style="display:none;">Retry Now</button>
+                `;
+                tabContents.appendChild(div);
+            });
+             document.getElementById('m3uStatus').textContent = 'Loaded. Select a channel.';
+             document.getElementById('m3uStatus').className = 'player-status';
+             
+             if (channelList.length > 0) openTab(0);
         }
 
-        // Main function to load and process the M3U playlist
-        async function loadM3uPlaylist() {
-            const m3uUrl = atob(encodedM3uUrl); 
-            tabButtons.innerHTML = '';
-            tabContents.innerHTML = '';
-            
-            m3uStatus.textContent = 'Loading M3U file via single reliable proxy...';
-            m3uStatus.className = 'player-status loading';
-            
-            try {
-                // M3U ফাইল আনার জন্য একটি শক্তিশালী প্রক্সি ব্যবহার
-                const fullUrl = m3uUrl.startsWith('http') ? m3uUrl : 'https://' + m3uUrl;
-                const proxyUrl = M3U_FETCH_PROXY + fullUrl;
-
-                // 25 সেকেন্ডের টাইমআউট সহ Fetch
-                const response = await fetch(proxyUrl, { signal: AbortSignal.timeout(25000) }); 
-                
-                if (!response.ok) {
-                    throw new Error(`HTTP status ${response.status} or network error.`);
-                }
-                const m3uContent = await response.text();
-                
-                channelList = parseM3u(m3uContent); 
-
-                if (channelList.length === 0) {
-                    m3uStatus.textContent = 'Error: No channels found in the playlist, but M3U file loaded.';
-                    m3uStatus.className = 'player-status error';
-                    return;
-                }
-
-                // Success block (M3U loaded)
-                channelList.forEach((ch, index) => {
-                    const btn = document.createElement('button');
-                    btn.className = 'tab-btn';
-                    btn.textContent = ch.name;
-                    btn.onclick = () => openTab(index);
-                    tabButtons.appendChild(btn);
-
-                    const div = document.createElement('div');
-                    div.className = 'tab-content';
-                    div.innerHTML = `
-                        <div class="player-title">LIVE: ${ch.name}</div>
-                        <video id="video-${index}" class="live-player" controls playsinline preload="auto" muted></video>
-                        <div id="status-${index}" class="player-status loading">Ready to play.</div>
-                        <button id="retry-${index}" class="retry-btn" style="display:none;">Retry Now</button>
-                    `;
-                    tabContents.appendChild(div);
-                });
-                
-                m3uStatus.textContent = `Success! ${channelList.length} channels loaded. Select a channel to play.`;
-                m3uStatus.className = 'player-status';
-                
-                if (channelList.length > 0) openTab(0);
-                return; 
-
-            } catch (error) {
-                console.error("M3U Fetch Failed:", error.message);
-                m3uStatus.textContent = `Failed to load M3U: Check M3U link validity or try VPN. (${error.message})`;
-                m3uStatus.className = 'player-status error';
-            }
-        }
-
-
-        // Individual channel loading function (Uses the new smart logic)
+        // Individual channel loading function (Uses the smart switching logic)
         function openTab(idx) {
             document.querySelectorAll('.tab-btn').forEach((b, i) => b.classList.toggle('active', i === idx));
             document.querySelectorAll('.tab-content').forEach((c, i) => c.classList.toggle('active', i === idx));
@@ -177,7 +125,6 @@
             if (currentHls) { currentHls.destroy(); currentHls = null; }
             currentChannelIndex = idx;
             
-            // যদি চ্যানেল পরিবর্তন হয়, তবে তার পূর্বের সচল প্রক্সিটি দিয়ে শুরু হবে
             const channel = channelList[idx];
 
             const video = document.getElementById(`video-${idx}`);
@@ -274,9 +221,7 @@
                     if (attemptType === 'direct') {
                         status.textContent = '✅ LIVE • Direct Load Successful.';
                         status.className = 'player-status status-direct';
-                        // ডাইরেক্ট লোড সফল হলে fixedProxy null ই থাকবে।
                     } else {
-                        // যদি প্রক্সি সফল হয়, সেটি ফিক্সড প্রক্সি হিসেবে সেট হবে
                         channel.fixedProxy = proxyIndex; 
                         status.textContent = `✅ LIVE • Proxy ${proxyIndex + 1} Fixed.`;
                         status.className = 'player-status status-fixed';
@@ -285,17 +230,15 @@
                         status.textContent = '❌ Autoplay Blocked! Click Play.';
                         status.className = 'player-status error';
                     });
-                    channel.retry = 0; // Success, so reset retry count
+                    channel.retry = 0; 
                 });
 
                 currentHls.on(Hls.Events.ERROR, (e, data) => {
                     if (data.fatal && (data.type === 'networkError' || data.details === Hls.ErrorDetails.MANIFEST_LOAD_ERROR)) {
-                         // যদি এটি সরাসরি লোড ব্যর্থ হয়, অথবা ফিক্সড প্রক্সি না থাকে
                          if (attemptType === 'direct' || channel.fixedProxy === null) {
                              console.error("Fatal Error (Switching to Proxy/Next Proxy):", data);
                              handleError(channel, data);
                          } else {
-                             // ফিক্সড প্রক্সি মোডে থাকলে রিকভারির জন্য অপেক্ষা
                              handleError(channel, data);
                          }
                     } else if (data.fatal) {
@@ -319,9 +262,9 @@
             }
         }
         
-        // Auto-start the playlist loading process on page load
+        // Auto-start the channel rendering on page load
         document.addEventListener('DOMContentLoaded', () => {
-             loadM3uPlaylist();
+             renderChannels();
         });
     </script>
 </body>
