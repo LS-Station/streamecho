@@ -73,6 +73,7 @@
 
     <script>
         // The Base64 encoded M3U URL for security
+        // Original Link: gist.githubusercontent.com/LS-Station/27dd2f66aa91148799b16fe0660504aa/raw/0b13ca77e76030e76b5b9ad9363263679637b36e/Player.m3u
         const encodedM3uUrl = "aHR0cHM6Ly9naXN0LmdpdGh1YnVzZXJjb250ZW50LmNvbS9MUy1TdGF0aW9uLzI3ZGQyZjY2YWE5MTE0ODc5OWIxNmZlMDY2MDUwNGFhL3Jhdy8wYjEzY2E3N2U3NjAzMGU3NmI1YjlhZDkzNjMyNjM2Nzk2MzdiMzZlL1BsYXllci5tM3U=";
         
         let channelList = [];
@@ -86,7 +87,7 @@
         // Proxy List (Optimized and highly aggressive list for CORS bypass)
         const getProxy = () => {
             const proxies = [
-                // 1. New Proxy Added
+                // 1. Tundracast Proxy (Added per user request)
                 'http://cors.tundracast.com:2000/', 
                 
                 // 2. Existing reliable proxies
@@ -135,7 +136,7 @@
                 const proxy = getProxy(); 
                 const fullUrl = m3uUrl.startsWith('http') ? m3uUrl : 'https://' + m3uUrl;
                 
-                // Special handling for the new Tundracast proxy (it doesn't need URL encoding if the URL starts with http/https)
+                // Special handling for Tundracast proxy which sometimes doesn't need encoding
                 let proxyUrl;
                 if (proxy.includes('tundracast.com')) {
                     proxyUrl = proxy + fullUrl;
