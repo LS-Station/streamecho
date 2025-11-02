@@ -13,8 +13,8 @@
         body { font-family: 'Poppins', sans-serif; background: #0F0F1A; color: var(--text); padding: 1rem; }
         .player-section { max-width: 1200px; margin: 0 auto; background: var(--card); padding: 1rem; border-radius: 16px; }
         
-        /* M3U Input Section Style */
-        .m3u-input-section { margin-bottom: 1.5rem; padding: 1rem; background: #2A2A45; border-radius: 12px; }
+        /* M3U Input Section Style (Hidden) */
+        .m3u-input-section { margin-bottom: 1.5rem; padding: 1rem; background: #2A2A45; border-radius: 12px; display: none; }
         .m3u-input-section input[type="text"] {
             width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 6px; border: 1px solid #4A4A6A; 
             background: #1A1A2E; color: var(--text); font-size: 1rem;
@@ -54,12 +54,7 @@
 </head>
 <body>
     <div class="player-section">
-        <div class="m3u-input-section" style="display: none;">
-            <label for="m3uUrlInput" style="font-weight: 600; display: block; margin-bottom: 5px;">Paste M3U Playlist URL:</label>
-            <input type="text" id="m3uUrlInput" placeholder="e.g., http://my-iptv-server.com/playlist.m3u">
-            <button onclick="loadM3uPlaylist()">Load M3U List</button>
-            <div id="m3uStatus" class="player-status" style="margin-top: 10px;">Ready to load playlist.</div>
-        </div>
+        <div class="m3u-input-section"></div>
         
         <div id="m3uStatus" class="player-status loading" style="text-align: center; margin-bottom: 1rem;">Loading encoded M3U playlist...</div>
 
@@ -70,7 +65,7 @@
             <a href="https://streamecho.top" target="_blank" class="promo-btn website-btn">
                 🌐 Visit Our Website
             </a>
-            <a href="https://t.me/YourTelegramChannelLink" target="_blank" class="promo-btn telegram-btn">
+            <a href="https://t.me/bdixftpiptv" target="_blank" class="promo-btn telegram-btn">
                 📢 Join Telegram Channel
             </a>
         </div>
@@ -78,8 +73,7 @@
 
     <script>
         // The Base64 encoded M3U URL for security
-        // Original Link: raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/DaddyLive.m3u8
-        const encodedM3uUrl = "cmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9EcmV3c2tpMjQyMy9EcmV3TGl2ZS9yZWZzL2hlYWRzL21haW4vRGFkZHlMaXZlLm0zdTg=";
+        const encodedM3uUrl = "aHR0cHM6Ly9naXN0LmdpdGh1YnVzZXJjb250ZW50LmNvbS9MUy1TdGF0aW9uLzI3ZGQyZjY2YWE5MTE0ODc5OWIxNmZlMDY2MDUwNGFhL3Jhdy8wYjEzY2E3N2U3NjAzMGU3NmI1YjlhZDkzNjMyNjM2Nzk2MzdiMzZlL1BsYXllci5tM3U=";
         
         let channelList = [];
         const tabButtons = document.getElementById('tabButtons');
@@ -92,6 +86,10 @@
         // Proxy List (Optimized and highly aggressive list for CORS bypass)
         const getProxy = () => {
             const proxies = [
+                // 1. New Proxy Added
+                'http://cors.tundracast.com:2000/', 
+                
+                // 2. Existing reliable proxies
                 'https://api.codetabs.com/v1/proxy?quest=', 
                 'https://corsproxy.io/?',
                 'https://thingproxy.freeboard.io/fetch/',
@@ -110,11 +108,9 @@
             for (let i = 0; i < lines.length; i++) {
                 const line = lines[i].trim();
                 if (line.startsWith('#EXTINF:')) {
-                    // Extract channel name from EXTINF line
                     const nameMatch = line.match(/,(.+)$/);
                     currentName = nameMatch ? nameMatch[1].trim() : 'Unknown Channel';
                 } else if (line.startsWith('http') || line.startsWith('https')) {
-                    // This is the channel URL
                     newChannels.push({ name: currentName, url: line });
                 }
             }
@@ -123,7 +119,7 @@
 
         // Main function to load and process the M3U playlist
         async function loadM3uPlaylist() {
-            // Decode the URL here
+            // Decode the M3U URL for fetching
             const m3uUrl = atob(encodedM3uUrl); 
 
             // Clear existing channels
@@ -137,10 +133,15 @@
             try {
                 // Fetch M3U file using the first proxy to avoid CORS issues
                 const proxy = getProxy(); 
-                // Add the missing protocol (https://) if not present
                 const fullUrl = m3uUrl.startsWith('http') ? m3uUrl : 'https://' + m3uUrl;
                 
-                const proxyUrl = proxy.endsWith('?') || proxy.endsWith('=') ? proxy + fullUrl : proxy + encodeURIComponent(fullUrl); 
+                // Special handling for the new Tundracast proxy (it doesn't need URL encoding if the URL starts with http/https)
+                let proxyUrl;
+                if (proxy.includes('tundracast.com')) {
+                    proxyUrl = proxy + fullUrl;
+                } else {
+                    proxyUrl = proxy.endsWith('?') || proxy.endsWith('=') ? proxy + fullUrl : proxy + encodeURIComponent(fullUrl); 
+                }
 
                 const response = await fetch(proxyUrl);
                 if (!response.ok) {
@@ -201,7 +202,6 @@
             const video = document.getElementById(`video-${idx}`);
             const status = document.getElementById(`status-${idx}`);
             const retryBtn = document.getElementById(`retry-${idx}`);
-            // Use URL from the dynamically loaded channelList
             const rawUrl = channelList[idx].url; 
 
             video.muted = true;
@@ -218,7 +218,14 @@
             }
 
             const proxy = getProxy();
-            const proxyUrl = proxy.endsWith('?') || proxy.endsWith('=') ? proxy + rawUrl : proxy + encodeURIComponent(rawUrl); 
+            
+            // Special handling for Tundracast
+            let proxyUrl;
+            if (proxy.includes('tundracast.com')) {
+                 proxyUrl = proxy + rawUrl;
+            } else {
+                 proxyUrl = proxy.endsWith('?') || proxy.endsWith('=') ? proxy + rawUrl : proxy + encodeURIComponent(rawUrl); 
+            }
 
             status.textContent = `Attempting Proxy ${retryCount + 1}...`;
             status.className = 'player-status loading';
@@ -271,8 +278,6 @@
         
         // Auto-start the playlist loading process on page load
         document.addEventListener('DOMContentLoaded', () => {
-             // Hide M3U input box and automatically call loadM3uPlaylist
-             document.querySelector('.m3u-input-section').style.display = 'none';
              loadM3uPlaylist();
         });
     </script>
