@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +13,8 @@
         body { font-family: 'Poppins', sans-serif; background: #0F0F1A; color: var(--text); padding: 1rem; }
         .player-section { max-width: 1200px; margin: 0 auto; background: var(--card); padding: 1rem; border-radius: 16px; }
         .tab-buttons { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1rem; justify-content: center; }
-        .tab-btn { padding: 10px 16px; background: rgba(0,212,255,0.1); color: var(--accent); border: 1px solid var(--accent); border-radius: 50px; font-size: 0.9rem; cursor: pointer; }
+        .tab-btn { padding: 10px 16px; background: rgba(0,212,255,0.1); color: var(--accent); border: 1px solid var(--accent); border-radius: 50px; font-size: 0.9rem; cursor: pointer; transition: background 0.2s, color 0.2s; }
+        .tab-btn:hover { background: rgba(0,212,255,0.2); }
         .tab-btn.active { background: var(--accent); color: var(--bg); }
         .tab-content { display: none; text-align: center; }
         .tab-content.active { display: block; }
@@ -21,14 +22,43 @@
         .player-title { color: var(--accent); font-weight: 600; margin: 0.5rem 0; font-size: 1.3rem; }
         .player-status { color: var(--light); font-size: 0.9rem; margin-top: 0.5rem; }
         .loading { color: #FFA41C; } .error { color: #FF3B30; }
-        .retry-btn { background: #FF3B30; color: white; border: none; padding: 8px 16px; border-radius: 50px; cursor: pointer; margin-top: 10px; }
-        @media (max-width: 768px) { .live-player { height: 220px; } }
+        .retry-btn { background: #FF3B30; color: white; border: none; padding: 8px 16px; border-radius: 50px; cursor: pointer; margin-top: 10px; transition: background 0.2s; }
+        .retry-btn:hover { background: #E6342D; }
+        
+        /* প্রমোশনাল বাটনগুলির স্টাইল */
+        .promo-buttons { display: flex; justify-content: center; gap: 15px; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #2A2A45; }
+        .promo-btn { 
+            padding: 12px 25px; 
+            font-size: 1rem; 
+            font-weight: 600;
+            border: none; 
+            border-radius: 8px; 
+            cursor: pointer;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .promo-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+
+        .website-btn { background: #4CAF50; color: white; } /* সবুজ */
+        .telegram-btn { background: #0088CC; color: white; } /* টেলিগ্রাম নীল */
+
+        @media (max-width: 768px) { .live-player { height: 220px; } .promo-btn { padding: 10px 18px; font-size: 0.9rem; } }
     </style>
 </head>
 <body>
     <div class="player-section">
         <div class="tab-buttons" id="tabButtons"></div>
         <div id="tabContents"></div>
+
+        <div class="promo-buttons">
+            <a href="https://streamecho.top" target="_blank" class="promo-btn website-btn">
+                🌐 আমাদের ওয়েবসাইট দেখুন
+            </a>
+            <a href="https://t.me/bdixftpiptv" target="_blank" class="promo-btn telegram-btn">
+                📢 টেলিগ্রাম চ্যানেলে যোগ দিন
+            </a>
+        </div>
     </div>
 
     <script>
@@ -99,7 +129,7 @@
 
         function loadWithRetry(video, status, retryBtn, rawUrl) {
             if (retryCount >= MAX_RETRY) {
-                status.textContent = 'Failed after 10 retries. Try VPN.';
+                status.textContent = '১০ বার চেষ্টার পরেও ব্যর্থ। ভিপিএন (VPN) ব্যবহার করুন।';
                 status.className = 'player-status error';
                 retryBtn.style.display = 'block';
                 retryBtn.onclick = () => { retryCount = 0; loadWithRetry(video, status, retryBtn, rawUrl); };
@@ -107,64 +137,71 @@
             }
 
             const proxy = getProxy();
-            const proxyUrl = proxy.endsWith('/') ? proxy + rawUrl : proxy + encodeURIComponent(rawUrl);
+            // কিছু প্রক্সি (যেমন corsproxy.io) URL এনকোড করার প্রয়োজন হতে পারে
+            const proxyUrl = proxy.endsWith('?') ? proxy + rawUrl : proxy + encodeURIComponent(rawUrl); 
 
-            status.textContent = `Trying Proxy ${retryCount + 1}...`;
+            status.textContent = `প্রক্সি ${retryCount + 1} দিয়ে চেষ্টা করা হচ্ছে...`;
             status.className = 'player-status loading';
             retryBtn.style.display = 'none';
 
             if (Hls.isSupported()) {
                 currentHls = new Hls({
-                    maxBufferLength: 30,
-                    maxMaxBufferLength: 60,
-                    liveSyncDurationCount: 4,
-                    lowLatencyMode: true,
-                    backBufferLength: 90,
+                    // **বাফার-ফ্রি অপটিমাইজেশন:**
+                    maxBufferLength: 5, // বাফার সাইজ ৫ সেকেন্ডে কমিয়ে আনা হলো
+                    maxMaxBufferLength: 10, // সর্বোচ্চ বাফার সাইজও কমানো হলো
+                    liveSyncDurationCount: 2, // লাইভ সিঙ্ক ডিউরেশন ২ সেগমেন্টে কমানো হলো
+                    lowLatencyMode: true, // লো-ল্যাটেন্সি মোড সক্রিয়
+                    backBufferLength: 30, // ব্যাক বাফার ৩০ সেকেন্ড রাখা হলো
                     enableWorker: true,
                     startLevel: -1,
-                    xhrSetup: (xhr) => { xhr.timeout = 30000; }
+                    // কোয়ালিটি সুইচিং-এর ক্ষেত্রে দ্রুত প্রতিক্রিয়া পেতে এটি কমানো হলো
+                    autoLevelCapping: 4, 
+                    xhrSetup: (xhr) => { xhr.timeout = 15000; } // টাইমআউট ১৫ সেকেন্ডে কমানো হলো
                 });
 
                 currentHls.loadSource(proxyUrl);
                 currentHls.attachMedia(video);
 
                 currentHls.on(Hls.Events.MANIFEST_PARSED, () => {
-                    status.textContent = 'LIVE • Buffering Ahead (Enhanced)';
+                    status.textContent = '✅ লাইভ • বাফারিং মুক্ত স্ট্রিমিং';
                     status.className = 'player-status';
-                    video.play();
+                    video.play().catch(e => {
+                        console.log("Play failed, likely due to browser autoplay policy:", e);
+                        status.textContent = '❌ অটো-প্লে ব্লকড! প্লে বাটনে চাপুন।';
+                        status.className = 'player-status error';
+                        // মিউট করা আছে, তাই সাধারণত কাজ করবে।
+                    });
                     retryCount = 0;
                 });
 
                 currentHls.on(Hls.Events.ERROR, (e, d) => {
-                    if (d.fatal || d.type === 'networkError') {
+                    if (d.fatal || d.type === 'networkError' || d.details === Hls.ErrorDetails.MANIFEST_LOAD_ERROR) {
                         console.log(`Error (Retry ${retryCount + 1}):`, d);
                         currentHls.destroy();
                         retryCount++;
-                        setTimeout(() => loadWithRetry(video, status, retryBtn, rawUrl), 3000);
+                        // ৩ সেকেন্ড পর পরের প্রক্সি দিয়ে আবার চেষ্টা
+                        setTimeout(() => loadWithRetry(video, status, retryBtn, rawUrl), 3000); 
+                    } else if (d.details === Hls.ErrorDetails.LEVEL_LOAD_ERROR) {
+                        // যদি শুধু লেভেল লোড না হয়, তাহলে শুধু রিকভারি চেষ্টা
+                        currentHls.recoverMediaError();
                     }
                 });
 
                 video.addEventListener('waiting', () => {
-                    if (video.buffered.length > 0 && video.currentTime < video.buffered.end(0)) {
-                        status.textContent = 'Heavy Buffering for Stability...';
-                    }
+                    status.textContent = '⏳ অপেক্ষা করুন... বাফারিং চলছে';
+                    status.className = 'player-status loading';
                 });
-                video.addEventListener('canplay', () => {
-                    status.textContent = 'LIVE • Playing (Buffered)';
-                });
-                video.addEventListener('progress', () => {
-                    const buffered = video.buffered;
-                    if (buffered.length > 0) {
-                        const bufferedSeconds = buffered.end(0) - buffered.start(0);
-                        if (bufferedSeconds > 20) {
-                            status.textContent = 'LIVE • Fully Buffered';
-                        }
-                    }
+                video.addEventListener('playing', () => {
+                    status.textContent = '▶️ লাইভ • প্লে হচ্ছে';
+                    status.className = 'player-status';
                 });
 
             } else {
+                // HLS.js সাপোর্ট না করলে সাধারণ ভিডিও ট্যাগ ব্যবহার
                 video.src = proxyUrl;
                 video.play();
+                status.textContent = '⚠️ HLS.js নেই, সাধারণ প্লেব্যাক।';
+                status.className = 'player-status error';
             }
         }
 
@@ -174,4 +211,3 @@
     </script>
 </body>
 </html>
-
