@@ -181,8 +181,6 @@ http://78.108.251.7/Boomerang/mono.m3u8
 http://78.108.251.7/Nick_Jr/mono.m3u8
 #EXTINF:-1 group-title="Sports",30A Golf Kingdom
 https://30a-tv.com/feeds/vidaa/golf.m3u8
-#EXTINF:-1 group-title="Sports",A Spor
-https://trkvz-live.daioncdn.net/aspor/aspor.m3u8
 #EXTINF:-1 group-title="Sports",ACCDN (1080p)
 https://raycom-accdn-firetv.amagi.tv/playlist.m3u8
 #EXTINF:-1 group-title="Sports",ACCN (720p)
@@ -273,36 +271,8 @@ https://a-cdn.klowdtv.com/live2/nautical_720p/playlist.m3u8
 http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/5ced7d5df64be98e07ed47b6/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=6c2a5105-30d3-11ef-9cf5-e9ddff8ff496&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=6477ef85-3680-442c-94d8-27197903b1f6
 #EXTINF:-1 group-title="Sports",NFL Network
 https://fl1.moveonjoy.com/NFL_NETWORK/index.m3u8
-#EXTINF:-1 group-title="Sports",NFL RedZone
-https://fl1.moveonjoy.com/NFL_RedZone/index.m3u8
 #EXTINF:-1 group-title="Sports",NFL Sunday Ticket 1
 http://fl2.moveonjoy.com/NFL_1/index.m3u8
-#EXTINF:-1 group-title="Sports",NFL Sunday Ticket 2
-http://fl2.moveonjoy.com/NFL_2/index.m3u8
-#EXTINF:-1 group-title="Sports",NFL Sunday Ticket 3
-http://fl2.moveonjoy.com/NFL_3/index.m3u8
-#EXTINF:-1 group-title="Sports",NFL Sunday Ticket 4
-http://fl2.moveonjoy.com/NFL_4/index.m3u8
-#EXTINF:-1 group-title="Sports",NFL Sunday Ticket 5
-http://fl2.moveonjoy.com/NFL_5/index.m3u8
-#EXTINF:-1 group-title="Sports",NFL Sunday Ticket 6
-http://fl2.moveonjoy.com/NFL_6/index.m3u8
-#EXTINF:-1 group-title="Sports",NFL Sunday Ticket 7
-http://fl2.moveonjoy.com/NFL_7/index.m3u8
-#EXTINF:-1 group-title="Sports",NFL Sunday Ticket 8
-http://fl2.moveonjoy.com/NFL_8/index.m3u8
-#EXTINF:-1 group-title="Sports",NFL Sunday Ticket 9
-http://fl2.moveonjoy.com/NFL_9/index.m3u8
-#EXTINF:-1 group-title="Sports",NFL Sunday Ticket 10
-http://fl2.moveonjoy.com/NFL_10/index.m3u8
-#EXTINF:-1 group-title="Sports",NFL Sunday Ticket 11
-http://fl2.moveonjoy.com/NFL_11/index.m3u8
-#EXTINF:-1 group-title="Sports",NFL Sunday Ticket 12
-http://fl2.moveonjoy.com/NFL_12/index.m3u8
-#EXTINF:-1 group-title="Sports",NFL Sunday Ticket 13
-http://fl2.moveonjoy.com/NFL_13/index.m3u8
-#EXTINF:-1 group-title="Sports",NFL Sunday Ticket 14
-http://fl2.moveonjoy.com/NFL_14/index.m3u8
 #EXTINF:-1 group-title="Sports",NHL
 https://nhl-firetv.amagi.tv/playlist.m3u8
 #EXTINF:-1 group-title="Sports",NHRA TV (720p)
@@ -323,8 +293,6 @@ https://stitcher-ipv4.pluto.tv/v1/stitch/embed/hls/channel/608030eff4b6f70007e16
 https://d2njbreu8qyfxo.cloudfront.net/scheduler/scheduleMaster/216.m3u8
 #EXTINF:-1 group-title="Sports",PokerGo
 http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/5fc54366b04b2300072e31af/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=6c2b6274-30d3-11ef-9cf5-e9ddff8ff496&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=a68d07ef-a794-43f8-a287-3bd7f27d909b
-#EXTINF:-1 group-title="Sports",Premiere Clubes
-http://187.120.222.37:721
 #EXTINF:-1 group-title="Sports",Racing America (720p)
 https://livetv-fa.tubi.video/racing-america/playlist.m3u8
 #EXTINF:-1 group-title="Sports",Real Madrid TV (1080p)
@@ -343,16 +311,6 @@ https://sportsgrid-tribal.amagi.tv/playlist.m3u8
 https://fl1.moveonjoy.com/SPORTSMAN_CHANNEL/index.m3u8
 #EXTINF:-1 group-title="Sports",SportsNet New York (540p)
 https://fl1.moveonjoy.com/SNY/index.m3u8
-#EXTINF:-1 group-title="Sports",Star Sports 1 HD (1080p) [Geo-blocked]
-http://116.90.120.149:8000/play/a0ba/index.m3u8
-#EXTINF:-1 group-title="Sports",Star Sports 1 Hindi HD (1080p)
-http://116.90.120.149:8000/play/a0bv/index.m3u8
-#EXTINF:-1 group-title="Sports",Star Sports 2 Hindi (1080p)
-http://116.90.120.149:8000/play/a0cs/index.m3u8
-#EXTINF:-1 group-title="Sports",Star Sports Select 1 HD (1080p)
-http://116.90.120.149:8000/play/a0cl/index.m3u8
-#EXTINF:-1 group-title="Sports",Star Sports Select 2 HD (1080p)
-http://116.90.120.149:8000/play/a0cm/index.m3u8
 #EXTINF:-1 group-title="Sports",TDM Sports Ch. 93 (720p)
 https://live3.tdm.com.mo/ch4/sport_ch4.live/playlist.m3u8
 #EXTINF:-1 group-title="Sports",Teledeporte (1080p)
