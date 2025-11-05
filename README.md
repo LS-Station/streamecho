@@ -4,7 +4,7 @@
 
 #  **StreamEcho** 
 
-![StreamEcho Banner](https://1.bp.blogspot.com/-h5fUZDgfXe8/YR87osMq6UI/AAAAAAAAAYk/18JeDAzajvYhKnMnllSf_DSWAm51cueuQCLcBGAsYHQ/s728/placeholder.jpg)  
+![StreamEcho Banner](https://blogger.googleusercontent.com/img/a/AVvXsEhNwfOe5UEaytnC2FpkUQWhjP3JqGnSaehshGyUIbvDvP_oKWs5H_C_Ki0qDMoMaMWhE0WxqZkJoxSC8nMswTKkejou2M_MJMcsLPYjhxbATIq8AgvXfG983fFBJ3LIYkhWyzdLZjq9zWVQ7nslzP1DAZaFuqzGsWeqYz0YaNlRvVFr338rDcc3hfKUuy7q=s1600)  
 *✨ **Daily Fresh M3U Links** • **100% Free** • **Global Live TV** ✨*
 
 </div>

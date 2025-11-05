@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="StreamEcho - Buffer-Free IPTV Player 2025">
+    <meta name="description" content="StreamEcho - GitHub Pages Optimized Player">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.15"></script>
-    <title>StreamEcho: Never Stop Player</title>
+    <title>StreamEcho: GitHub Player</title>
     <style>
         :root { --accent: #00D4FF; --bg: #0F0F1A; --card: #1A1A2E; --text: #E0E0FF; --light: #AAAAAA; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Poppins', sans-serif; background: #0F0F1A; color: var(--text); padding: 1rem; }
         .player-section { max-width: 1200px; margin: 0 auto; background: var(--card); padding: 1rem; border-radius: 16px; }
         .tab-buttons { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1rem; justify-content: center; }
-        .tab-btn { padding: 10px 16px; background: rgba(0,212,255,0.1); color: var(--accent); border: 1px solid var(--accent); border-radius: 50px; font-size: 0.9rem; cursor: pointer; }
+        .tab-btn { padding: 10px 16px; background: rgba(0,212,255,0.1); color: var(--accent); border: 1px solid var(--accent); border-radius: 50px; font-size: 0.9rem; cursor: pointer; transition: background 0.2s, color 0.2s; }
+        .tab-btn:hover { background: rgba(0,212,255,0.2); }
         .tab-btn.active { background: var(--accent); color: var(--bg); }
         .tab-content { display: none; text-align: center; }
         .tab-content.active { display: block; }
@@ -21,156 +22,257 @@
         .player-title { color: var(--accent); font-weight: 600; margin: 0.5rem 0; font-size: 1.3rem; }
         .player-status { color: var(--light); font-size: 0.9rem; margin-top: 0.5rem; }
         .loading { color: #FFA41C; } .error { color: #FF3B30; }
-        .retry-btn { background: #FF3B30; color: white; border: none; padding: 8px 16px; border-radius: 50px; cursor: pointer; margin-top: 10px; }
-        @media (max-width: 768px) { .live-player { height: 220px; } }
+        .retry-btn { background: #FF3B30; color: white; border: none; padding: 8px 16px; border-radius: 50px; cursor: pointer; margin-top: 10px; transition: background 0.2s; }
+        .retry-btn:hover { background: #E6342D; }
+        
+        .promo-buttons { display: flex; justify-content: center; gap: 15px; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #2A2A45; }
+        .promo-btn { 
+            padding: 12px 25px; font-size: 1rem; font-weight: 600; border: none; border-radius: 8px; cursor: pointer;
+            text-decoration: none; text-transform: uppercase; transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .promo-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+
+        .website-btn { background: #4CAF50; color: white; } 
+        .telegram-btn { background: #0088CC; color: white; } 
+        .status-direct { color: white; background: #4CAF50; } 
+        .status-fixed { color: white; background: #0088CC; }
+
+        @media (max-width: 768px) { .live-player { height: 220px; } .promo-btn { padding: 10px 18px; font-size: 0.9rem; } }
     </style>
 </head>
 <body>
     <div class="player-section">
         <div class="tab-buttons" id="tabButtons"></div>
         <div id="tabContents"></div>
+
+        <div class="promo-buttons">
+            <a href="https://streamecho.top" target="_blank" class="promo-btn website-btn">
+                🌐 Visit Our Website
+            </a>
+            <a href="https://t.me/bdixftpiptv" target="_blank" class="promo-btn telegram-btn">
+                📢 Join Telegram Channel
+            </a>
+        </div>
     </div>
 
     <script>
-        // তোমার চ্যানেল লিস্ট (এখানে নতুন যোগ করো)
+        // 9 Channels Encodings - REPLACE 'xxxxxx' WITH YOUR BASE64 ENCODED STRINGS
         const encNames = [
-            "VCBTcG9ydHMgSEQ=", "U3RhciBTcG9ydHMgMQ==", "U29saCBMaXZlIFNwb3J0cw==", "YmVJTiBTUE9SVFMgMQ=="
+            "U0tZIFNQT1JUIExBTElHQQ==", 
+            "xxxxxx", "xxxxxx",
+            "xxxxxx", "xxxxxx", "xxxxxx",
+            "xxxxxx", "xxxxxx", "xxxxxx"
         ];
         const encUrls = [
-            "aHR0cDovLzExNi4yMDQuMTQ5LjE2L3Rfc3BvcnRzL2luZGV4Lm0zdTg=",
-            "aHR0cDovLzQxLjIwNS45My4xNTQvU1RBUlNQT1JUUzEvaW5kZXgubTN1OA==",
-            "aHR0cDovL2NvcnMudHVuZHJhY2FzdC5jb206MjAwMC9odHRwczovL3dvLmNtYS5mb290YmFsbGlpLmlyL2hsczIvc29saC5tM3U4",
-            "aHR0cHM6Ly9iYWxhbmNlLmZvb3RiYWxsaWkuaXIvaGxzMi9iZWluMS5tM3U4"
+            "aHR0cDovLzE4MS43OC4xMDkuNDg6OTk5OC9wbGF5L2EwNnIvaW5kZXgubTN1OA==", 
+            "xxxxxx", "xxxxxx",
+            "xxxxxx", "xxxxxx", "xxxxxx",
+            "xxxxxx", "xxxxxx", "xxxxxx"
         ];
-
-        const channelList = encNames.map((n, i) => ({ name: atob(n), url: atob(encUrls[i]) }));
-
+        
+        const channelList = encNames.map((n, i) => ({ 
+            name: atob(n), // Decoding Name
+            url: atob(encUrls[i]), // Decoding URL
+            retry: 0, 
+            fixedProxy: null
+        }));
+        
         const tabButtons = document.getElementById('tabButtons');
         const tabContents = document.getElementById('tabContents');
         let currentHls = null;
-        let retryCount = 0;
-        const MAX_RETRY = 10;
+        let currentChannelIndex = -1; 
+        
+        // **চ্যানেল লোড করার জন্য প্রক্সি লিস্ট**
+        const CHANNEL_PROXIES = [
+            'https://api.allorigins.win/raw?url=', 
+            'http://cors.tundracast.com:2000/', 
+            'https://r34-cors-bypass.deno.dev/?url=',
+            'https://api.codetabs.com/v1/proxy?quest=', 
+            'https://corsproxy.io/?',
+            'https://thingproxy.freeboard.io/fetch/',
+            'https://anywhere.pwisetthon.com/',
+            'https://cors-anywhere.herokuapp.com/'
+        ];
 
-        // প্রক্সি লিস্ট (অটো-সুইচ)
-        const getProxy = () => {
-            const proxies = [
-                'https://anywhere.pwisetthon.com/',
-                'https://api.allorigins.win/raw?url=',
-                'https://corsproxy.io/?',
-                'https://thingproxy.freeboard.io/fetch/',
-                'https://cors-anywhere.herokuapp.com/'
-            ];
-            return proxies[retryCount % proxies.length];
-        };
+        // Renders the channel tabs and contents
+        function renderChannels() {
+            channelList.forEach((ch, index) => {
+                const btn = document.createElement('button');
+                btn.className = 'tab-btn';
+                btn.textContent = ch.name;
+                btn.onclick = () => openTab(index);
+                tabButtons.appendChild(btn);
 
-        channelList.forEach((ch, i) => {
-            const btn = document.createElement('button');
-            btn.className = 'tab-btn';
-            btn.textContent = ch.name;
-            btn.onclick = () => openTab(i);
-            tabButtons.appendChild(btn);
+                const div = document.createElement('div');
+                const channelName = ch.name;
+                div.className = 'tab-content';
+                div.innerHTML = `
+                    <div class="player-title">LIVE: ${channelName}</div>
+                    <video id="video-${index}" class="live-player" controls playsinline preload="auto" muted></video>
+                    <div id="status-${index}" class="player-status loading">Ready to play.</div>
+                    <button id="retry-${index}" class="retry-btn" style="display:none;">Retry Now</button>
+                `;
+                tabContents.appendChild(div);
+            });
+             
+             const statusDiv = document.createElement('div');
+             statusDiv.id = 'm3uStatus';
+             statusDiv.className = 'player-status';
+             statusDiv.style.textAlign = 'center';
+             statusDiv.style.marginBottom = '1rem';
+             statusDiv.textContent = 'Channels Loaded. Select a channel.';
+             document.querySelector('.player-section').insertBefore(statusDiv, document.getElementById('tabButtons'));
+             
+             if (channelList.length > 0) openTab(0);
+        }
 
-            const div = document.createElement('div');
-            div.className = 'tab-content';
-            div.innerHTML = `
-                <div class="player-title">LIVE: ${ch.name}</div>
-                <video id="video-${i}" class="live-player" controls playsinline preload="auto" muted></video>
-                <div id="status-${i}" class="player-status loading">Loading... (Retry 0)</div>
-                <button id="retry-${i}" class="retry-btn" style="display:none;">Retry Now</button>
-            `;
-            tabContents.appendChild(div);
-        });
-
+        // Individual channel loading function (Uses the smart switching logic)
         function openTab(idx) {
             document.querySelectorAll('.tab-btn').forEach((b, i) => b.classList.toggle('active', i === idx));
             document.querySelectorAll('.tab-content').forEach((c, i) => c.classList.toggle('active', i === idx));
 
             if (currentHls) { currentHls.destroy(); currentHls = null; }
-            retryCount = 0;
+            currentChannelIndex = idx;
+            
+            const channel = channelList[idx];
 
             const video = document.getElementById(`video-${idx}`);
-            const status = document.getElementById(`status-${idx}`);
-            const retryBtn = document.getElementById(`retry-${idx}`);
-            const rawUrl = channelList[idx].url;
-
+            
             video.muted = true;
-            loadWithRetry(video, status, retryBtn, rawUrl);
+            
+            // SMART SWITCHING LOGIC START
+            if (channel.fixedProxy !== null) {
+                // 2. If a proxy previously worked, try loading with that fixed proxy
+                const fixedProxyUrl = CHANNEL_PROXIES[channel.fixedProxy];
+                const proxifiedUrl = getFinalProxyUrl(fixedProxyUrl, channel.url);
+                loadStreamAttempt(proxifiedUrl, channel, 'fixed');
+
+            } else {
+                // 1. First, attempt Direct Load.
+                loadStreamAttempt(channel.url, channel, 'direct');
+            }
+        }
+        
+        // URL formatting function
+        function getFinalProxyUrl(proxy, rawUrl) {
+            if (proxy.includes('tundracast.com') || proxy.includes('raw?url=') || proxy.includes('deno.dev/?url=')) {
+                 return proxy + rawUrl;
+            } else {
+                 return proxy.endsWith('?') || proxy.endsWith('=') ? proxy + rawUrl : proxy + encodeURIComponent(rawUrl); 
+            }
         }
 
-        function loadWithRetry(video, status, retryBtn, rawUrl) {
-            if (retryCount >= MAX_RETRY) {
-                status.textContent = 'Failed after 10 retries. Try VPN.';
+        // Recovery and Proxy Switching Logic
+        function handleError(channel, data) {
+            const video = document.getElementById(`video-${currentChannelIndex}`);
+            const status = document.getElementById(`status-${currentChannelIndex}`);
+            const retryBtn = document.getElementById(`retry-${currentChannelIndex}`);
+
+            // 1. If in Fixed Proxy Mode, attempt media recovery (STABILITY TRICK)
+            if (channel.fixedProxy !== null && data.type === 'networkError') {
+                 console.log(`Fixed Proxy Mode (${channel.fixedProxy + 1}): Attempting media recovery...`);
+                 status.textContent = `⚠️ Connection Lost. Recovering via fixed proxy...`;
+                 currentHls.recoverMediaError();
+                 return;
+            }
+            
+            // 2. Begin/Continue Proxy Switching
+            if (channel.retry < CHANNEL_PROXIES.length) {
+                channel.retry++;
+                const nextProxyIndex = channel.retry - 1;
+                const nextProxyUrl = CHANNEL_PROXIES[nextProxyIndex];
+                const proxifiedUrl = getFinalProxyUrl(nextProxyUrl, channel.url);
+                
+                status.textContent = `Retrying: Proxy ${channel.retry}/${CHANNEL_PROXIES.length}...`;
+                
+                // 1 second delay before next attempt
+                setTimeout(() => loadStreamAttempt(proxifiedUrl, channel, 'proxy', nextProxyIndex), 1000);
+            
+            } else {
+                // 3. All attempts failed
+                status.textContent = `Failed after ${CHANNEL_PROXIES.length} retries. Link likely dead or Geo-blocked.`;
                 status.className = 'player-status error';
                 retryBtn.style.display = 'block';
-                retryBtn.onclick = () => { retryCount = 0; loadWithRetry(video, status, retryBtn, rawUrl); };
-                return;
+                channel.retry = 0; // Reset for manual retry
+                channel.fixedProxy = null;
             }
+        }
 
-            const proxy = getProxy();
-            const proxyUrl = proxy.endsWith('/') ? proxy + rawUrl : proxy + encodeURIComponent(rawUrl);
+        // Load Attempt Function
+        function loadStreamAttempt(url, channel, attemptType, proxyIndex = null) {
+            const video = document.getElementById(`video-${currentChannelIndex}`);
+            const status = document.getElementById(`status-${currentChannelIndex}`);
+            
+            video.pause();
+            video.removeAttribute('src'); 
 
-            status.textContent = `Trying Proxy ${retryCount + 1}...`;
-            status.className = 'player-status loading';
-            retryBtn.style.display = 'none';
+            if (currentHls) { currentHls.destroy(); currentHls = null; }
 
+            if (attemptType === 'direct') {
+                status.textContent = 'Attempting Direct Load...';
+                status.className = 'player-status loading';
+            } else if (attemptType === 'proxy' || attemptType === 'fixed') {
+                status.textContent = `Retrying: Proxy ${proxyIndex + 1}/${CHANNEL_PROXIES.length}...`;
+                status.className = 'player-status loading';
+            }
+            
             if (Hls.isSupported()) {
                 currentHls = new Hls({
-                    maxBufferLength: 30,
-                    maxMaxBufferLength: 60,
-                    liveSyncDurationCount: 4,
                     lowLatencyMode: true,
-                    backBufferLength: 90,
-                    enableWorker: true,
-                    startLevel: -1,
-                    xhrSetup: (xhr) => { xhr.timeout = 30000; }
+                    xhrSetup: (xhr) => { xhr.timeout = 10000; } 
                 });
 
-                currentHls.loadSource(proxyUrl);
+                currentHls.loadSource(url);
                 currentHls.attachMedia(video);
 
                 currentHls.on(Hls.Events.MANIFEST_PARSED, () => {
-                    status.textContent = 'LIVE • Buffering Ahead (Enhanced)';
-                    status.className = 'player-status';
-                    video.play();
-                    retryCount = 0;
+                    if (attemptType === 'direct') {
+                        status.textContent = '✅ LIVE • Direct Load Successful.';
+                        status.className = 'player-status status-direct';
+                    } else {
+                        channel.fixedProxy = proxyIndex; 
+                        status.textContent = `✅ LIVE • Proxy ${proxyIndex + 1} Fixed.`;
+                        status.className = 'player-status status-fixed';
+                    }
+                    video.play().catch(e => {
+                        status.textContent = '❌ Autoplay Blocked! Click Play.';
+                        status.className = 'player-status error';
+                    });
+                    channel.retry = 0; 
                 });
 
-                currentHls.on(Hls.Events.ERROR, (e, d) => {
-                    if (d.fatal || d.type === 'networkError') {
-                        console.log(`Error (Retry ${retryCount + 1}):`, d);
-                        currentHls.destroy();
-                        retryCount++;
-                        setTimeout(() => loadWithRetry(video, status, retryBtn, rawUrl), 3000);
+                currentHls.on(Hls.Events.ERROR, (e, data) => {
+                    if (data.fatal && (data.type === 'networkError' || data.details === Hls.ErrorDetails.MANIFEST_LOAD_ERROR)) {
+                         if (attemptType === 'direct' || channel.fixedProxy === null) {
+                             console.error("Fatal Error (Switching to Proxy/Next Proxy):", data);
+                             handleError(channel, data);
+                         } else {
+                             handleError(channel, data);
+                         }
+                    } else if (data.fatal) {
+                         status.textContent = '❌ Fatal Error. Link may be dead or format wrong.';
+                         status.className = 'player-status error';
                     }
                 });
 
-                video.addEventListener('waiting', () => {
-                    if (video.buffered.length > 0 && video.currentTime < video.buffered.end(0)) {
-                        status.textContent = 'Heavy Buffering for Stability...';
-                    }
-                });
-                video.addEventListener('canplay', () => {
-                    status.textContent = 'LIVE • Playing (Buffered)';
-                });
-                video.addEventListener('progress', () => {
-                    const buffered = video.buffered;
-                    if (buffered.length > 0) {
-                        const bufferedSeconds = buffered.end(0) - buffered.start(0);
-                        if (bufferedSeconds > 20) {
-                            status.textContent = 'LIVE • Fully Buffered';
-                        }
+                video.addEventListener('playing', () => { 
+                    const channel = channelList[currentChannelIndex];
+                    if (channel.fixedProxy === null) {
+                         status.textContent = '▶️ LIVE • Playing (Direct)';
+                    } else {
+                         status.textContent = `▶️ LIVE • Playing (Proxy ${channel.fixedProxy + 1})`;
                     }
                 });
 
             } else {
-                video.src = proxyUrl;
-                video.play();
+                status.textContent = '⚠️ HLS.js not supported.';
+                status.className = 'player-status error';
             }
         }
-
-        setTimeout(() => {
-            if (channelList.length > 0) openTab(0);
-        }, 500);
+        
+        document.addEventListener('DOMContentLoaded', () => {
+             renderChannels();
+        });
     </script>
 </body>
 </html>
