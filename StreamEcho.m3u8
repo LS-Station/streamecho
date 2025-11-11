@@ -187,8 +187,6 @@ https://30a-tv.com/feeds/vidaa/golf.m3u8
 https://raycom-accdn-firetv.amagi.tv/playlist.m3u8
 #EXTINF:-1 group-title="Sports",ACCN (720p)
 https://fl1.moveonjoy.com/ACC_NETWORK/index.m3u8
-#EXTINF:-1 group-title="Sports",ACI Sport TV (1080p)
-https://webstream.multistream.it/memfs/e2cb3629-c1a2-495b-b43a-9eb386f04ed8.m3u8
 #EXTINF:-1 group-title="Sports",Alkass Four HD (720p)
 https://Streamer3.qna.org.qa:443/148164621_live/148164621_296.sdp/playlist.m3u8
 #EXTINF:-1 group-title="Sports",Alkass Three (720p)
@@ -271,8 +269,6 @@ https://a-cdn.klowdtv.com/live2/nautical_720p/playlist.m3u8
 http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/5ced7d5df64be98e07ed47b6/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=6c2a5105-30d3-11ef-9cf5-e9ddff8ff496&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=6477ef85-3680-442c-94d8-27197903b1f6
 #EXTINF:-1 group-title="Sports",NFL Network
 https://fl1.moveonjoy.com/NFL_NETWORK/index.m3u8
-#EXTINF:-1 group-title="Sports",NFL Sunday Ticket 1
-http://fl2.moveonjoy.com/NFL_1/index.m3u8
 #EXTINF:-1 group-title="Sports",NHL
 https://nhl-firetv.amagi.tv/playlist.m3u8
 #EXTINF:-1 group-title="Sports",NHRA TV (720p)
