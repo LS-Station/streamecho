@@ -3,14 +3,6 @@
 https://byphdgllyk.gpcdn.net/hls/deeptotv/0_1/index.m3u8
 #EXTINF:-1 group-title="Kids",ZB Cartoon
 https://server.zillarbarta.com/zbcatun/video.m3u8
-#EXTINF:-1 ,SONY LIV
-https://dai.google.com/linear/hls/event/biQJgf06SJCitj-nd502ow/master.m3u8
-#EXTINF:-1 ,SONY LIV2
-https://dai.google.com/linear/hls/event/tG04-ukTSleEi0819p-EqA/master.m3u8
-#EXTINF:-1 ,Fox Sports 501 HD
-http://y3fqd48g.megatv.fun/iptv/NRLXRWSBWBPLN4/19146/index.m3u8
-#EXTINF:-1 ,Sky Sports Cricket
-http://y3fqd48g.megatv.fun/iptv/NRLXRWSBWBPLN4/9258/index.m3u8
 #EXTINF:-1 ,Sony Ten 1
 http://87.255.35.150:18926
 #EXTINF:-1 ,Sony Ten 2
@@ -294,4 +286,5 @@ http://mol-2.com:8080/play/live.php?mac=00:1A:79:BC:CF:06&stream=418307&extensio
 #EXTINF:-1 group-title="Sports" tvg-logo="https://static.epg.best/fr/CanalPlusSport.fr.png",Canal+ Sport FHD
 http://mol-2.com:8080/play/live.php?mac=00:1A:79:BC:CF:06&stream=2804&extension=ts&play_token=we3qaeVQwz&sn2=
 #EXTINF:-1 group-title="Sports" tvg-logo="https://static.epg.best/fr/InfosportPlus.fr.png",Infosport+ FHD
+
 http://mol-2.com:8080/play/live.php?mac=00:1A:79:BC:CF:06&stream=2802&extension=ts&play_token=PEX5WpVqN4&sn2=
